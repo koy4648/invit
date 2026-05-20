@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-// 예식 일시 설정 (환경 변수 또는 하드코딩)
 const WEDDING_DATE = new Date("2025-10-18T11:00:00+09:00");
 
 interface TimeLeft {
@@ -14,87 +13,92 @@ interface TimeLeft {
 }
 
 function calculateTimeLeft(): TimeLeft {
-  const now = new Date();
-  const diff = WEDDING_DATE.getTime() - now.getTime();
+  const diff = WEDDING_DATE.getTime() - Date.now();
+  if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0, isPast: true };
 
-  if (diff <= 0) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0, isPast: true };
-  }
-
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-  return { days, hours, minutes, seconds, isPast: false };
+  return {
+    days:    Math.floor(diff / 86_400_000),
+    hours:   Math.floor((diff % 86_400_000) / 3_600_000),
+    minutes: Math.floor((diff % 3_600_000) / 60_000),
+    seconds: Math.floor((diff % 60_000) / 1_000),
+    isPast:  false,
+  };
 }
 
 export default function CountdownTimer() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-    isPast: false,
-  });
-  const [mounted, setMounted] = useState(false);
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => calculateTimeLeft());
 
   useEffect(() => {
-    setMounted(true);
-    setTimeLeft(calculateTimeLeft());
-
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    return () => clearInterval(timer);
+    const id = setInterval(() => setTimeLeft(calculateTimeLeft()), 1_000);
+    return () => clearInterval(id);
   }, []);
 
-  if (!mounted) {
-    return (
-      <div className="flex justify-center gap-3 py-4">
-        {["일", "시간", "분", "초"].map((unit) => (
-          <div key={unit} className="flex flex-col items-center">
-            <div className="w-16 h-16 bg-white/20 rounded-2xl animate-pulse" />
-            <span className="text-xs text-white/70 mt-1">{unit}</span>
-          </div>
-        ))}
-      </div>
-    );
-  }
+  const units = [
+    { value: timeLeft.days,    label: "DAYS" },
+    { value: timeLeft.hours,   label: "HRS" },
+    { value: timeLeft.minutes, label: "MIN" },
+    { value: timeLeft.seconds, label: "SEC" },
+  ];
 
   if (timeLeft.isPast) {
     return (
       <div className="text-center py-4">
-        <p className="text-white/90 text-lg font-light tracking-widest">
+        <p className="text-sm tracking-widest font-light" style={{ color: "rgba(255,255,255,0.9)" }}>
           결혼식이 거행되었습니다
         </p>
-        <p className="text-white/60 text-sm mt-1">
-          축하해 주셔서 감사합니다 💕
+        <p className="text-xs mt-1" style={{ color: "rgba(255,255,255,0.6)" }}>
+          축하해 주셔서 감사합니다
         </p>
       </div>
     );
   }
 
-  const units = [
-    { value: timeLeft.days, label: "일" },
-    { value: timeLeft.hours, label: "시간" },
-    { value: timeLeft.minutes, label: "분" },
-    { value: timeLeft.seconds, label: "초" },
-  ];
-
   return (
-    <div className="flex justify-center gap-3 py-4">
-      {units.map(({ value, label }) => (
-        <div key={label} className="flex flex-col items-center">
-          <div className="w-16 h-16 bg-white/20 backdrop-blur-sm border border-white/30 rounded-2xl flex items-center justify-center shadow-lg">
-            <span className="text-2xl font-bold text-white tabular-nums">
+    <div className="flex justify-center gap-2.5 py-2">
+      {units.map(({ value, label }, i) => (
+        <div key={label} className="flex flex-col items-center gap-1.5">
+          {/* 숫자 카드 */}
+          <div
+            className="w-[68px] h-[68px] rounded-2xl flex items-center justify-center relative overflow-hidden"
+            style={{
+              background: "rgba(255,255,255,0.15)",
+              border: "1px solid rgba(255,255,255,0.3)",
+              backdropFilter: "blur(12px)",
+              boxShadow: "0 4px 16px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.25)",
+            }}
+          >
+            {/* 상단 하이라이트 */}
+            <div
+              className="absolute top-0 left-0 right-0 h-1/2 rounded-t-2xl"
+              style={{ background: "rgba(255,255,255,0.08)" }}
+            />
+            <span
+              className="relative z-10 text-[26px] font-light tabular-nums"
+              style={{
+                color: "#fff",
+                fontFamily: "var(--font-cormorant), serif",
+                textShadow: "0 1px 4px rgba(0,0,0,0.15)",
+              }}
+            >
               {String(value).padStart(2, "0")}
             </span>
           </div>
-          <span className="text-xs text-white/70 mt-1.5 tracking-wider">
+
+          {/* 레이블 */}
+          <span
+            className="text-[9px] tracking-[0.25em] font-medium"
+            style={{ color: "rgba(255,255,255,0.65)" }}
+          >
             {label}
           </span>
+
+          {/* 구분 점 (마지막 제외) */}
+          {i < units.length - 1 && (
+            <div
+              className="absolute"
+              style={{ display: "none" }} // flex gap으로 대체
+            />
+          )}
         </div>
       ))}
     </div>

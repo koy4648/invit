@@ -5,83 +5,116 @@ import Guestbook from "@/components/Guestbook";
 import PhotoUpload from "@/components/PhotoUpload";
 import WeddingHero from "@/components/WeddingHero";
 import WeddingInfo from "@/components/WeddingInfo";
+import BottomNav from "@/components/BottomNav";
 import ToastProvider from "@/components/ToastProvider";
+
+/* 골드 구분선 */
+function GoldDivider() {
+  return (
+    <div className="divider-gold px-8 py-2">
+      <span className="text-xs" style={{ color: "#d4a96a" }}>✦</span>
+    </div>
+  );
+}
+
+/* 섹션 스켈레톤 */
+function SectionSkeleton({ height = "h-48" }: { height?: string }) {
+  return <div className={`${height} mx-4 rounded-3xl shimmer`} />;
+}
 
 export default function Home() {
   return (
     <>
       <ToastProvider />
-      <main className="min-h-screen bg-stone-50">
-        {/* 히어로 섹션 */}
+
+      <main
+        className="min-h-screen"
+        style={{ background: "linear-gradient(180deg, #fdfaf6 0%, #f9f3ea 100%)" }}
+      >
+        {/* ── 히어로 ─────────────────────────────── */}
         <WeddingHero />
 
-        {/* D-Day 카운트다운 */}
-        <section className="bg-gradient-to-b from-rose-400 to-rose-300 px-4 py-6">
-          <p className="text-center text-white/80 text-xs tracking-[0.3em] uppercase mb-2">
+        {/* ── D-Day 카운트다운 배너 ─────────────── */}
+        <section
+          className="px-4 py-8"
+          style={{
+            background: "linear-gradient(135deg, #c49a55 0%, #b08840 50%, #9a7535 100%)",
+          }}
+        >
+          <p
+            className="text-center text-[10px] tracking-[0.4em] uppercase mb-4"
+            style={{ color: "rgba(255,255,255,0.65)" }}
+          >
             Wedding Countdown
           </p>
-          <Suspense fallback={<div className="h-24" />}>
+          <Suspense fallback={<div className="h-20" />}>
             <CountdownTimer />
           </Suspense>
+          <p
+            className="text-center text-[11px] tracking-widest mt-4 font-light"
+            style={{ color: "rgba(255,255,255,0.55)" }}
+          >
+            2025 · 10 · 18 · SAT · 11:00 AM
+          </p>
         </section>
 
-        {/* 본문 컨텐츠 */}
-        <div className="max-w-md mx-auto">
-          {/* 예식 정보 */}
-          <WeddingInfo />
+        {/* ── 본문 컨텐츠 ────────────────────────── */}
+        <div className="max-w-md mx-auto pb-28">
+          {/* 예식 안내 */}
+          <Suspense fallback={<SectionSkeleton height="h-64" />}>
+            <WeddingInfo />
+          </Suspense>
 
-          {/* 구분선 */}
-          <div className="flex items-center gap-3 px-4">
-            <div className="flex-1 h-px bg-stone-200" />
-            <span className="text-stone-300 text-xs">❤</span>
-            <div className="flex-1 h-px bg-stone-200" />
-          </div>
+          <GoldDivider />
 
-          {/* 신랑신부 갤러리 */}
-          <Suspense
-            fallback={
-              <div className="h-64 bg-stone-100 rounded-2xl mx-4 animate-pulse" />
-            }
-          >
+          {/* 갤러리 */}
+          <Suspense fallback={<SectionSkeleton height="h-80" />}>
             <Gallery />
           </Suspense>
 
-          {/* 구분선 */}
-          <div className="flex items-center gap-3 px-4">
-            <div className="flex-1 h-px bg-stone-200" />
-            <span className="text-stone-300 text-xs">❤</span>
-            <div className="flex-1 h-px bg-stone-200" />
-          </div>
+          <GoldDivider />
 
-          {/* 하객 사진 업로드 */}
+          {/* 하객 사진 공유 */}
           <PhotoUpload />
 
-          {/* 구분선 */}
-          <div className="flex items-center gap-3 px-4">
-            <div className="flex-1 h-px bg-stone-200" />
-            <span className="text-stone-300 text-xs">❤</span>
-            <div className="flex-1 h-px bg-stone-200" />
-          </div>
+          <GoldDivider />
 
           {/* 방명록 */}
-          <Suspense
-            fallback={
-              <div className="h-48 bg-stone-100 rounded-2xl mx-4 animate-pulse" />
-            }
-          >
+          <Suspense fallback={<SectionSkeleton height="h-48" />}>
             <Guestbook />
           </Suspense>
 
           {/* 푸터 */}
-          <footer className="text-center py-10 px-4">
-            <p className="text-stone-400 text-xs leading-relaxed">
-              두 사람의 새로운 시작을 <br />
+          <footer className="text-center py-12 px-6">
+            <div className="divider-gold mb-6">
+              <span className="text-xs" style={{ color: "#d4a96a" }}>✦</span>
+            </div>
+            <p
+              className="text-[13px] leading-[2.2] font-light tracking-wider"
+              style={{ color: "#a8a29e" }}
+            >
+              두 사람의 새로운 시작을<br />
               함께 축복해 주셔서 감사합니다
             </p>
-            <p className="text-rose-300 text-lg mt-3">💕</p>
+            <p
+              className="mt-4 text-xs tracking-[0.3em]"
+              style={{
+                background: "linear-gradient(135deg, #d4a96a, #b08840)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Kim Minjun &amp; Lee Seoyeon
+            </p>
+            <p className="mt-2 text-xs" style={{ color: "#c4b8a8" }}>
+              2025 · 10 · 18
+            </p>
           </footer>
         </div>
       </main>
+
+      {/* ── 하단 탭 네비게이션 ─────────────────── */}
+      <BottomNav />
     </>
   );
 }

@@ -1,11 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Noto_Serif_KR } from "next/font/google";
+import { Noto_Serif_KR, Cormorant_Garamond } from "next/font/google";
 import "./globals.css";
 
 const notoSerifKR = Noto_Serif_KR({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600"],
   variable: "--font-noto-serif-kr",
+  display: "swap",
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
   display: "swap",
 });
 
@@ -25,7 +33,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 1,
   userScalable: false,
-  themeColor: "#f87171",
+  themeColor: "#c49a55",
 };
 
 export default function RootLayout({
@@ -34,7 +42,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={notoSerifKR.variable}>
+    <html lang="ko" className={`${notoSerifKR.variable} ${cormorant.variable}`}>
       <body className={`${notoSerifKR.className} antialiased`}>{children}</body>
     </html>
   );

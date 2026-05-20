@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+:root {
+  --font-noto-serif-kr: "Noto Serif KR", serif;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-noto-serif-kr), serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 모바일 터치 스크롤 최적화 */
+.embla {
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 커스텀 스크롤바 */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1c4b0;
+  border-radius: 2px;
+}

@@ -12,7 +12,12 @@ interface Account {
   type: "groom" | "bride" | "groom_parents" | "bride_parents";
 }
 
-const ACCOUNTS: Account[] = [
+interface AccountInfoProps {
+  accounts?: Account[];
+  showAccounts?: boolean;
+}
+
+const DEFAULT_ACCOUNTS: Account[] = [
   {
     name: "신랑",
     bank: "국민은행",
@@ -43,10 +48,18 @@ const ACCOUNTS: Account[] = [
   },
 ];
 
-export default function AccountInfo() {
+export default function AccountInfo({
+  accounts = DEFAULT_ACCOUNTS,
+  showAccounts = true,
+}: AccountInfoProps) {
   const [expandedAccounts, setExpandedAccounts] = useState<Set<string>>(
     new Set()
   );
+
+  // showAccounts가 false면 섹션 자체를 렌더링하지 않음
+  if (!showAccounts || accounts.length === 0) {
+    return null;
+  }
 
   const toggleExpand = (type: string) => {
     const newSet = new Set(expandedAccounts);
@@ -92,7 +105,7 @@ export default function AccountInfo() {
       </div>
 
       <div className="space-y-3">
-        {ACCOUNTS.map((account) => {
+        {accounts.map((account) => {
           const isExpanded = expandedAccounts.has(account.type);
 
           return (

@@ -99,7 +99,8 @@ export default function Home() {
           <GoldDivider />
 
           {/* 마음 전하기 */}
-          <AccountInfo />
+          {/* showAccounts={false}로 설정하면 이 섹션을 남기지 않습니다 */}
+          <AccountInfo showAccounts={true} />
 
           <GoldDivider />
 

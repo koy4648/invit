@@ -10,7 +10,15 @@ interface RSVPFormData {
   meal_preference: "yes" | "no" | "undecided";
 }
 
-export default function RSVPForm() {
+interface RSVPFormProps {
+  isModal?: boolean;
+  onSubmitSuccess?: () => void;
+}
+
+export default function RSVPForm({
+  isModal = false,
+  onSubmitSuccess,
+}: RSVPFormProps = {}) {
   const [formData, setFormData] = useState<RSVPFormData>({
     name: "",
     attendance: "attend",
@@ -18,7 +26,7 @@ export default function RSVPForm() {
     meal_preference: "undecided",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(isModal ? true : false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -62,6 +70,11 @@ export default function RSVPForm() {
         meal_preference: "undecided",
       });
       setIsExpanded(false);
+
+      // 모달 모드에서 콜백 실행
+      if (isModal && onSubmitSuccess) {
+        onSubmitSuccess();
+      }
     } catch (error) {
       toast.error(
         error instanceof Error ? error.message : "오류가 발생했습니다."
@@ -71,50 +84,56 @@ export default function RSVPForm() {
     }
   };
 
-  return (
-    <section id="section-rsvp" className="px-6 py-8">
-      {/* 아코디언 헤더 */}
-      <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center justify-between px-4 py-4 rounded-2xl transition-all duration-300"
-        style={{
-          background: isExpanded
-            ? "linear-gradient(135deg, rgba(212,169,106,0.15), rgba(176,136,64,0.08))"
-            : "rgba(255,255,255,0.6)",
-          border: "1px solid rgba(212,169,106,0.2)",
-          backdropFilter: "blur(8px)",
-        }}
-      >
-        <div className="text-left">
-          <h3
-            className="text-lg font-medium tracking-wide"
-            style={{ color: "#b08840" }}
-          >
-            참석 여부 알리기
-          </h3>
-          <p className="text-xs mt-1" style={{ color: "#a8a29e" }}>
-            예식 참석 여부를 알려주세요
-          </p>
-        </div>
-        <span
-          className="text-2xl transition-transform duration-300"
-          style={{ transform: isExpanded ? "rotate(180deg)" : "rotate(0deg)" }}
+  const content = (
+    <>
+      {/* 아코디언 헤더 (모달 모드에서는 숨김) */}
+      {!isModal && (
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="w-full flex items-center justify-between px-4 py-4 rounded-2xl transition-all duration-300"
+          style={{
+            background: isExpanded
+              ? "linear-gradient(135deg, rgba(212,169,106,0.15), rgba(176,136,64,0.08))"
+              : "rgba(255,255,255,0.6)",
+            border: "1px solid rgba(212,169,106,0.2)",
+            backdropFilter: "blur(8px)",
+          }}
         >
-          ▼
-        </span>
-      </button>
+          <div className="text-left">
+            <h3
+              className="text-lg font-medium tracking-wide"
+              style={{ color: "#b08840" }}
+            >
+              참석 여부 알리기
+            </h3>
+            <p className="text-xs mt-1" style={{ color: "#a8a29e" }}>
+              예식 참석 여부를 알려주세요
+            </p>
+          </div>
+          <span
+            className="text-2xl transition-transform duration-300"
+            style={{ transform: isExpanded ? "rotate(180deg)" : "rotate(0deg)" }}
+          >
+            ▼
+          </span>
+        </button>
+      )}
 
-      {/* 아코디언 콘텐츠 */}
+      {/* 아코디언 콘텐츠 또는 모달 폼 */}
       <div
-        className="overflow-hidden transition-all duration-300"
-        style={{
-          maxHeight: isExpanded ? "600px" : "0px",
-          opacity: isExpanded ? 1 : 0,
-        }}
+        className={isModal ? "" : "overflow-hidden transition-all duration-300"}
+        style={
+          !isModal
+            ? {
+                maxHeight: isExpanded ? "600px" : "0px",
+                opacity: isExpanded ? 1 : 0,
+              }
+            : undefined
+        }
       >
         <form
           onSubmit={handleSubmit}
-          className="mt-4 space-y-4 px-4 py-4 rounded-2xl"
+          className={`${isModal ? "" : "mt-4"} space-y-4 px-4 py-4 rounded-2xl`}
           style={{
             background: "rgba(255,255,255,0.4)",
             border: "1px solid rgba(212,169,106,0.15)",
@@ -262,6 +281,16 @@ export default function RSVPForm() {
           </button>
         </form>
       </div>
+    </>
+  );
+
+  if (isModal) {
+    return <>{content}</>;
+  }
+
+  return (
+    <section id="section-rsvp" className="px-6 py-8">
+      {content}
     </section>
   );
 }

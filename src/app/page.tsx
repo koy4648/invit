@@ -8,6 +8,7 @@ import WeddingInfo from "@/components/WeddingInfo";
 import BottomNav from "@/components/BottomNav";
 import ToastProvider from "@/components/ToastProvider";
 import RSVPForm from "@/components/RSVPForm";
+import RSVPModal from "@/components/RSVPModal";
 import AccountInfo from "@/components/AccountInfo";
 import NavigationLinks from "@/components/NavigationLinks";
 import CalendarLink from "@/components/CalendarLink";
@@ -156,6 +157,9 @@ export default function Home() {
 
       {/* ── 이스터에그 (폭죽) ─────────────────── */}
       <ConfettiEasterEgg />
+
+      {/* ── RSVP 팝업 모달 ─────────────────── */}
+      <RSVPModal />
     </>
   );
 }

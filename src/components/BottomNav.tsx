@@ -11,9 +11,9 @@ interface Tab {
 
 const TABS: Tab[] = [
   { id: "home",    label: "홈",      icon: "🏠", sectionId: "section-hero" },
-  { id: "gallery", label: "갤러리",  icon: "🖼",  sectionId: "section-gallery" },
-  { id: "map",     label: "안내",    icon: "📍", sectionId: "section-info" },
-  { id: "photos",  label: "사진",    icon: "📸", sectionId: "section-photos" },
+  { id: "story",   label: "이야기",  icon: "💕", sectionId: "section-love-story" },
+  { id: "rsvp",    label: "참석",    icon: "✋", sectionId: "section-rsvp" },
+  { id: "account", label: "마음",    icon: "💝", sectionId: "section-account" },
   { id: "guest",   label: "방명록",  icon: "💌", sectionId: "section-guestbook" },
 ];
 
@@ -50,7 +50,7 @@ export default function BottomNav() {
 
   return (
     <nav
-      className="fixed bottom-0 left-0 right-0 z-50 max-w-md mx-auto"
+      className="fixed bottom-0 left-0 right-0 z-40 max-w-md mx-auto"
       aria-label="하단 탭 네비게이션"
     >
       {/* 블러 배경 */}
@@ -69,43 +69,43 @@ export default function BottomNav() {
             const isActive = active === id;
             return (
               <button
-                key={id}
-                onClick={() => scrollTo(sectionId, id)}
-                className="flex-1 flex flex-col items-center justify-center pt-2.5 pb-1 gap-0.5 transition-all duration-200 relative"
-                aria-label={label}
-                aria-current={isActive ? "page" : undefined}
+              key={id}
+              onClick={() => scrollTo(sectionId, id)}
+              className="flex-1 flex flex-col items-center justify-center pt-2.5 pb-1 gap-0.5 transition-all duration-200 relative"
+              aria-label={label}
+              aria-current={isActive ? "page" : undefined}
+            >
+              {/* 활성 인디케이터 */}
+              {isActive && (
+                <span
+                  className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-0.5 rounded-full"
+                  style={{
+                    background: "linear-gradient(90deg, #d4a96a, #b08840)",
+                  }}
+                />
+              )}
+
+              {/* 아이콘 */}
+              <span
+                className="text-xl leading-none transition-transform duration-200"
+                style={{
+                  transform: isActive ? "scale(1.15)" : "scale(1)",
+                  filter: isActive ? "none" : "grayscale(0.3) opacity(0.55)",
+                }}
               >
-                {/* 활성 인디케이터 */}
-                {isActive && (
-                  <span
-                    className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-0.5 rounded-full"
-                    style={{
-                      background: "linear-gradient(90deg, #d4a96a, #b08840)",
-                    }}
-                  />
-                )}
+                {icon}
+              </span>
 
-                {/* 아이콘 */}
-                <span
-                  className="text-xl leading-none transition-transform duration-200"
-                  style={{
-                    transform: isActive ? "scale(1.15)" : "scale(1)",
-                    filter: isActive ? "none" : "grayscale(0.3) opacity(0.55)",
-                  }}
-                >
-                  {icon}
-                </span>
-
-                {/* 라벨 */}
-                <span
-                  className="text-[10px] font-medium tracking-wider transition-colors duration-200"
-                  style={{
-                    color: isActive ? "#b08840" : "#a8a29e",
-                  }}
-                >
-                  {label}
-                </span>
-              </button>
+              {/* 라벨 */}
+              <span
+                className="text-[10px] font-medium tracking-wider transition-colors duration-200"
+                style={{
+                  color: isActive ? "#b08840" : "#a8a29e",
+                }}
+              >
+                {label}
+              </span>
+            </button>
             );
           })}
         </div>

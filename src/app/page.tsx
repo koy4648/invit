@@ -7,6 +7,13 @@ import WeddingHero from "@/components/WeddingHero";
 import WeddingInfo from "@/components/WeddingInfo";
 import BottomNav from "@/components/BottomNav";
 import ToastProvider from "@/components/ToastProvider";
+import RSVPForm from "@/components/RSVPForm";
+import AccountInfo from "@/components/AccountInfo";
+import NavigationLinks from "@/components/NavigationLinks";
+import CalendarLink from "@/components/CalendarLink";
+import BgmPlayer from "@/components/BgmPlayer";
+import LoveStory from "@/components/LoveStory";
+import ConfettiEasterEgg from "@/components/ConfettiEasterEgg";
 
 /* 골드 구분선 */
 function GoldDivider() {
@@ -79,6 +86,33 @@ export default function Home() {
 
           <GoldDivider />
 
+          {/* 우리들의 이야기 */}
+          <Suspense fallback={<SectionSkeleton height="h-80" />}>
+            <LoveStory />
+          </Suspense>
+
+          <GoldDivider />
+
+          {/* 참석 여부 */}
+          <RSVPForm />
+
+          <GoldDivider />
+
+          {/* 마음 전하기 */}
+          <AccountInfo />
+
+          <GoldDivider />
+
+          {/* 오시는 길 */}
+          <NavigationLinks />
+
+          <GoldDivider />
+
+          {/* 캘린더 등록 */}
+          <CalendarLink />
+
+          <GoldDivider />
+
           {/* 방명록 */}
           <Suspense fallback={<SectionSkeleton height="h-48" />}>
             <Guestbook />
@@ -115,6 +149,12 @@ export default function Home() {
 
       {/* ── 하단 탭 네비게이션 ─────────────────── */}
       <BottomNav />
+
+      {/* ── BGM 플레이어 ─────────────────── */}
+      <BgmPlayer />
+
+      {/* ── 이스터에그 (폭죽) ─────────────────── */}
+      <ConfettiEasterEgg />
     </>
   );
 }

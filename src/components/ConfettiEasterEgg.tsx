@@ -13,7 +13,7 @@ export default function ConfettiEasterEgg({
   tapCount = 5,
 }: ConfettiEasterEggProps) {
   const tapCounterRef = useRef(0);
-  const tapTimeoutRef = useRef<NodeJS.Timeout>();
+  const tapTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [hasTriggered, setHasTriggered] = useState(false);
 
   useEffect(() => {

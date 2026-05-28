@@ -1,4 +1,5 @@
 import Image from "next/image";
+import KakaoShare from "./KakaoShare";
 
 export default function WeddingHero() {
   return (
@@ -195,8 +196,13 @@ export default function WeddingHero() {
           </div>
         </div>
 
+        {/* 카카오톡 공유 버튼 */}
+        <div className="w-full px-6 mt-8">
+          <KakaoShare />
+        </div>
+
         {/* 스크롤 유도 */}
-        <div className="mt-10 flex flex-col items-center gap-1.5">
+        <div className="mt-8 flex flex-col items-center gap-1.5">
           <p className="text-[10px] tracking-[0.3em]" style={{ color: "#c49a55" }}>
             SCROLL
           </p>

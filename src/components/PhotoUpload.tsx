@@ -163,9 +163,9 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
         className="relative rounded-3xl p-8 text-center cursor-pointer transition-all duration-300"
         style={{
           background: isDragging
-            ? "rgba(212,169,106,0.1)"
-            : "rgba(253,250,246,0.8)",
-          border: `2px dashed ${isDragging ? "#d4a96a" : "rgba(212,169,106,0.35)"}`,
+            ? "rgba(216,148,169,0.12)"
+            : "rgba(240,245,250,0.72)",
+          border: `2px dashed ${isDragging ? "var(--button)" : "rgba(130,152,178,0.34)"}`,
           transform: isDragging ? "scale(1.01)" : "scale(1)",
         }}
       >
@@ -180,8 +180,8 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
         <div
           className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 text-2xl"
           style={{
-            background: "linear-gradient(135deg, rgba(212,169,106,0.15), rgba(176,136,64,0.08))",
-            border: "1px solid rgba(212,169,106,0.2)",
+            background: "linear-gradient(135deg, rgba(216,148,169,0.18), rgba(130,152,178,0.13))",
+            border: "1px solid rgba(216,148,169,0.2)",
           }}
         >
           📸
@@ -205,16 +205,16 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
         >
           <div className="flex items-center justify-between mb-2">
             <span className="text-xs tracking-wider" style={{ color: "#78716c" }}>업로드 중...</span>
-            <span className="text-sm font-medium tabular-nums" style={{ color: "#b08840" }}>
+            <span className="text-sm font-medium tabular-nums" style={{ color: "var(--button)" }}>
               {totalProgress}%
             </span>
           </div>
-          <div className="w-full h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(212,169,106,0.15)" }}>
+          <div className="w-full h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(216,148,169,0.15)" }}>
             <div
               className="h-full rounded-full transition-all duration-300"
               style={{
                 width: `${totalProgress}%`,
-                background: "linear-gradient(90deg, #d4a96a, #b08840)",
+                background: "linear-gradient(90deg, var(--blush), var(--button))",
               }}
             />
           </div>
@@ -253,10 +253,10 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
                   {(state.file.size / 1024 / 1024).toFixed(1)} MB
                 </p>
                 {state.status === "uploading" && (
-                  <div className="w-full h-1 rounded-full overflow-hidden" style={{ background: "rgba(212,169,106,0.15)" }}>
+                  <div className="w-full h-1 rounded-full overflow-hidden" style={{ background: "rgba(216,148,169,0.15)" }}>
                     <div
                       className="h-full rounded-full transition-all duration-200"
-                      style={{ width: `${state.progress}%`, background: "linear-gradient(90deg, #d4a96a, #b08840)" }}
+                      style={{ width: `${state.progress}%`, background: "linear-gradient(90deg, var(--blush), var(--button))" }}
                     />
                   </div>
                 )}
@@ -280,7 +280,7 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
                 {state.status === "done"  && (
                   <div
                     className="w-6 h-6 rounded-full flex items-center justify-center text-xs"
-                    style={{ background: "linear-gradient(135deg, #d4a96a, #b08840)", color: "#fff" }}
+                    style={{ background: "linear-gradient(135deg, var(--blush), var(--button))", color: "#fff" }}
                   >
                     ✓
                   </div>
@@ -303,7 +303,7 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
       {/* 업로드 완료 갤러리 */}
       {uploadedPhotos.length > 0 && (
         <div className="mt-6">
-          <p className="text-[11px] tracking-[0.25em] uppercase mb-3" style={{ color: "#c49a55" }}>
+          <p className="text-[11px] tracking-[0.25em] uppercase mb-3" style={{ color: "var(--button)" }}>
             업로드된 사진 ({uploadedPhotos.length}장)
           </p>
           <div className="grid grid-cols-3 gap-1.5">

@@ -1,35 +1,35 @@
 const COUPLE = [
   {
-    role: "GROOM",
+    role: "BRIDE",
     name: "김영서",
     englishName: "Youngseo Kim",
-    initial: "K",
-    introduction: "차분한 마음으로 오래 곁을 지키는 사람",
+    initial: "Y",
+    introduction: "밝고 감성적인 ENFP",
   },
   {
-    role: "BRIDE",
+    role: "GROOM",
     name: "정진성",
-    englishName: "Jinsung Jung",
+    englishName: "Jinseong Jeong",
     initial: "J",
-    introduction: "작은 순간에서도 기쁨을 발견하는 사람",
+    introduction: "성실하고 다정한 ISTJ",
   },
 ];
 
 const INTERVIEW = [
   {
     question: "서로의 첫인상은?",
+    bride: "성실하고 다정다감한 귀여운 구석이 있는 사람",
     groom: "웃을 때 주변까지 환해지는 사람이었습니다.",
-    bride: "차분하지만 따뜻한 사람이라는 생각이 들었어요.",
   },
   {
     question: "가장 사랑스러운 순간은?",
-    groom: "사소한 일에도 진심으로 기뻐해 줄 때요.",
-    bride: "말없이 제 편이 되어주는 모든 순간이요.",
+    bride: "사소한 말장난을 하고 개구지게 웃을 때",
+    groom: "사소한 일에도 진심으로 기뻐해 줄 때",
   },
   {
     question: "함께 그리고 싶은 모습은?",
-    groom: "매일의 안부를 가장 먼저 나누는 사이.",
-    bride: "오래도록 서로를 웃게 해주는 다정한 부부.",
+    bride: "서로의 가장 기쁜 순간도 슬픈 순간도 함께 나누는 사이",
+    groom: "오래도록 서로를 웃게 해주는 다정한 부부.",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function CoupleInterview() {
       <header className="couple-heading">
         <p className="section-title">About us</p>
         <h2>두 사람을 소개합니다</h2>
-        <p>서로에게 가장 가까운 친구가 된 두 사람의 이야기</p>
+        <p>서로에게 가장 가까운 친구가 되어주기로 한 두 사람의 이야기</p>
       </header>
 
       <div className="couple-profiles">
@@ -65,11 +65,11 @@ export default function CoupleInterview() {
             <dl className="interview-answers">
               <div>
                 <dt>영서</dt>
-                <dd>{item.groom}</dd>
+                <dd>{item.bride}</dd>
               </div>
               <div>
                 <dt>진성</dt>
-                <dd>{item.bride}</dd>
+                <dd>{item.groom}</dd>
               </div>
             </dl>
           </article>

@@ -14,8 +14,8 @@ interface CalendarLinkProps {
 export default function CalendarLink({
   eventTitle = "김영서 ♥ 정진성 결혼식",
   eventDate = "2027-08-28",
-  eventTime = "11:00",
-  eventLocation = "보테가마지오 로스타뇨홀",
+  eventTime = "12:00",
+  eventLocation = "서울가든호텔 그랜드볼룸홀",
   eventDescription = "저희의 결혼식에 초대합니다.",
 }: CalendarLinkProps) {
   // .ics 파일 생성 및 다운로드
@@ -80,7 +80,7 @@ END:VCALENDAR`;
   return (
     <div className="px-6 py-4 space-y-3">
       <div className="flex items-center gap-2 mb-4">
-        <Calendar size={20} style={{ color: "#d4a96a" }} />
+        <Calendar size={20} style={{ color: "var(--blush)" }} />
         <h3
           className="text-lg font-light tracking-wider"
           style={{ color: "#44403c" }}
@@ -98,7 +98,7 @@ END:VCALENDAR`;
       <div className="flex gap-2">
         <button
           onClick={downloadICS}
-          className="flex-1 px-4 py-3 rounded-lg font-medium transition-all duration-200 text-white text-sm"
+          className="invitation-action flex-1 px-4 py-3 rounded-xl font-medium transition-all duration-200 text-white text-sm"
           style={{
             background: "linear-gradient(135deg, #d4a96a, #b08840)",
           }}
@@ -107,7 +107,7 @@ END:VCALENDAR`;
         </button>
         <button
           onClick={addToGoogleCalendar}
-          className="flex-1 px-4 py-3 rounded-lg font-medium transition-all duration-200 text-white text-sm"
+          className="invitation-action flex-1 px-4 py-3 rounded-xl font-medium transition-all duration-200 text-white text-sm"
           style={{
             background: "linear-gradient(135deg, #4285F4, #34A853)",
           }}

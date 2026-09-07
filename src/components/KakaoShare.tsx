@@ -82,7 +82,7 @@ export default function KakaoShare({
     <button
       onClick={handleShareClick}
       disabled={!isKakaoReady}
-      className="w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2"
+      className="invitation-action w-full px-4 py-3 rounded-xl font-medium transition-all duration-200 flex items-center justify-center gap-2"
       style={{
         background: isKakaoReady
           ? "linear-gradient(135deg, #d4a96a, #b08840)"

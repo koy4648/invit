@@ -93,7 +93,7 @@ export default function Guestbook() {
       {showForm && (
         <form
           onSubmit={handleSubmit}
-          className="mb-6 rounded-3xl p-5 space-y-3 animate-fadeInUp"
+          className="lovely-form mb-6 rounded-3xl p-5 space-y-3 animate-fadeInUp"
           style={{
             background: "rgba(253,250,246,0.9)",
             border: "1px solid rgba(212,169,106,0.25)",
@@ -103,7 +103,7 @@ export default function Guestbook() {
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="block text-[11px] tracking-wider mb-1.5" style={{ color: "#a8a29e" }}>
-                이름 <span style={{ color: "#d4a96a" }}>*</span>
+                이름 <span style={{ color: "var(--blush)" }}>*</span>
               </label>
               <input
                 type="text"
@@ -117,7 +117,7 @@ export default function Guestbook() {
             </div>
             <div>
               <label className="block text-[11px] tracking-wider mb-1.5" style={{ color: "#a8a29e" }}>
-                비밀번호 <span style={{ color: "#d4a96a" }}>*</span>
+                비밀번호 <span style={{ color: "var(--blush)" }}>*</span>
               </label>
               <input
                 type="password"
@@ -132,7 +132,7 @@ export default function Guestbook() {
           </div>
           <div>
             <label className="block text-[11px] tracking-wider mb-1.5" style={{ color: "#a8a29e" }}>
-              축하 메시지 <span style={{ color: "#d4a96a" }}>*</span>
+              축하 메시지 <span style={{ color: "var(--blush)" }}>*</span>
             </label>
             <textarea
               value={message}
@@ -150,7 +150,7 @@ export default function Guestbook() {
           <button
             type="submit"
             disabled={submitting}
-            className="w-full py-3 rounded-2xl text-sm font-medium tracking-wider transition-all active:scale-[0.98]"
+            className="invitation-action w-full py-3 rounded-2xl text-sm font-medium tracking-wider transition-all active:scale-[0.98]"
             style={{
               background: submitting
                 ? "rgba(212,169,106,0.3)"

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Gift, Heart, Home, MessageCircle, Send } from "lucide-react";
+import { Heart, Home, MessageCircle, Phone, Send } from "lucide-react";
 
 interface Tab {
   id: string;
@@ -14,7 +14,7 @@ const TABS: Tab[] = [
   { id: "home",    label: "홈",      Icon: Home, sectionId: "section-hero" },
   { id: "story",   label: "이야기",  Icon: Heart, sectionId: "section-couple" },
   { id: "rsvp",    label: "참석",    Icon: Send, sectionId: "section-rsvp" },
-  { id: "account", label: "마음",    Icon: Gift, sectionId: "section-account" },
+  { id: "contacts", label: "연락처", Icon: Phone, sectionId: "section-contacts" },
   { id: "guest",   label: "방명록",  Icon: MessageCircle, sectionId: "section-guestbook" },
 ];
 
@@ -81,7 +81,7 @@ export default function BottomNav() {
                 <span
                   className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-0.5 rounded-full"
                   style={{
-                    background: "var(--accent)",
+                    background: "var(--blush)",
                   }}
                 />
               )}

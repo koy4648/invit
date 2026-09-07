@@ -54,22 +54,14 @@ export default function CountdownTimer() {
   }
 
   return (
-    <div className="flex justify-center gap-2.5 py-2">
+    <div className="countdown-grid">
       {units.map(({ value, label }, i) => (
-        <div key={label} className="flex flex-col items-center gap-1.5">
+        <div key={label} className="countdown-unit">
           {/* 숫자 카드 */}
           <div
-            className="w-[68px] h-[68px] flex items-center justify-center relative overflow-hidden"
-            style={{
-              background: "#fff",
-              border: "1px solid var(--line)",
-            }}
+            className="countdown-card"
           >
             {/* 상단 하이라이트 */}
-            <div
-              className="absolute top-0 left-0 right-0 h-1/2"
-              style={{ background: "#fafaf8" }}
-            />
             <span
               className="relative z-10 text-[26px] font-light tabular-nums"
               style={{
@@ -89,13 +81,7 @@ export default function CountdownTimer() {
             {label}
           </span>
 
-          {/* 구분 점 (마지막 제외) */}
-          {i < units.length - 1 && (
-            <div
-              className="absolute"
-              style={{ display: "none" }} // flex gap으로 대체
-            />
-          )}
+          {i < units.length - 1 && null}
         </div>
       ))}
     </div>

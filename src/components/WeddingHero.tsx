@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import HandwrittenTitle from "./HandwrittenTitle";
 import { useGalleryPhotos } from "@/hooks/useGalleryPhotos";
 
 export default function WeddingHero() {
@@ -15,17 +14,27 @@ export default function WeddingHero() {
         <p className="hero-date">28 · AUGUST · 2027</p>
       </div>
 
-      <div className="hero-image-wrap" style={{ position: "relative" }}>
-        <Image
-          src={cover?.url ?? "/editorial-peony-hydrangea.png"}
-          alt={cover?.name ?? "분홍 작약과 흐릿한 파란 수국으로 장식한 웨딩 이미지"}
-          fill
-          className="object-cover"
-          sizes="(max-width: 480px) 100vw, 480px"
-          preload
-        />
+      <div className={`hero-image-wrap ${cover ? "has-photo" : "is-placeholder"}`}>
+        {cover ? (
+          <Image
+            src={cover.url}
+            alt={cover.name}
+            fill
+            className="object-cover"
+            sizes="(max-width: 480px) 100vw, 480px"
+            preload
+          />
+        ) : (
+          <div className="hero-photo-placeholder" aria-label="대표 사진이 들어갈 자리">
+            <span>Y</span>
+            <i aria-hidden="true" />
+            <span>J</span>
+          </div>
+        )}
         <div className="hero-image-copy">
-          <HandwrittenTitle />
+          <p className="hero-copy-label">Our beginning</p>
+          <p className="hero-copy-title">우리, 결혼합니다</p>
+          <span className="hero-copy-line" aria-hidden="true" />
         </div>
       </div>
 

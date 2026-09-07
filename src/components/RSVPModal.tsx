@@ -79,11 +79,11 @@ export default function RSVPModal({ isOpen = false, onClose }: RSVPModalProps) {
               onClick={handleClose}
               className="p-2 hover:bg-white rounded-lg transition-colors"
               style={{
-                background: "rgba(212, 169, 106, 0.1)",
+                background: "var(--button-soft)",
               }}
               title="닫기"
             >
-              <X size={20} style={{ color: "#d4a96a" }} />
+              <X size={20} style={{ color: "var(--button)" }} />
             </button>
           </div>
 
@@ -114,7 +114,7 @@ export default function RSVPModal({ isOpen = false, onClose }: RSVPModalProps) {
             {/* 닫기 버튼 */}
             <button
               onClick={handleClose}
-              className="w-full mt-6 px-4 py-3 rounded-lg font-medium transition-all duration-200 text-white"
+              className="invitation-action-soft w-full mt-6 px-4 py-3 rounded-xl font-medium transition-all duration-200"
               style={{
                 background: "rgba(212, 169, 106, 0.2)",
                 color: "#b08840",

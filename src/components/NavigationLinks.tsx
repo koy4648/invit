@@ -5,38 +5,36 @@ import { MapPin } from "lucide-react";
 interface NavigationLinksProps {
   venueName?: string;
   venueAddress?: string;
-  latitude?: number;
-  longitude?: number;
 }
 
 export default function NavigationLinks({
-  venueName = "보테가마지오 로스타뇨홀",
-  venueAddress = "서울시 강남구 테헤란로 123",
-  latitude = 37.4979,
-  longitude = 127.0276,
+  venueName = "서울가든호텔",
+  venueAddress = "서울특별시 마포구 마포대로 58",
 }: NavigationLinksProps) {
+  const destination = `${venueName} ${venueAddress}`;
+
   // 카카오내비 링크
   const openKakaoNavi = () => {
-    const kakaoNaviUrl = `kakaomap://look?q=${encodeURIComponent(venueName)}`;
+    const kakaoNaviUrl = `https://map.kakao.com/?q=${encodeURIComponent(destination)}`;
     window.location.href = kakaoNaviUrl;
   };
 
   // 티맵 링크
   const openTMap = () => {
-    const tmapUrl = `tmap://search?query=${encodeURIComponent(venueName)}`;
+    const tmapUrl = `tmap://search?query=${encodeURIComponent(destination)}`;
     window.location.href = tmapUrl;
   };
 
   // 네이버지도 링크
   const openNaverMap = () => {
-    const naverMapUrl = `naver://map/search/${encodeURIComponent(venueName)}`;
+    const naverMapUrl = `https://map.naver.com/p/search/${encodeURIComponent(destination)}`;
     window.location.href = naverMapUrl;
   };
 
   return (
     <div className="px-6 py-4 space-y-3">
       <div className="flex items-center gap-2 mb-4">
-        <MapPin size={20} style={{ color: "#d4a96a" }} />
+        <MapPin size={20} style={{ color: "var(--blush)" }} />
         <h3
           className="text-lg font-light tracking-wider"
           style={{ color: "#44403c" }}
@@ -54,7 +52,7 @@ export default function NavigationLinks({
       <div className="grid grid-cols-3 gap-2">
         <button
           onClick={openKakaoNavi}
-          className="px-3 py-3 rounded-lg font-medium transition-all duration-200 text-white text-xs"
+          className="invitation-action px-3 py-3 rounded-xl font-medium transition-all duration-200 text-white text-xs"
           style={{
             background: "linear-gradient(135deg, #FFE812, #FFED4E)",
             color: "#000",
@@ -64,7 +62,7 @@ export default function NavigationLinks({
         </button>
         <button
           onClick={openTMap}
-          className="px-3 py-3 rounded-lg font-medium transition-all duration-200 text-white text-xs"
+          className="invitation-action px-3 py-3 rounded-xl font-medium transition-all duration-200 text-white text-xs"
           style={{
             background: "linear-gradient(135deg, #FF6B6B, #FF8E72)",
           }}
@@ -73,7 +71,7 @@ export default function NavigationLinks({
         </button>
         <button
           onClick={openNaverMap}
-          className="px-3 py-3 rounded-lg font-medium transition-all duration-200 text-white text-xs"
+          className="invitation-action px-3 py-3 rounded-xl font-medium transition-all duration-200 text-white text-xs"
           style={{
             background: "linear-gradient(135deg, #00C73C, #1EC800)",
           }}

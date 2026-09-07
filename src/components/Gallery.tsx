@@ -5,28 +5,16 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
 import { useGalleryPhotos } from "@/hooks/useGalleryPhotos";
 
-// 스냅 사진이 준비되면 아래 src만 실제 파일 경로로 교체하면 됩니다.
-const GALLERY_IMAGES = [
-  { src: "/editorial-peony-hydrangea.png", alt: "분홍 작약과 파란 수국 이미지 1", position: "18% 20%" },
-  { src: "/editorial-peony-hydrangea.png", alt: "분홍 작약과 파란 수국 이미지 2", position: "72% 12%" },
-  { src: "/editorial-peony-hydrangea.png", alt: "분홍 작약과 파란 수국 이미지 3", position: "52% 48%" },
-  { src: "/editorial-peony-hydrangea.png", alt: "분홍 작약과 파란 수국 이미지 4", position: "28% 68%" },
-  { src: "/editorial-peony-hydrangea.png", alt: "분홍 작약과 파란 수국 이미지 5", position: "80% 72%" },
-  { src: "/editorial-peony-hydrangea.png", alt: "분홍 작약과 파란 수국 이미지 6", position: "55% 92%" },
-];
-
 export default function Gallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const touchStartX = useRef<number | null>(null);
   const uploadedPhotos = useGalleryPhotos();
-  const images = uploadedPhotos.length
-    ? uploadedPhotos.map((photo) => ({
-        key: photo.key,
-        src: photo.url,
-        alt: photo.name,
-        position: "50% 50%",
-      }))
-    : GALLERY_IMAGES.map((image, index) => ({ ...image, key: `sample-${index}` }));
+  const images = uploadedPhotos.map((photo) => ({
+    key: photo.key,
+    src: photo.url,
+    alt: photo.name,
+    position: "50% 50%",
+  }));
   const imageCount = images.length;
 
   const close = useCallback(() => setActiveIndex(null), []);
@@ -71,30 +59,38 @@ export default function Gallery() {
           <p className="section-title">Gallery</p>
           <h2>우리의 순간들</h2>
         </div>
-        <p>사진을 누르면 크게 볼 수 있어요</p>
+        <p>{images.length ? "사진을 누르면 크게 볼 수 있어요" : "스냅 촬영 후 공개됩니다"}</p>
       </header>
 
-      <div className="gallery-grid">
-        {images.map((image, index) => (
-          <button
-            key={image.key}
-            type="button"
-            className={`gallery-tile gallery-tile-${index + 1}`}
-            onClick={() => setActiveIndex(index)}
-            aria-label={`${index + 1}번째 사진 크게 보기`}
-          >
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              className="object-cover transition-transform duration-500"
-              style={{ objectPosition: image.position }}
-              sizes="(max-width: 480px) 50vw, 240px"
-            />
-            <span className="gallery-expand" aria-hidden="true"><Maximize2 size={15} /></span>
-          </button>
-        ))}
-      </div>
+      {images.length ? (
+        <div className="gallery-grid">
+          {images.map((image, index) => (
+            <button
+              key={image.key}
+              type="button"
+              className={`gallery-tile gallery-tile-${index + 1}`}
+              onClick={() => setActiveIndex(index)}
+              aria-label={`${index + 1}번째 사진 크게 보기`}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover transition-transform duration-500"
+                style={{ objectPosition: image.position }}
+                sizes="(max-width: 480px) 50vw, 240px"
+              />
+              <span className="gallery-expand" aria-hidden="true"><Maximize2 size={15} /></span>
+            </button>
+          ))}
+        </div>
+      ) : (
+        <div className="gallery-empty">
+          <div className="gallery-empty-mark" aria-hidden="true"><span /><span /></div>
+          <p>사진으로 채워질 우리의 순간들</p>
+          <span>스냅 촬영 후 천천히 담아둘게요.</span>
+        </div>
+      )}
 
       {activeIndex !== null && images[activeIndex] && (
         <div className="lightbox" role="dialog" aria-modal="true" aria-label="사진 크게 보기" onClick={close}>

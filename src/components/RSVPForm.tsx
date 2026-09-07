@@ -91,7 +91,7 @@ export default function RSVPForm({
       {!isModal && (
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="w-full flex items-center justify-between px-4 py-4 rounded-2xl transition-all duration-300"
+          className="lovely-panel-trigger w-full flex items-center justify-between px-4 py-4 rounded-2xl transition-all duration-300"
           style={{
             background: isExpanded
               ? "linear-gradient(135deg, rgba(212,169,106,0.15), rgba(176,136,64,0.08))"
@@ -103,7 +103,7 @@ export default function RSVPForm({
           <div className="text-left">
             <h3
               className="text-lg font-medium tracking-wide"
-              style={{ color: "#b08840" }}
+              style={{ color: "var(--button)" }}
             >
               참석 여부 알리기
             </h3>
@@ -134,7 +134,7 @@ export default function RSVPForm({
       >
         <form
           onSubmit={handleSubmit}
-          className={`${isModal ? "" : "mt-4"} space-y-4 px-4 py-4 rounded-2xl`}
+          className={`${isModal ? "" : "mt-4"} lovely-form space-y-4 px-4 py-4 rounded-2xl`}
           style={{
             background: "rgba(255,255,255,0.4)",
             border: "1px solid rgba(212,169,106,0.15)",
@@ -161,7 +161,7 @@ export default function RSVPForm({
                 backgroundColor: "rgba(255,255,255,0.8)",
               }}
               onFocus={(e) => {
-                e.currentTarget.style.borderColor = "#d4a96a";
+                e.currentTarget.style.borderColor = "var(--button)";
                 e.currentTarget.style.backgroundColor = "#fff";
               }}
               onBlur={(e) => {
@@ -235,7 +235,7 @@ export default function RSVPForm({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 text-white"
+            className="invitation-action w-full px-4 py-3 rounded-xl font-medium transition-all duration-200 text-white"
             style={{
               background: isSubmitting
                 ? "linear-gradient(135deg, #d4a96a, #b08840)"

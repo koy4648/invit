@@ -9,7 +9,7 @@ import BottomNav from "@/components/BottomNav";
 import ToastProvider from "@/components/ToastProvider";
 import RSVPForm from "@/components/RSVPForm";
 import RSVPModal from "@/components/RSVPModal";
-import AccountInfo from "@/components/AccountInfo";
+import FamilyContacts from "@/components/FamilyContacts";
 import NavigationLinks from "@/components/NavigationLinks";
 import CalendarLink from "@/components/CalendarLink";
 import LoveStory from "@/components/LoveStory";
@@ -20,7 +20,7 @@ import CoupleInterview from "@/components/CoupleInterview";
 function GoldDivider() {
   return (
     <div className="divider-gold px-8 py-2" aria-hidden="true">
-      <span className="text-[9px]">◆</span>
+      <span className="text-xs">♡</span>
     </div>
   );
 }
@@ -90,9 +90,8 @@ export default function Home() {
 
           <GoldDivider />
 
-          {/* 마음 전하기 */}
-          {/* showAccounts={false}로 설정하면 이 섹션을 남기지 않습니다 */}
-          <AccountInfo showAccounts={true} />
+          {/* 연락처 및 마음 전하기 */}
+          <FamilyContacts />
 
           <GoldDivider />
 
@@ -114,7 +113,7 @@ export default function Home() {
           {/* 푸터 */}
           <footer className="text-center py-12 px-6">
             <div className="divider-gold mb-6">
-              <span className="text-[9px]" style={{ color: "var(--accent)" }}>◆</span>
+              <span className="text-xs" style={{ color: "var(--blush)" }}>♡</span>
             </div>
             <p
               className="text-[13px] leading-[2.2] font-light tracking-wider"
@@ -127,7 +126,7 @@ export default function Home() {
               className="mt-4 text-xs tracking-[0.3em]"
               style={{ color: "var(--ink)" }}
             >
-              Kim Youngseo &amp; Jung Jinsung
+              Youngseo Kim &amp; Jinseong Jeong
             </p>
             <p className="mt-2 text-xs" style={{ color: "var(--muted)" }}>
               2027 · 08 · 28

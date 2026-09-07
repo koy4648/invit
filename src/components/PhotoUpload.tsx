@@ -145,7 +145,7 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
     <section id="section-photos" className="py-10 px-4">
       {/* 헤더 */}
       <div className="mb-6">
-        <p className="section-title mb-1">Photo Share</p>
+        <p className="section-title mb-1">사진 나눔</p>
         <h2 className="text-xl font-light tracking-wider" style={{ color: "#44403c" }}>
           하객 사진 공유
         </h2>

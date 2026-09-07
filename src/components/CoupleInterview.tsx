@@ -44,7 +44,7 @@ export default function CoupleInterview() {
   return (
     <section id="section-couple" className="couple-section">
       <header className="couple-heading">
-        <p className="section-title">About us</p>
+        <p className="section-title">두 사람</p>
         <h2>두 사람을 소개합니다</h2>
         <p>서로에게 가장 든든한 편이 되어주기로 한 두 사람의 이야기</p>
       </header>
@@ -70,7 +70,7 @@ export default function CoupleInterview() {
           aria-controls="couple-interview-answers"
         >
           <span>
-            <span className="interview-label">A little interview</span>
+            <span className="interview-label">작은 인터뷰</span>
             <strong>{isInterviewOpen ? "우리의 이야기를 접어둘게요" : "서로에게 물어본 작은 질문들"}</strong>
           </span>
           <ChevronDown size={19} className={isInterviewOpen ? "is-open" : ""} />

@@ -63,7 +63,7 @@ export default function RSVPModal({ isOpen = false, onClose }: RSVPModalProps) {
         <div className="rsvp-modal-card" onClick={(event) => event.stopPropagation()}>
           <div className="rsvp-modal-header">
             <div>
-              <p className="rsvp-modal-kicker">A little note from us</p>
+              <p className="rsvp-modal-kicker">두 사람의 작은 부탁</p>
               <h2>참석 여부를 알려주세요</h2>
             </div>
             <button type="button" onClick={handleClose} className="rsvp-modal-close" title="닫기" aria-label="닫기">

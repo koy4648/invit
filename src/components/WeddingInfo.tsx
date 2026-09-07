@@ -20,7 +20,7 @@ export default function WeddingInfo() {
     <section id="section-info" className="py-10 px-4 space-y-4">
       {/* 섹션 헤더 */}
       <div className="mb-6">
-        <p className="section-title mb-1">Location & Info</p>
+          <p className="section-title mb-1">예식 안내</p>
         <h2 className="text-xl font-light tracking-wider" style={{ color: "var(--ink)" }}>
           예식 안내
         </h2>
@@ -37,7 +37,7 @@ export default function WeddingInfo() {
             <span className="text-lg">📅</span>
           </div>
           <div>
-            <p className="text-[11px] tracking-wider mb-1" style={{ color: "var(--muted)" }}>DATE & TIME</p>
+            <p className="text-[11px] tracking-wider mb-1" style={{ color: "var(--muted)" }}>일시</p>
             <p className="text-sm font-medium" style={{ color: "var(--ink)" }}>
               2027년 8월 28일 토요일
             </p>
@@ -54,7 +54,7 @@ export default function WeddingInfo() {
             <span className="text-lg">📍</span>
           </div>
           <div className="flex-1">
-            <p className="text-[11px] tracking-wider mb-1" style={{ color: "var(--muted)" }}>VENUE</p>
+            <p className="text-[11px] tracking-wider mb-1" style={{ color: "var(--muted)" }}>장소</p>
             <p className="text-sm font-medium" style={{ color: "var(--ink)" }}>그랜드볼룸웨딩홀 2층</p>
             <p className="text-xs mt-0.5" style={{ color: "var(--muted)" }}>서울특별시 마포구 마포대로 58</p>
             <button

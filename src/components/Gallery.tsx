@@ -89,7 +89,7 @@ export default function Gallery() {
     <section id="section-gallery" className="gallery-section">
       <header className="gallery-heading">
         <div>
-          <p className="section-title">Gallery</p>
+          <p className="section-title">우리의 순간</p>
           <h2>우리의 순간들</h2>
         </div>
         <p>{isMock ? "우리의 장면을 담아둘게요" : `${images.length}개의 소중한 순간`}</p>

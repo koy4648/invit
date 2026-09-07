@@ -36,7 +36,7 @@ export default function WeddingHero() {
       </div>
 
       <div className="hero-masthead">
-        <p className="hero-kicker">The Wedding of</p>
+        <p className="hero-kicker">우리의 결혼식</p>
         <p className="hero-date">28 · AUGUST · 2027. 12:00 PM</p>
       </div>
 
@@ -70,7 +70,7 @@ export default function WeddingHero() {
           저희의 새로운 시작을 함께 축복해 주시면 감사하겠습니다.
         </p>
         <div className="hero-worship-note">
-          <p className="hero-worship-label">CEREMONY NOTE</p>
+          <p className="hero-worship-label">예식 안내</p>
           <p>
             저희의 결혼식은 기독교 예배 형식으로 진행됩니다.<br />
             종교와 관계없이 두 사람의 새로운 시작을 축복하는 자리로 마련하였으니,<br />

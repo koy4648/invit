@@ -37,7 +37,7 @@ export default function WeddingHero() {
 
       <div className="hero-masthead">
         <p className="hero-kicker">The Wedding of</p>
-        <p className="hero-date">28 · AUGUST · 2027</p>
+        <p className="hero-date">28 · AUGUST · 2027. 12:00 PM</p>
       </div>
 
       <div className="hero-image-wrap has-photo">
@@ -51,7 +51,7 @@ export default function WeddingHero() {
         />
         <div className="hero-image-copy">
           <p className="hero-copy-label">Wedding Day of</p>
-          <p className="hero-copy-title">Youngseo <span>&amp;</span> Jinseong</p>
+          <p className="hero-copy-title">Youngseo<span>🤍</span>Jinseong</p>
           <p className="hero-copy-date">2027.08.28. SAT 12PM</p>
           <span className="hero-copy-line" aria-hidden="true" />
         </div>

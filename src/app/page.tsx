@@ -119,14 +119,14 @@ export default function Home() {
               className="text-[13px] leading-[2.2] font-light tracking-wider"
               style={{ color: "var(--muted)" }}
             >
-              두 사람의 새로운 시작을<br />
+              저희의 새로운 시작을<br />
               함께 축복해 주셔서 감사합니다
             </p>
             <p
               className="mt-4 text-xs tracking-[0.3em]"
               style={{ color: "var(--ink)" }}
             >
-              Youngseo Kim &amp; Jinseong Jeong
+              Youngseo Kim 🤍 Jinseong Jeong
             </p>
             <p className="mt-2 text-xs" style={{ color: "var(--muted)" }}>
               2027 · 08 · 28

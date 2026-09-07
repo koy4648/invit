@@ -263,21 +263,23 @@
   }
 }
 
-/* Clear visual anchors: shell and pearl textures make the beach idea unmistakable. */
+/* Abstract pearl-and-shell material language: no literal photo backgrounds. */
 .summer-sea-theme .shore-section {
   background:
-    linear-gradient(180deg, rgba(242, 251, 250, 0.96) 0%, rgba(250, 247, 238, 0.9) 20%, rgba(251, 244, 231, 0.94) 100%),
-    url("/shore/summer-shells.jpg") center 12rem / 100% auto no-repeat;
+    radial-gradient(ellipse at 15% 24%, rgba(255,255,255,0.92) 0 3%, transparent 3.5%),
+    radial-gradient(ellipse at 87% 58%, rgba(255,255,255,0.68) 0 2.5%, transparent 3%),
+    repeating-radial-gradient(ellipse at 40% 0%, rgba(208,188,157,0.08) 0 1px, transparent 2px 17px),
+    linear-gradient(180deg, #f2fbfa 0%, #faf7ee 18%, #fbf4e7 100%);
 }
 
 .summer-sea-theme .shore-guestbook {
   background:
-    linear-gradient(145deg, rgba(255, 252, 246, 0.9), rgba(255, 247, 237, 0.78)),
-    url("/shore/pearl-shells.jpg") center / cover no-repeat;
-  background-blend-mode: screen, normal;
+    radial-gradient(ellipse at 50% 115%, rgba(229, 198, 174, 0.34) 0 18%, transparent 18.5%),
+    repeating-radial-gradient(ellipse at 50% 115%, rgba(255,255,255,0.42) 0 1px, transparent 2px 13px),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.84), rgba(255, 247, 237, 0.72));
 }
 
 .summer-sea-theme .shore-guestbook .card {
-  background: rgba(255, 255, 255, 0.78);
-  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(7px);
 }

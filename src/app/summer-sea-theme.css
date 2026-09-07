@@ -262,3 +262,22 @@
     animation: none;
   }
 }
+
+/* Clear visual anchors: shell and pearl textures make the beach idea unmistakable. */
+.summer-sea-theme .shore-section {
+  background:
+    linear-gradient(180deg, rgba(242, 251, 250, 0.96) 0%, rgba(250, 247, 238, 0.9) 20%, rgba(251, 244, 231, 0.94) 100%),
+    url("/shore/summer-shells.jpg") center 12rem / 100% auto no-repeat;
+}
+
+.summer-sea-theme .shore-guestbook {
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.9), rgba(255, 247, 237, 0.78)),
+    url("/shore/pearl-shells.jpg") center / cover no-repeat;
+  background-blend-mode: screen, normal;
+}
+
+.summer-sea-theme .shore-guestbook .card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(6px);
+}

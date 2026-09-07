@@ -34,7 +34,7 @@ export default function Home() {
     <>
       <ToastProvider />
 
-      <main className="invitation-shell min-h-screen">
+      <main className="invitation-shell summer-sea-theme min-h-screen">
         {/* ── 히어로 ─────────────────────────────── */}
         <WeddingHero />
 

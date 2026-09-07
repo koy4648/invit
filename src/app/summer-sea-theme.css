@@ -1,0 +1,96 @@
+/* Comparison concept: a lovely, breezy August day by the sea. */
+.summer-sea-theme {
+  --ink: #284255;
+  --muted: #718b9a;
+  --line: #d9ebed;
+  --accent: #4f839c;
+  --blush: #e9b8c8;
+  --butter: #b9e2e0;
+  --sage: #a6d8c9;
+  --sky: #a7d9ea;
+  --lilac: #c9bee1;
+  --blush-soft: #fff4f7;
+  --blue-soft: #edf9fc;
+  --butter-soft: #effafa;
+  --sage-soft: #effaf5;
+  --lilac-soft: #f6f1fb;
+  --button: #5c91aa;
+  --button-hover: #467c96;
+  --button-soft: #edf8fa;
+  --paper: #fcfefe;
+  position: relative;
+  background: var(--paper);
+}
+
+.summer-sea-theme::before,
+.summer-sea-theme::after {
+  position: absolute;
+  z-index: 0;
+  color: rgba(79, 131, 156, 0.2);
+  font-family: Georgia, serif;
+  pointer-events: none;
+}
+
+.summer-sea-theme::before { content: "⚓"; top: 28rem; left: 0.7rem; font-size: 1rem; }
+.summer-sea-theme::after { content: "⌁  ⌁"; right: 0.5rem; bottom: 22rem; font-size: 1.3rem; letter-spacing: 0.2em; }
+.summer-sea-theme > * { position: relative; z-index: 1; }
+
+.summer-sea-theme .hero-masthead {
+  background: linear-gradient(90deg, var(--blue-soft), #fff 40%, var(--butter-soft) 72%, var(--blush-soft));
+}
+
+.summer-sea-theme .hero-opening-copy { color: #6883a0; }
+.summer-sea-theme .hero-opening-rule,
+.summer-sea-theme .hero-copy-line {
+  background: linear-gradient(90deg, transparent, var(--sky), var(--sage), var(--lilac), transparent);
+}
+
+.summer-sea-theme .hero-intro,
+.summer-sea-theme .couple-section,
+.summer-sea-theme .family-contacts-section,
+.summer-sea-theme .gallery-section {
+  background-image:
+    radial-gradient(circle at 8% 12%, rgba(167, 217, 234, 0.2), transparent 11rem),
+    radial-gradient(circle at 92% 82%, rgba(166, 216, 201, 0.16), transparent 13rem),
+    linear-gradient(180deg, rgba(252, 254, 254, 0.98), rgba(239, 250, 245, 0.65) 52%, rgba(252, 254, 254, 0.98));
+}
+
+.summer-sea-theme .hero-worship-note,
+.summer-sea-theme .interview-toggle,
+.summer-sea-theme .lovely-panel-trigger {
+  background: linear-gradient(145deg, rgba(237, 249, 252, 0.92), rgba(239, 250, 245, 0.82), rgba(255, 244, 247, 0.72));
+  border-color: rgba(104, 165, 177, 0.28);
+}
+
+.summer-sea-theme .countdown-section {
+  background: linear-gradient(180deg, rgba(237, 249, 252, 0.96), rgba(239, 250, 245, 0.86));
+}
+
+.summer-sea-theme .countdown-section::after {
+  content: "⌁  8월의 바다처럼, 시원하고 다정하게 함께 항해할게요  ⌁";
+  display: block;
+  margin-top: 1.4rem;
+  color: var(--accent);
+  font-family: var(--font-cormorant), serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-align: center;
+}
+
+.summer-sea-theme .card,
+.summer-sea-theme .rsvp-modal-card,
+.summer-sea-theme .gallery-tile,
+.summer-sea-theme .interview-item {
+  border-color: rgba(104, 165, 177, 0.26);
+  box-shadow: 0 0.8rem 2.5rem rgba(70, 124, 150, 0.08), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.summer-sea-theme .section-title::before {
+  background: var(--sky);
+  box-shadow: 0.42rem 0.28rem 0 var(--sage), 0.78rem -0.08rem 0 var(--blush);
+}
+
+@media (max-width: 380px) {
+  .summer-sea-theme::before { left: 0.35rem; }
+  .summer-sea-theme::after { right: 0.3rem; }
+}

@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./summer-sea-theme.css";
 
 :root {
   --font-noto-serif-kr: "Noto Serif KR", serif;

@@ -14,8 +14,18 @@ export default function WeddingHero() {
   const displayAlt = cover?.name ?? "Youngseo & Jinseong 웨딩 사진";
 
   useEffect(() => {
-    const timer = window.setTimeout(() => setIsOpening(false), 3550);
-    return () => window.clearTimeout(timer);
+    if ("scrollRestoration" in window.history) window.history.scrollRestoration = "manual";
+    const resetScroll = () => window.scrollTo({ top: 0, behavior: "auto" });
+    resetScroll();
+    const frame = window.requestAnimationFrame(resetScroll);
+    const timer = window.setTimeout(() => {
+      resetScroll();
+      setIsOpening(false);
+    }, 3550);
+    return () => {
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(timer);
+    };
   }, []);
 
   return (

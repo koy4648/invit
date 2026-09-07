@@ -50,6 +50,10 @@ input[type="radio"] { accent-color: var(--button); }
   right: max(1rem, calc((100vw - 480px) / 2 + 1rem));
 }
 
+.tab-bar-safe {
+  padding-bottom: max(0.35rem, env(safe-area-inset-bottom));
+}
+
 .invitation-shell {
   position: relative;
   width: 100%;

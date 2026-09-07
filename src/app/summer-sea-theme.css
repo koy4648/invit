@@ -328,3 +328,44 @@
   .summer-sea-theme .shore-pearl-drift::before,
   .summer-sea-theme .shore-pearl-drift::after { animation: none; }
 }
+
+/* Continuous art direction: one long water-to-sand canvas instead of separate section cards. */
+.summer-sea-theme .content-column {
+  background:
+    radial-gradient(circle at 8% 6%, rgba(255,255,255,0.58), transparent 13rem),
+    radial-gradient(circle at 92% 43%, rgba(255,255,255,0.34), transparent 15rem),
+    linear-gradient(180deg, #dff6f5 0%, #e6f7f2 18%, #edf7ef 32%, #f7f4e9 54%, #faf1df 78%, #fbedd8 100%) !important;
+}
+
+.summer-sea-theme .content-column .couple-section,
+.summer-sea-theme .content-column .family-contacts-section,
+.summer-sea-theme .content-column .gallery-section,
+.summer-sea-theme .content-column .shore-section,
+.summer-sea-theme .content-column .photo-upload-section,
+.summer-sea-theme .content-column .pearl-rsvp,
+.summer-sea-theme .content-column #section-rsvp,
+.summer-sea-theme .content-column #section-guestbook {
+  background: transparent !important;
+}
+
+.summer-sea-theme .content-column .shore-section {
+  background-image: none !important;
+}
+
+.summer-sea-theme .content-column .divider-gold {
+  opacity: 0.72;
+}
+
+.summer-sea-theme .content-column .divider-gold::before,
+.summer-sea-theme .content-column .divider-gold::after {
+  background: linear-gradient(90deg, transparent, rgba(135, 190, 191, 0.46), rgba(230, 202, 169, 0.42), transparent);
+}
+
+.summer-sea-theme .countdown-section {
+  border-color: rgba(143, 203, 210, 0.22);
+}
+
+.summer-sea-theme .hero-intro::after,
+.summer-sea-theme .countdown-section::after {
+  text-shadow: 0 1px 0 rgba(255,255,255,0.75);
+}

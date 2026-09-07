@@ -278,8 +278,8 @@ input[type="radio"] { accent-color: var(--button); }
   overflow: hidden;
   padding: 4.5rem 2rem 4.75rem;
   background:
-    radial-gradient(circle at 4% 20%, rgba(243, 217, 130, 0.18), transparent 8rem),
-    radial-gradient(circle at 96% 78%, rgba(169, 201, 167, 0.16), transparent 9rem),
+    radial-gradient(circle at 4% 20%, rgba(231, 184, 202, 0.16), transparent 8rem),
+    radial-gradient(circle at 96% 78%, rgba(172, 212, 233, 0.16), transparent 9rem),
     var(--paper);
   text-align: center;
 }
@@ -325,12 +325,14 @@ input[type="radio"] { accent-color: var(--button); }
 }
 
 .hero-message {
-  margin: 0;
+  max-width: 19rem;
+  margin: 0 auto;
   color: #5f625c;
   font-size: 0.86rem;
   font-weight: 300;
   letter-spacing: 0.02em;
   line-height: 2.15;
+  word-break: keep-all;
 }
 
 .countdown-section {
@@ -354,8 +356,8 @@ input[type="radio"] { accent-color: var(--button); }
   background: rgba(255, 255, 255, 0.82);
   box-shadow: 0 0.55rem 1.5rem rgba(103, 88, 118, 0.08);
 }
-.countdown-unit:nth-child(2) .countdown-card { background: rgba(255, 252, 238, 0.9); }
-.countdown-unit:nth-child(3) .countdown-card { background: rgba(245, 249, 242, 0.9); }
+.countdown-unit:nth-child(2) .countdown-card { background: rgba(247, 241, 252, 0.9); }
+.countdown-unit:nth-child(3) .countdown-card { background: rgba(238, 248, 252, 0.9); }
 .countdown-unit:nth-child(4) .countdown-card { background: rgba(245, 241, 250, 0.9); }
 .countdown-card::before {
   content: "";
@@ -1081,6 +1083,7 @@ input[type="radio"] { accent-color: var(--button); }
   font-size: 0.74rem;
   font-weight: 300;
   line-height: 1.9;
+  word-break: keep-all;
 }
 
 @keyframes openingCharacter {

@@ -153,10 +153,10 @@ export default function Guestbook() {
             className="invitation-action w-full py-3 rounded-2xl text-sm font-medium tracking-wider transition-all active:scale-[0.98]"
             style={{
               background: submitting
-                ? "rgba(212,169,106,0.3)"
+                ? "rgba(205,188,229,0.3)"
                 : "linear-gradient(135deg, var(--lilac), var(--accent))",
               color: "#fff",
-              boxShadow: submitting ? "none" : "0 4px 16px rgba(176,136,64,0.35)",
+              boxShadow: submitting ? "none" : "0 4px 16px rgba(128,99,156,0.25)",
             }}
           >
             {submitting ? "등록 중..." : "축하 메시지 남기기 💕"}

@@ -7,7 +7,6 @@ interface RSVPFormData {
   name: string;
   attendance: "attend" | "absent";
   guest_count: number;
-  meal_preference: "yes" | "no" | "undecided";
 }
 
 interface RSVPFormProps {
@@ -23,7 +22,6 @@ export default function RSVPForm({
     name: "",
     attendance: "attend",
     guest_count: 1,
-    meal_preference: "undecided",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isExpanded, setIsExpanded] = useState(isModal ? true : false);
@@ -32,11 +30,15 @@ export default function RSVPForm({
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]:
-        name === "guest_count" ? parseInt(value, 10) : (value as any),
-    }));
+    setFormData((prev) => {
+      if (name === "guest_count") {
+        return { ...prev, guest_count: parseInt(value, 10) };
+      }
+      if (name === "attendance") {
+        return { ...prev, attendance: value as RSVPFormData["attendance"] };
+      }
+      return { ...prev, name: value };
+    });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -67,7 +69,6 @@ export default function RSVPForm({
         name: "",
         attendance: "attend",
         guest_count: 1,
-        meal_preference: "undecided",
       });
       setIsExpanded(false);
 
@@ -228,40 +229,6 @@ export default function RSVPForm({
                 </option>
               ))}
             </select>
-          </div>
-
-          {/* 식사 여부 */}
-          <div>
-            <label
-              className="block text-sm font-medium mb-2"
-              style={{ color: "#78716c" }}
-            >
-              식사 여부
-            </label>
-            <div className="flex gap-2">
-              {[
-                { value: "yes", label: "예" },
-                { value: "no", label: "아니오" },
-                { value: "undecided", label: "미정" },
-              ].map(({ value, label }) => (
-                <label
-                  key={value}
-                  className="flex items-center gap-2 cursor-pointer flex-1"
-                >
-                  <input
-                    type="radio"
-                    name="meal_preference"
-                    value={value}
-                    checked={formData.meal_preference === value}
-                    onChange={handleInputChange}
-                    className="w-4 h-4"
-                  />
-                  <span className="text-sm" style={{ color: "#78716c" }}>
-                    {label}
-                  </span>
-                </label>
-              ))}
-            </div>
           </div>
 
           {/* 제출 버튼 */}

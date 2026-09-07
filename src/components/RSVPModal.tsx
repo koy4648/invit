@@ -9,19 +9,15 @@ interface RSVPModalProps {
   onClose?: () => void;
 }
 
-export default function RSVPModal({ isOpen = true, onClose }: RSVPModalProps) {
+export default function RSVPModal({ isOpen = false, onClose }: RSVPModalProps) {
   const [isVisible, setIsVisible] = useState(isOpen);
-  const [hasResponded, setHasResponded] = useState(false);
 
   useEffect(() => {
-    // localStorage에서 RSVP 응답 여부 확인
-    const hasRsvpResponded = localStorage.getItem("rsvp_responded");
-    if (hasRsvpResponded === "true") {
-      setHasResponded(true);
-      setIsVisible(false);
-    } else {
-      setIsVisible(isOpen);
-    }
+    const timer = window.setTimeout(() => {
+      const hasRsvpResponded = localStorage.getItem("rsvp_responded");
+      setIsVisible(hasRsvpResponded === "true" ? false : isOpen);
+    }, 0);
+    return () => window.clearTimeout(timer);
   }, [isOpen]);
 
   const handleClose = () => {
@@ -32,7 +28,6 @@ export default function RSVPModal({ isOpen = true, onClose }: RSVPModalProps) {
   const handleRsvpSubmit = () => {
     // RSVP 응답 완료 표시
     localStorage.setItem("rsvp_responded", "true");
-    setHasResponded(true);
     setIsVisible(false);
   };
 
@@ -60,7 +55,7 @@ export default function RSVPModal({ isOpen = true, onClose }: RSVPModalProps) {
         <div
           className="w-full max-w-md rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto md:rounded-3xl"
           style={{
-            background: "linear-gradient(180deg, #fdfaf6 0%, #f9f3ea 100%)",
+            background: "#ffffff",
             animation: "slideUp 0.3s ease-out",
           }}
           onClick={(e) => e.stopPropagation()}
@@ -69,9 +64,9 @@ export default function RSVPModal({ isOpen = true, onClose }: RSVPModalProps) {
           <div
             className="sticky top-0 z-10 flex items-center justify-between px-6 py-4"
             style={{
-              background: "rgba(253, 250, 246, 0.95)",
+              background: "rgba(255, 255, 255, 0.95)",
               backdropFilter: "blur(20px)",
-              borderBottom: "1px solid rgba(212, 169, 106, 0.2)",
+              borderBottom: "1px solid var(--line)",
             }}
           >
             <h2

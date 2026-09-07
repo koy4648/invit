@@ -54,10 +54,6 @@ export async function POST(request: NextRequest) {
         absent: rsvpData?.filter((r) => r.attendance === "absent").length || 0,
         totalGuests:
           rsvpData?.reduce((sum, r) => sum + (r.guest_count || 1), 0) || 0,
-        mealYes:
-          rsvpData?.filter((r) => r.meal_preference === "yes").length || 0,
-        mealNo:
-          rsvpData?.filter((r) => r.meal_preference === "no").length || 0,
       },
       guestbook: {
         total: guestbookData?.length || 0,

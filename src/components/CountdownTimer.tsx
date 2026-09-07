@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-const WEDDING_DATE = new Date("2025-10-18T11:00:00+09:00");
+const WEDDING_DATE = new Date("2027-08-28T12:00:00+09:00");
 
 interface TimeLeft {
   days: number;
@@ -43,10 +43,10 @@ export default function CountdownTimer() {
   if (timeLeft.isPast) {
     return (
       <div className="text-center py-4">
-        <p className="text-sm tracking-widest font-light" style={{ color: "rgba(255,255,255,0.9)" }}>
+        <p className="text-sm tracking-widest font-light" style={{ color: "var(--ink)" }}>
           결혼식이 거행되었습니다
         </p>
-        <p className="text-xs mt-1" style={{ color: "rgba(255,255,255,0.6)" }}>
+        <p className="text-xs mt-1" style={{ color: "var(--muted)" }}>
           축하해 주셔서 감사합니다
         </p>
       </div>
@@ -59,25 +59,22 @@ export default function CountdownTimer() {
         <div key={label} className="flex flex-col items-center gap-1.5">
           {/* 숫자 카드 */}
           <div
-            className="w-[68px] h-[68px] rounded-2xl flex items-center justify-center relative overflow-hidden"
+            className="w-[68px] h-[68px] flex items-center justify-center relative overflow-hidden"
             style={{
-              background: "rgba(255,255,255,0.15)",
-              border: "1px solid rgba(255,255,255,0.3)",
-              backdropFilter: "blur(12px)",
-              boxShadow: "0 4px 16px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.25)",
+              background: "#fff",
+              border: "1px solid var(--line)",
             }}
           >
             {/* 상단 하이라이트 */}
             <div
-              className="absolute top-0 left-0 right-0 h-1/2 rounded-t-2xl"
-              style={{ background: "rgba(255,255,255,0.08)" }}
+              className="absolute top-0 left-0 right-0 h-1/2"
+              style={{ background: "#fafaf8" }}
             />
             <span
               className="relative z-10 text-[26px] font-light tabular-nums"
               style={{
-                color: "#fff",
+                color: "var(--ink)",
                 fontFamily: "var(--font-cormorant), serif",
-                textShadow: "0 1px 4px rgba(0,0,0,0.15)",
               }}
             >
               {String(value).padStart(2, "0")}
@@ -87,7 +84,7 @@ export default function CountdownTimer() {
           {/* 레이블 */}
           <span
             className="text-[9px] tracking-[0.25em] font-medium"
-            style={{ color: "rgba(255,255,255,0.65)" }}
+            style={{ color: "var(--muted)" }}
           >
             {label}
           </span>

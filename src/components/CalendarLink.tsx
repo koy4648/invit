@@ -12,8 +12,8 @@ interface CalendarLinkProps {
 }
 
 export default function CalendarLink({
-  eventTitle = "김민준 ♥ 이서연 결혼식",
-  eventDate = "2025-10-18",
+  eventTitle = "김영서 ♥ 정진성 결혼식",
+  eventDate = "2027-08-28",
   eventTime = "11:00",
   eventLocation = "보테가마지오 로스타뇨홀",
   eventDescription = "저희의 결혼식에 초대합니다.",

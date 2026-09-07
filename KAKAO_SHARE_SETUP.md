@@ -70,7 +70,7 @@ NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY=YOUR_KAKAO_JAVASCRIPT_KEY
 - Kakao SDK 자동 로드
 - 공유 버튼 클릭 시 카카오톡 공유 팝업 표시
 - 공유 메시지에 포함되는 정보:
-  - 제목: "김민준 ♥ 이서연 결혼합니다"
+  - 제목: "김영서 ♥ 정진성 결혼합니다"
   - 설명: 결혼식 날짜, 시간, 장소
   - 이미지: `/og-image.jpg`
   - 버튼 1: "모바일 청첩장" (메인 페이지로 이동)
@@ -159,8 +159,8 @@ npm run dev
 `src/app/layout.tsx`의 Open Graph 메타 태그가 올바르게 설정되어 있는지 확인:
 ```typescript
 openGraph: {
-  title: "김민준 ♥ 이서연 결혼합니다",
-  description: "2025년 10월 18일 토요일 오전 11시",
+  title: "김영서 ♥ 정진성 결혼합니다",
+  description: "2027년 8월 28일 토요일 오전 12시",
   type: "website",
 },
 ```
@@ -214,6 +214,3 @@ export default function MyComponent() {
 - [메시지 템플릿 가이드](https://developers.kakao.com/docs/ko/message-template/common)
 
 ---
-
-**마지막 업데이트:** 2025년 1월
-**작성자:** Manus AI

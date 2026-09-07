@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
   try {
     const supabase = getSupabaseClient();
     const body = await request.json();
-    const { name, attendance, guest_count, meal_preference } = body;
+    const { name, attendance, guest_count } = body;
 
     // 입력값 검증
     if (!name || !attendance) {
@@ -39,7 +39,6 @@ export async function POST(request: NextRequest) {
         name,
         attendance,
         guest_count: guest_count || 1,
-        meal_preference: meal_preference || null,
       },
     ]);
 

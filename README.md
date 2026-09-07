@@ -15,7 +15,7 @@ Next.js App Router + Supabase + Cloudflare R2 기반의 풀스택 모바일 청�
 ## 주요 기능
 
 - **D-Day 카운트다운**: 예식 일시까지 일/시간/분/초 실시간 타이머
-- **갤러리**: 터치 슬라이드 캐러셀 ↔ 그리드 전환, 라이트박스 뷰어
+- **갤러리**: 관리자 사진 관리, 대표 사진 연동, 라이트박스 뷰어
 - **방명록**: Supabase 연동 실시간 메시지 등록/조회
 - **하객 사진 공유**: Cloudflare R2 Presigned URL 직접 업로드, 다중 파일, 진행률 표시
 
@@ -67,23 +67,14 @@ cp .env.local.example .env.local
 ]
 ```
 
-### 3. 갤러리 이미지 추가
+### 3. 갤러리 사진 관리
 
-`public/gallery/` 폴더에 다음 파일들을 추가하세요:
+`/admin`에 접속해 `ADMIN_PASSWORD`로 로그인한 뒤 **사진 관리** 탭을 사용하세요.
 
-```
-public/
-  gallery/
-    cover.jpg      ← 메인 커버 사진
-    photo1.jpg     ← 갤러리 사진 1
-    photo2.jpg     ← 갤러리 사진 2
-    photo3.jpg     ← 갤러리 사진 3
-    photo4.jpg     ← 갤러리 사진 4
-    photo5.jpg     ← 갤러리 사진 5
-    photo6.jpg     ← 갤러리 사진 6
-```
-
-이미지 파일명/경로는 `src/components/Gallery.tsx`의 `GALLERY_IMAGES` 배열에서 수정할 수 있습니다.
+- JPG, PNG, WebP 파일을 한 번에 최대 20장까지 추가
+- 대표 사진을 지정하면 청첩장 첫 화면에 자동 반영
+- 사진 순서 변경 및 삭제
+- 등록된 사진은 Cloudflare R2에 저장되며 공개 갤러리에 자동 표시
 
 ### 4. 개인 정보 수정
 
@@ -138,6 +129,7 @@ npm run dev
 | `NEXT_PUBLIC_SUPABASE_URL` | Supabase 프로젝트 URL | 공개 |
 | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase Anon 키 | 공개 |
 | `SUPABASE_SERVICE_ROLE_KEY` | Supabase Service Role 키 | **비공개** |
+| `ADMIN_PASSWORD` | 관리자 페이지 비밀번호 | **비공개** |
 | `R2_ACCOUNT_ID` | Cloudflare 계정 ID | **비공개** |
 | `R2_ACCESS_KEY_ID` | R2 Access Key ID | **비공개** |
 | `R2_SECRET_ACCESS_KEY` | R2 Secret Access Key | **비공개** |

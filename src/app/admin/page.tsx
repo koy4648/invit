@@ -3,6 +3,7 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { Lock, LogOut } from "lucide-react";
+import AdminPhotoManager from "@/components/AdminPhotoManager";
 
 interface AdminStats {
   rsvp: {
@@ -10,8 +11,6 @@ interface AdminStats {
     attend: number;
     absent: number;
     totalGuests: number;
-    mealYes: number;
-    mealNo: number;
   };
   guestbook: {
     total: number;
@@ -23,7 +22,6 @@ interface RSVPEntry {
   name: string;
   attendance: string;
   guest_count: number;
-  meal_preference: string;
   created_at: string;
 }
 
@@ -34,16 +32,24 @@ interface GuestbookEntry {
   created_at: string;
 }
 
+type AdminTab = "stats" | "rsvp" | "guestbook" | "photos";
+
+const ADMIN_TABS: { id: AdminTab; label: string }[] = [
+  { id: "stats", label: "통계" },
+  { id: "rsvp", label: "참석 현황" },
+  { id: "guestbook", label: "방명록" },
+  { id: "photos", label: "사진 관리" },
+];
+
 export default function AdminPage() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [password, setPassword] = useState("");
+  const [sessionPassword, setSessionPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [stats, setStats] = useState<AdminStats | null>(null);
   const [rsvpList, setRsvpList] = useState<RSVPEntry[]>([]);
   const [guestbookList, setGuestbookList] = useState<GuestbookEntry[]>([]);
-  const [activeTab, setActiveTab] = useState<"stats" | "rsvp" | "guestbook">(
-    "stats"
-  );
+  const [activeTab, setActiveTab] = useState<AdminTab>("stats");
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,6 +78,7 @@ export default function AdminPage() {
       setRsvpList(data.rsvpList);
       setGuestbookList(data.guestbookList);
       setIsAuthenticated(true);
+      setSessionPassword(password);
       setPassword("");
       toast.success("관리자 페이지에 접속했습니다.");
     } catch (error) {
@@ -88,6 +95,7 @@ export default function AdminPage() {
     setStats(null);
     setRsvpList([]);
     setGuestbookList([]);
+    setSessionPassword("");
     setPassword("");
     setActiveTab("stats");
     toast.success("로그아웃되었습니다.");
@@ -197,14 +205,10 @@ export default function AdminPage() {
           borderBottom: "1px solid rgba(212,169,106,0.1)",
         }}
       >
-        {[
-          { id: "stats", label: "통계" },
-          { id: "rsvp", label: "참석 현황" },
-          { id: "guestbook", label: "방명록" },
-        ].map(({ id, label }) => (
+        {ADMIN_TABS.map(({ id, label }) => (
           <button
             key={id}
-            onClick={() => setActiveTab(id as any)}
+            onClick={() => setActiveTab(id)}
             className="px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium"
             style={{
               background:
@@ -229,8 +233,6 @@ export default function AdminPage() {
               { label: "참석", value: stats.rsvp.attend },
               { label: "불참", value: stats.rsvp.absent },
               { label: "총 인원", value: stats.rsvp.totalGuests },
-              { label: "식사 예", value: stats.rsvp.mealYes },
-              { label: "식사 아니오", value: stats.rsvp.mealNo },
               { label: "방명록", value: stats.guestbook.total },
             ].map((stat, idx) => (
               <div
@@ -297,12 +299,6 @@ export default function AdminPage() {
                       >
                         인원
                       </th>
-                      <th
-                        className="px-4 py-2 text-left"
-                        style={{ color: "#b08840" }}
-                      >
-                        식사
-                      </th>
                     </tr>
                   </thead>
                   <tbody>
@@ -321,13 +317,6 @@ export default function AdminPage() {
                         </td>
                         <td className="px-4 py-3" style={{ color: "#44403c" }}>
                           {entry.guest_count}명
-                        </td>
-                        <td className="px-4 py-3" style={{ color: "#44403c" }}>
-                          {entry.meal_preference === "yes"
-                            ? "예"
-                            : entry.meal_preference === "no"
-                              ? "아니오"
-                              : "미정"}
                         </td>
                       </tr>
                     ))}
@@ -377,6 +366,10 @@ export default function AdminPage() {
               </div>
             )}
           </div>
+        )}
+
+        {activeTab === "photos" && sessionPassword && (
+          <AdminPhotoManager password={sessionPassword} />
         )}
       </div>
     </div>

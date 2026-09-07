@@ -1,20 +1,21 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Gift, Heart, Home, MessageCircle, Send } from "lucide-react";
 
 interface Tab {
   id: string;
   label: string;
-  icon: string;
+  Icon: typeof Home;
   sectionId: string;
 }
 
 const TABS: Tab[] = [
-  { id: "home",    label: "홈",      icon: "🏠", sectionId: "section-hero" },
-  { id: "story",   label: "이야기",  icon: "💕", sectionId: "section-love-story" },
-  { id: "rsvp",    label: "참석",    icon: "✋", sectionId: "section-rsvp" },
-  { id: "account", label: "마음",    icon: "💝", sectionId: "section-account" },
-  { id: "guest",   label: "방명록",  icon: "💌", sectionId: "section-guestbook" },
+  { id: "home",    label: "홈",      Icon: Home, sectionId: "section-hero" },
+  { id: "story",   label: "이야기",  Icon: Heart, sectionId: "section-couple" },
+  { id: "rsvp",    label: "참석",    Icon: Send, sectionId: "section-rsvp" },
+  { id: "account", label: "마음",    Icon: Gift, sectionId: "section-account" },
+  { id: "guest",   label: "방명록",  Icon: MessageCircle, sectionId: "section-guestbook" },
 ];
 
 export default function BottomNav() {
@@ -57,15 +58,15 @@ export default function BottomNav() {
       <div
         className="tab-bar-safe"
         style={{
-          background: "rgba(253, 250, 246, 0.88)",
+          background: "rgba(255, 255, 255, 0.92)",
           backdropFilter: "blur(20px) saturate(180%)",
           WebkitBackdropFilter: "blur(20px) saturate(180%)",
-          borderTop: "1px solid rgba(212, 169, 106, 0.2)",
-          boxShadow: "0 -4px 24px rgba(180, 140, 80, 0.08)",
+          borderTop: "1px solid var(--line)",
+          boxShadow: "0 -8px 28px rgba(32, 34, 31, 0.04)",
         }}
       >
         <div className="flex items-stretch">
-          {TABS.map(({ id, label, icon, sectionId }) => {
+          {TABS.map(({ id, label, Icon, sectionId }) => {
             const isActive = active === id;
             return (
               <button
@@ -80,27 +81,27 @@ export default function BottomNav() {
                 <span
                   className="absolute top-0 left-1/2 -translate-x-1/2 w-6 h-0.5 rounded-full"
                   style={{
-                    background: "linear-gradient(90deg, #d4a96a, #b08840)",
+                    background: "var(--accent)",
                   }}
                 />
               )}
 
               {/* 아이콘 */}
               <span
-                className="text-xl leading-none transition-transform duration-200"
+                className="leading-none transition-transform duration-200"
                 style={{
                   transform: isActive ? "scale(1.15)" : "scale(1)",
                   filter: isActive ? "none" : "grayscale(0.3) opacity(0.55)",
                 }}
               >
-                {icon}
+                <Icon size={18} strokeWidth={isActive ? 1.8 : 1.35} />
               </span>
 
               {/* 라벨 */}
               <span
                 className="text-[10px] font-medium tracking-wider transition-colors duration-200"
                 style={{
-                  color: isActive ? "#b08840" : "#a8a29e",
+                  color: isActive ? "var(--ink)" : "var(--muted)",
                 }}
               >
                 {label}

@@ -3,8 +3,8 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 
-const KAKAO_MAP_URL = "https://map.kakao.com/link/to/그랜드볼룸웨딩홀,37.5665,126.9780";
-const NAVER_MAP_URL = "https://map.naver.com/v5/search/그랜드볼룸웨딩홀";
+const KAKAO_MAP_URL = "https://map.kakao.com/link/to/서울가든호텔,37.5665,126.9780";
+const NAVER_MAP_URL = "https://map.naver.com/v5/search/서울가든호텔";
 
 interface ContactInfo {
   role: string;
@@ -14,12 +14,12 @@ interface ContactInfo {
 }
 
 const CONTACTS: ContactInfo[] = [
-  { role: "신랑",       name: "김민준", phone: "010-1234-5678", side: "groom" },
-  { role: "신랑 아버지", name: "김철수", phone: "010-2345-6789", side: "groom" },
-  { role: "신랑 어머니", name: "박영희", phone: "010-3456-7890", side: "groom" },
-  { role: "신부",       name: "이서연", phone: "010-4567-8901", side: "bride" },
-  { role: "신부 아버지", name: "이상훈", phone: "010-5678-9012", side: "bride" },
-  { role: "신부 어머니", name: "최미경", phone: "010-6789-0123", side: "bride" },
+  { role: "신랑",       name: "정진성", phone: "010-2357-7375", side: "groom" },
+  { role: "신랑 아버지", name: "정병철", phone: "010-2345-6789", side: "groom" },
+  { role: "신랑 어머니", name: "김명주", phone: "010-3456-7890", side: "groom" },
+  { role: "신부",       name: "김영서", phone: "010-5149-4648", side: "bride" },
+  { role: "신부 아버지", name: "김형태", phone: "010-9010-4648", side: "bride" },
+  { role: "신부 어머니", name: "정옥화", phone: "010-5239-4648", side: "bride" },
 ];
 
 function ContactCard({ contact }: { contact: ContactInfo }) {
@@ -95,7 +95,7 @@ export default function WeddingInfo() {
 
   const handleCopyAddress = async () => {
     try {
-      await navigator.clipboard.writeText("서울특별시 중구 을지로 30 그랜드볼룸웨딩홀 5층");
+      await navigator.clipboard.writeText("서울특별시 마포구 마포대로 58 그랜드볼룸웨딩홀 2층");
       toast.success("주소가 복사되었습니다.");
     } catch {
       toast.error("복사에 실패했습니다.");
@@ -125,9 +125,9 @@ export default function WeddingInfo() {
           <div>
             <p className="text-[11px] tracking-wider mb-1" style={{ color: "#a8a29e" }}>DATE & TIME</p>
             <p className="text-sm font-medium" style={{ color: "#44403c" }}>
-              2025년 10월 18일 토요일
+              2027년 8월 28일 토요일
             </p>
-            <p className="text-xs mt-0.5" style={{ color: "#78716c" }}>오전 11시 00분</p>
+            <p className="text-xs mt-0.5" style={{ color: "#78716c" }}>오전 12시 00분</p>
           </div>
         </div>
 
@@ -141,8 +141,8 @@ export default function WeddingInfo() {
           </div>
           <div className="flex-1">
             <p className="text-[11px] tracking-wider mb-1" style={{ color: "#a8a29e" }}>VENUE</p>
-            <p className="text-sm font-medium" style={{ color: "#44403c" }}>그랜드볼룸웨딩홀 5층</p>
-            <p className="text-xs mt-0.5" style={{ color: "#78716c" }}>서울특별시 중구 을지로 30</p>
+            <p className="text-sm font-medium" style={{ color: "#44403c" }}>그랜드볼룸웨딩홀 2층</p>
+            <p className="text-xs mt-0.5" style={{ color: "#78716c" }}>서울특별시 마포구 마포대로 58</p>
             <button
               onClick={handleCopyAddress}
               className="text-[11px] mt-1.5 tracking-wider transition-colors"
@@ -191,10 +191,10 @@ export default function WeddingInfo() {
         </p>
         <div className="space-y-3">
           {[
-            { icon: "🚇", label: "지하철", desc: "2호선 을지로입구역 5번 출구 도보 3분" },
-            { icon: "🚌", label: "버스",   desc: "간선 103, 421 / 지선 7011 을지로입구 정류장 하차" },
-            { icon: "🚗", label: "주차",   desc: "건물 지하 주차장 이용 가능 (3시간 무료)" },
-          ].map(({ icon, label, desc }) => (
+            { icon: "🚇", label: "지하철", desc: "5호선 마포역 3번 출구에서 도보 약 2분, 공덕역(5호선·6호선·공항철도·경의중앙선)에서는 도보 약 5분 거리입니다." },
+            { icon: "🚌", label: "버스",   desc: "마포역(중) 정류장에서 하차" },
+            { icon: "🚗", label: "주차",   desc: "호텔 건물 주차장 이용 가능 (3시간 무료)" },
+                    ].map(({ icon, label, desc }) => (
             <div key={label} className="flex gap-3 items-start">
               <div
                 className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 text-sm"

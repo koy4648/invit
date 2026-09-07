@@ -12,6 +12,11 @@ export interface UploadedPhoto {
   uploadedAt: string;
 }
 
+export interface GalleryPhoto extends UploadedPhoto {
+  size: number;
+  isCover: boolean;
+}
+
 export interface PresignedUrlResponse {
   uploadUrl: string;
   publicUrl: string;

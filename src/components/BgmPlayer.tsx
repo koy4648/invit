@@ -67,22 +67,18 @@ export default function BgmPlayer({
       {/* BGM 토글 버튼 - 항상 표시 */}
       <button
         onClick={togglePlayPause}
-        className="fixed right-6 top-24 z-40 w-14 h-14 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center hover:scale-110 active:scale-95"
+        className="music-button fixed top-24 z-40 w-11 h-11 rounded-full transition-all duration-300 flex items-center justify-center hover:scale-105 active:scale-95"
         style={{
-          background: isPlaying
-            ? "linear-gradient(135deg, #d4a96a, #b08840)"
-            : "linear-gradient(135deg, rgba(212,169,106,0.8), rgba(176,136,64,0.6))",
+          background: isPlaying ? "var(--accent)" : "rgba(32, 34, 31, 0.86)",
           cursor: "pointer",
-          boxShadow: isPlaying
-            ? "0 8px 24px rgba(212,169,106,0.4)"
-            : "0 4px 12px rgba(212,169,106,0.2)",
+          boxShadow: "0 6px 20px rgba(32, 34, 31, 0.16)",
         }}
         title={isPlaying ? "음악 중지" : "음악 재생"}
       >
         {isPlaying ? (
-          <Music size={24} style={{ color: "#fff" }} />
+          <Music size={19} style={{ color: "#fff" }} />
         ) : (
-          <Volume2 size={24} style={{ color: "#fff" }} />
+          <Volume2 size={19} style={{ color: "#fff" }} />
         )}
       </button>
     </>

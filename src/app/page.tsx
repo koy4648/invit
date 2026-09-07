@@ -12,15 +12,15 @@ import RSVPModal from "@/components/RSVPModal";
 import AccountInfo from "@/components/AccountInfo";
 import NavigationLinks from "@/components/NavigationLinks";
 import CalendarLink from "@/components/CalendarLink";
-import BgmPlayer from "@/components/BgmPlayer";
 import LoveStory from "@/components/LoveStory";
 import ConfettiEasterEgg from "@/components/ConfettiEasterEgg";
+import CoupleInterview from "@/components/CoupleInterview";
 
 /* 골드 구분선 */
 function GoldDivider() {
   return (
-    <div className="divider-gold px-8 py-2">
-      <span className="text-xs" style={{ color: "#d4a96a" }}>✦</span>
+    <div className="divider-gold px-8 py-2" aria-hidden="true">
+      <span className="text-[9px]">◆</span>
     </div>
   );
 }
@@ -35,43 +35,34 @@ export default function Home() {
     <>
       <ToastProvider />
 
-      <main
-        className="min-h-screen"
-        style={{ background: "linear-gradient(180deg, #fdfaf6 0%, #f9f3ea 100%)" }}
-      >
+      <main className="invitation-shell min-h-screen">
         {/* ── 히어로 ─────────────────────────────── */}
         <WeddingHero />
 
         {/* ── D-Day 카운트다운 배너 ─────────────── */}
-        <section
-          className="px-4 py-8"
-          style={{
-            background: "linear-gradient(135deg, #c49a55 0%, #b08840 50%, #9a7535 100%)",
-          }}
-        >
-          <p
-            className="text-center text-[10px] tracking-[0.4em] uppercase mb-4"
-            style={{ color: "rgba(255,255,255,0.65)" }}
-          >
+        <section className="countdown-section">
+          <p className="countdown-label">
             Wedding Countdown
           </p>
           <Suspense fallback={<div className="h-20" />}>
             <CountdownTimer />
           </Suspense>
-          <p
-            className="text-center text-[11px] tracking-widest mt-4 font-light"
-            style={{ color: "rgba(255,255,255,0.55)" }}
-          >
-            2025 · 10 · 18 · SAT · 11:00 AM
+          <p className="countdown-date">
+            2027 · 08 · 28 · SAT · 12:00 PM
           </p>
         </section>
 
         {/* ── 본문 컨텐츠 ────────────────────────── */}
-        <div className="max-w-md mx-auto pb-28">
+        <div className="content-column pb-28">
           {/* 예식 안내 */}
           <Suspense fallback={<SectionSkeleton height="h-64" />}>
             <WeddingInfo />
           </Suspense>
+
+          <GoldDivider />
+
+          {/* 신랑신부 소개 및 인터뷰 */}
+          <CoupleInterview />
 
           <GoldDivider />
 
@@ -123,27 +114,23 @@ export default function Home() {
           {/* 푸터 */}
           <footer className="text-center py-12 px-6">
             <div className="divider-gold mb-6">
-              <span className="text-xs" style={{ color: "#d4a96a" }}>✦</span>
+              <span className="text-[9px]" style={{ color: "var(--accent)" }}>◆</span>
             </div>
             <p
               className="text-[13px] leading-[2.2] font-light tracking-wider"
-              style={{ color: "#a8a29e" }}
+              style={{ color: "var(--muted)" }}
             >
               두 사람의 새로운 시작을<br />
               함께 축복해 주셔서 감사합니다
             </p>
             <p
               className="mt-4 text-xs tracking-[0.3em]"
-              style={{
-                background: "linear-gradient(135deg, #d4a96a, #b08840)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
+              style={{ color: "var(--ink)" }}
             >
-              Kim Minjun &amp; Lee Seoyeon
+              Kim Youngseo &amp; Jung Jinsung
             </p>
-            <p className="mt-2 text-xs" style={{ color: "#c4b8a8" }}>
-              2025 · 10 · 18
+            <p className="mt-2 text-xs" style={{ color: "var(--muted)" }}>
+              2027 · 08 · 28
             </p>
           </footer>
         </div>
@@ -151,9 +138,6 @@ export default function Home() {
 
       {/* ── 하단 탭 네비게이션 ─────────────────── */}
       <BottomNav />
-
-      {/* ── BGM 플레이어 ─────────────────── */}
-      <BgmPlayer />
 
       {/* ── 이스터에그 (폭죽) ─────────────────── */}
       <ConfettiEasterEgg />

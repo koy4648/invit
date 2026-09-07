@@ -11,8 +11,8 @@ interface KakaoShareProps {
 }
 
 export default function KakaoShare({
-  title = "김민준 ♥ 이서연 결혼합니다",
-  description = "2025년 10월 18일 토요일 오전 11시\n보테가마지오 로스타뇨홀",
+  title = "김영서 ♥ 정진성 결혼합니다",
+  description = "2027년 8월 28일 토요일 오전 12시\n서울가든호텔 2층 그랜드볼룸에서 두 사람의 새로운 시작을 함께 축복해 주세요.",
   imageUrl = "/og-image.jpg",
   webUrl = typeof window !== "undefined" ? window.location.origin : "",
   mobileWebUrl = typeof window !== "undefined" ? window.location.origin : "",
@@ -104,7 +104,7 @@ declare global {
     Kakao: {
       init: (key: string) => void;
       Share: {
-        sendDefault: (params: any) => void;
+        sendDefault: (params: Record<string, unknown>) => void;
       };
     };
   }

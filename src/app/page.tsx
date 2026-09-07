@@ -67,6 +67,7 @@ export default function Home() {
 
           {/* 갤러리 */}
           <div className="shore-section">
+            <div className="shore-pearl-drift" aria-hidden="true" />
             <Suspense fallback={<SectionSkeleton height="h-80" />}>
               <Gallery />
             </Suspense>

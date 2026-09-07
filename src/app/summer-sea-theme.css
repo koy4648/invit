@@ -38,8 +38,8 @@
 .summer-sea-theme .hero-editorial,
 .summer-sea-theme .countdown-section {
   background:
-    radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.78), transparent 8rem),
-    linear-gradient(180deg, #f7ffff 0%, #e7f8f7 52%, #d9f0ef 100%);
+    radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.82), transparent 8rem),
+    linear-gradient(180deg, #f8ffff 0%, #dff7f7 52%, #c9edf0 100%);
 }
 
 .summer-sea-theme .hero-editorial::after {
@@ -70,7 +70,7 @@
   background-image:
     radial-gradient(circle at 8% 12%, rgba(167, 217, 234, 0.2), transparent 11rem),
     radial-gradient(circle at 92% 82%, rgba(166, 216, 201, 0.16), transparent 13rem),
-    linear-gradient(180deg, rgba(252, 254, 254, 0.98), rgba(239, 250, 245, 0.65) 52%, rgba(252, 254, 254, 0.98));
+    linear-gradient(180deg, rgba(239, 252, 253, 0.98), rgba(232, 249, 246, 0.72) 52%, rgba(252, 250, 244, 0.98));
 }
 
 .summer-sea-theme .shore-section {
@@ -79,7 +79,7 @@
   background:
     radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.9), transparent 7rem),
     radial-gradient(circle at 88% 38%, rgba(255, 255, 255, 0.58), transparent 9rem),
-    linear-gradient(180deg, #f2fbfa 0%, #faf7ee 16%, #fbf4e7 100%);
+    linear-gradient(180deg, #dff6f5 0%, #edf8f2 13%, #faf6eb 32%, #fbf1df 100%);
 }
 
 .summer-sea-theme .shore-section::before,
@@ -266,20 +266,65 @@
 /* Abstract pearl-and-shell material language: no literal photo backgrounds. */
 .summer-sea-theme .shore-section {
   background:
-    radial-gradient(ellipse at 15% 24%, rgba(255,255,255,0.92) 0 3%, transparent 3.5%),
-    radial-gradient(ellipse at 87% 58%, rgba(255,255,255,0.68) 0 2.5%, transparent 3%),
-    repeating-radial-gradient(ellipse at 40% 0%, rgba(208,188,157,0.08) 0 1px, transparent 2px 17px),
-    linear-gradient(180deg, #f2fbfa 0%, #faf7ee 18%, #fbf4e7 100%);
+    radial-gradient(ellipse at 15% 24%, rgba(255,255,255,0.8) 0 2%, transparent 2.5%),
+    radial-gradient(ellipse at 87% 58%, rgba(255,255,255,0.55) 0 1.5%, transparent 2%),
+    linear-gradient(180deg, #dff6f5 0%, #edf8f2 13%, #faf6eb 32%, #fbf1df 100%);
 }
 
 .summer-sea-theme .shore-guestbook {
   background:
     radial-gradient(ellipse at 50% 115%, rgba(229, 198, 174, 0.34) 0 18%, transparent 18.5%),
-    repeating-radial-gradient(ellipse at 50% 115%, rgba(255,255,255,0.42) 0 1px, transparent 2px 13px),
     linear-gradient(145deg, rgba(255, 255, 255, 0.84), rgba(255, 247, 237, 0.72));
 }
 
 .summer-sea-theme .shore-guestbook .card {
   background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(7px);
+}
+
+/* Scattered pearls: distinct, sparse highlights rather than a repeated wood-ring pattern. */
+.summer-sea-theme .shore-pearl-drift {
+  position: absolute;
+  z-index: 2;
+  top: 4.5rem;
+  left: 0;
+  width: 100%;
+  height: 15rem;
+  pointer-events: none;
+}
+
+.summer-sea-theme .shore-pearl-drift::before,
+.summer-sea-theme .shore-pearl-drift::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle at 29% 24%, #fff 0 10%, #fffdf6 22%, #e8f6f2 58%, #b7d9d3 100%);
+  box-shadow: 0 0 0.9rem rgba(255,255,255,0.95), 0 0.25rem 0.65rem rgba(137, 169, 164, 0.2);
+  opacity: 0.9;
+  animation: pearl-float 5s ease-in-out infinite alternate;
+}
+
+.summer-sea-theme .shore-pearl-drift::before {
+  top: 1.2rem;
+  left: 16%;
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
+.summer-sea-theme .shore-pearl-drift::after {
+  top: 7rem;
+  right: 13%;
+  width: 0.85rem;
+  height: 0.85rem;
+  animation-delay: -1.8s;
+}
+
+@keyframes pearl-float {
+  from { transform: translateY(0) rotate(-3deg); }
+  to { transform: translateY(0.35rem) rotate(4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .summer-sea-theme .shore-pearl-drift::before,
+  .summer-sea-theme .shore-pearl-drift::after { animation: none; }
 }

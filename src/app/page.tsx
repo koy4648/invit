@@ -16,7 +16,7 @@ import LoveStory from "@/components/LoveStory";
 import ConfettiEasterEgg from "@/components/ConfettiEasterEgg";
 import CoupleInterview from "@/components/CoupleInterview";
 
-/* 골드 구분선 */
+/* 파스텔 구분선 */
 function GoldDivider() {
   return (
     <div className="divider-gold px-8 py-2" aria-hidden="true">

@@ -89,10 +89,10 @@ export default function RSVPModal({ isOpen = false, onClose }: RSVPModalProps) {
 
           {/* 콘텐츠 */}
           <div className="px-6 py-6">
-            <p className="text-sm mb-6" style={{ color: "#78716c" }}>
+            <p className="text-sm mb-6" style={{ color: "var(--muted)" }}>
               축하해주셔서 감사합니다! 아래 양식을 통해 참석 여부를 알려주세요.
               <br />
-              <span style={{ color: "#a8a29e" }} className="text-xs">
+              <span style={{ color: "var(--muted)" }} className="text-xs">
                 (선택사항이며, 나중에 언제든 수정할 수 있습니다)
               </span>
             </p>
@@ -117,7 +117,7 @@ export default function RSVPModal({ isOpen = false, onClose }: RSVPModalProps) {
               className="invitation-action-soft w-full mt-6 px-4 py-3 rounded-xl font-medium transition-all duration-200"
               style={{
                 background: "rgba(212, 169, 106, 0.2)",
-                color: "#b08840",
+                color: "#8e74a7",
                 border: "1px solid rgba(212, 169, 106, 0.3)",
               }}
             >

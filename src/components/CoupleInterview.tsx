@@ -1,13 +1,13 @@
 const COUPLE = [
   {
-    role: "BRIDE",
+    role: "ONE",
     name: "김영서",
     englishName: "Youngseo Kim",
     initial: "Y",
     introduction: "밝고 감성적인 ENFP",
   },
   {
-    role: "GROOM",
+    role: "TWO",
     name: "정진성",
     englishName: "Jinseong Jeong",
     initial: "J",

@@ -22,14 +22,14 @@ export default function ToastProvider() {
           letterSpacing: "0.02em",
         },
         success: {
-          iconTheme: { primary: "#b08840", secondary: "#fdfaf6" },
+          iconTheme: { primary: "#8e74a7", secondary: "#fdfaf6" },
         },
         error: {
           iconTheme: { primary: "#ef4444", secondary: "#fff" },
           duration: 5000,
         },
         loading: {
-          iconTheme: { primary: "#d4a96a", secondary: "#fdfaf6" },
+          iconTheme: { primary: "#d99ab2", secondary: "#fdfaf6" },
         },
       }}
     />

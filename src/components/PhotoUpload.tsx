@@ -149,7 +149,7 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
         <h2 className="text-xl font-light tracking-wider" style={{ color: "#44403c" }}>
           하객 사진 공유
         </h2>
-        <p className="text-xs mt-1 tracking-wide" style={{ color: "#a8a29e" }}>
+        <p className="text-xs mt-1 tracking-wide" style={{ color: "var(--muted)" }}>
           소중한 순간을 함께 나눠주세요 · 최대 50MB · JPG/PNG/WebP/HEIC
         </p>
       </div>
@@ -186,10 +186,10 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
         >
           📸
         </div>
-        <p className="text-sm font-medium tracking-wider mb-1" style={{ color: "#78716c" }}>
+        <p className="text-sm font-medium tracking-wider mb-1" style={{ color: "var(--muted)" }}>
           사진을 드래그하거나 탭하여 선택
         </p>
-        <p className="text-xs tracking-wide" style={{ color: "#a8a29e" }}>
+        <p className="text-xs tracking-wide" style={{ color: "var(--muted)" }}>
           한 번에 최대 {MAX_FILES}개 · 파일당 최대 50MB
         </p>
       </div>
@@ -200,11 +200,11 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
           className="mt-4 rounded-2xl p-4 animate-fadeInUp"
           style={{
             background: "rgba(253,250,246,0.9)",
-            border: "1px solid rgba(212,169,106,0.2)",
+            border: "1px solid rgba(172,212,233,0.22)",
           }}
         >
           <div className="flex items-center justify-between mb-2">
-            <span className="text-xs tracking-wider" style={{ color: "#78716c" }}>업로드 중...</span>
+            <span className="text-xs tracking-wider" style={{ color: "var(--muted)" }}>업로드 중...</span>
             <span className="text-sm font-medium tabular-nums" style={{ color: "var(--button)" }}>
               {totalProgress}%
             </span>
@@ -230,14 +230,14 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
               className="flex items-center gap-3 rounded-2xl p-3 animate-fadeInUp"
               style={{
                 background: "#fff",
-                border: "1px solid rgba(212,169,106,0.15)",
+                border: "1px solid rgba(231,169,187,0.22)",
                 boxShadow: "0 2px 8px rgba(180,140,80,0.06)",
               }}
             >
               {/* 썸네일 */}
               <div
                 className="relative w-12 h-12 rounded-xl overflow-hidden flex-shrink-0"
-                style={{ background: "rgba(212,169,106,0.1)" }}
+                style={{ background: "rgba(172,212,233,0.16)" }}
               >
                 {state.previewUrl && (
                   <Image src={state.previewUrl} alt={state.file.name} fill className="object-cover" sizes="48px" unoptimized />
@@ -249,7 +249,7 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
                 <p className="text-xs font-medium truncate mb-0.5" style={{ color: "#44403c" }}>
                   {state.file.name}
                 </p>
-                <p className="text-[11px] mb-1" style={{ color: "#a8a29e" }}>
+                <p className="text-[11px] mb-1" style={{ color: "var(--muted)" }}>
                   {(state.file.size / 1024 / 1024).toFixed(1)} MB
                 </p>
                 {state.status === "uploading" && (
@@ -272,7 +272,7 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
                   <button
                     onClick={() => abortRefs.current.get(state.id)?.abort()}
                     className="text-[11px] px-2 py-1 rounded-lg tracking-wider transition-colors"
-                    style={{ border: "1px solid rgba(212,169,106,0.3)", color: "#a8a29e" }}
+                    style={{ border: "1px solid rgba(205,188,229,0.34)", color: "var(--muted)" }}
                   >
                     취소
                   </button>
@@ -311,7 +311,7 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
               <div
                 key={photo.key}
                 className="relative aspect-square rounded-2xl overflow-hidden"
-                style={{ background: "rgba(212,169,106,0.1)" }}
+                style={{ background: "rgba(172,212,233,0.16)" }}
               >
                 <Image
                   src={photo.url}

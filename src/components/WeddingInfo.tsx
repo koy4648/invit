@@ -21,7 +21,7 @@ export default function WeddingInfo() {
       {/* 섹션 헤더 */}
       <div className="mb-6">
         <p className="section-title mb-1">Location & Info</p>
-        <h2 className="text-xl font-light tracking-wider" style={{ color: "#44403c" }}>
+        <h2 className="text-xl font-light tracking-wider" style={{ color: "var(--ink)" }}>
           예식 안내
         </h2>
       </div>
@@ -29,19 +29,19 @@ export default function WeddingInfo() {
       {/* 예식 정보 카드 */}
       <div className="card p-5">
         {/* 날짜 */}
-        <div className="flex items-start gap-4 pb-4" style={{ borderBottom: "1px solid rgba(212,169,106,0.12)" }}>
+        <div className="flex items-start gap-4 pb-4" style={{ borderBottom: "1px solid rgba(205,188,229,0.28)" }}>
           <div
             className="w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0"
-            style={{ background: "linear-gradient(135deg, rgba(212,169,106,0.15), rgba(176,136,64,0.08))" }}
+            style={{ background: "linear-gradient(135deg, rgba(231,169,187,0.18), rgba(172,212,233,0.14))" }}
           >
             <span className="text-lg">📅</span>
           </div>
           <div>
-            <p className="text-[11px] tracking-wider mb-1" style={{ color: "#a8a29e" }}>DATE & TIME</p>
-            <p className="text-sm font-medium" style={{ color: "#44403c" }}>
+            <p className="text-[11px] tracking-wider mb-1" style={{ color: "var(--muted)" }}>DATE & TIME</p>
+            <p className="text-sm font-medium" style={{ color: "var(--ink)" }}>
               2027년 8월 28일 토요일
             </p>
-            <p className="text-xs mt-0.5" style={{ color: "#78716c" }}>오전 12시 00분</p>
+            <p className="text-xs mt-0.5" style={{ color: "var(--muted)" }}>오전 12시 00분</p>
           </div>
         </div>
 
@@ -49,14 +49,14 @@ export default function WeddingInfo() {
         <div className="flex items-start gap-4 pt-4">
           <div
             className="w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0"
-            style={{ background: "linear-gradient(135deg, rgba(212,169,106,0.15), rgba(176,136,64,0.08))" }}
+            style={{ background: "linear-gradient(135deg, rgba(231,169,187,0.18), rgba(172,212,233,0.14))" }}
           >
             <span className="text-lg">📍</span>
           </div>
           <div className="flex-1">
-            <p className="text-[11px] tracking-wider mb-1" style={{ color: "#a8a29e" }}>VENUE</p>
-            <p className="text-sm font-medium" style={{ color: "#44403c" }}>그랜드볼룸웨딩홀 2층</p>
-            <p className="text-xs mt-0.5" style={{ color: "#78716c" }}>서울특별시 마포구 마포대로 58</p>
+            <p className="text-[11px] tracking-wider mb-1" style={{ color: "var(--muted)" }}>VENUE</p>
+            <p className="text-sm font-medium" style={{ color: "var(--ink)" }}>그랜드볼룸웨딩홀 2층</p>
+            <p className="text-xs mt-0.5" style={{ color: "var(--muted)" }}>서울특별시 마포구 마포대로 58</p>
             <button
               onClick={handleCopyAddress}
               className="text-[11px] mt-1.5 tracking-wider transition-colors"
@@ -75,9 +75,9 @@ export default function WeddingInfo() {
             rel="noopener noreferrer"
             className="invitation-action flex-1 py-3 rounded-2xl text-xs font-medium text-center tracking-wider transition-all active:scale-95"
             style={{
-              background: "#FEE500",
-              color: "#3C1E1E",
-              boxShadow: "0 2px 8px rgba(254,229,0,0.4)",
+              background: "var(--blush-soft)",
+              color: "var(--accent)",
+              boxShadow: "0 2px 8px rgba(231,169,187,0.2)",
             }}
           >
             카카오맵
@@ -88,9 +88,9 @@ export default function WeddingInfo() {
             rel="noopener noreferrer"
             className="invitation-action flex-1 py-3 rounded-2xl text-xs font-medium text-center tracking-wider transition-all active:scale-95"
             style={{
-              background: "#03C75A",
+              background: "var(--blue-soft)",
               color: "#fff",
-              boxShadow: "0 2px 8px rgba(3,199,90,0.35)",
+              boxShadow: "0 2px 8px rgba(172,212,233,0.24)",
             }}
           >
             네이버지도
@@ -112,7 +112,7 @@ export default function WeddingInfo() {
             <div key={label} className="flex gap-3 items-start">
               <div
                 className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 text-sm"
-                style={{ background: "rgba(212,169,106,0.1)" }}
+                style={{ background: "rgba(172,212,233,0.16)" }}
               >
                 {icon}
               </div>
@@ -120,7 +120,7 @@ export default function WeddingInfo() {
                 <p className="text-[11px] font-medium tracking-wider mb-0.5" style={{ color: "var(--button)" }}>
                   {label}
                 </p>
-                <p className="text-xs leading-relaxed" style={{ color: "#78716c" }}>{desc}</p>
+                <p className="text-xs leading-relaxed" style={{ color: "var(--muted)" }}>{desc}</p>
               </div>
             </div>
           ))}

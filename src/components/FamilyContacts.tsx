@@ -99,7 +99,7 @@ function ContactGroup({
         aria-expanded={isOpen}
       >
         <div>
-          <span>{side === "bride" ? "BRIDE'S FAMILY" : "GROOM'S FAMILY"}</span>
+          <span>{side === "bride" ? "YOUNGSEO'S FAMILY" : "JINSEONG'S FAMILY"}</span>
           <strong>{title}</strong>
         </div>
         <ChevronDown size={20} className={isOpen ? "is-open" : ""} />
@@ -126,8 +126,8 @@ export default function FamilyContacts() {
       </header>
 
       <div className="family-contact-groups">
-        <ContactGroup side="bride" title="신부측 연락처" contacts={BRIDE_CONTACTS} />
-        <ContactGroup side="groom" title="신랑측 연락처" contacts={GROOM_CONTACTS} />
+        <ContactGroup side="bride" title="영서의 가족" contacts={BRIDE_CONTACTS} />
+        <ContactGroup side="groom" title="진성의 가족" contacts={GROOM_CONTACTS} />
       </div>
     </section>
   );

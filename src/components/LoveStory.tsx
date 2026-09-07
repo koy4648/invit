@@ -77,11 +77,11 @@ export default function LoveStory() {
       <div className="mb-8">
         <h2
           className="text-2xl font-light tracking-wider mb-2"
-          style={{ color: "#44403c" }}
+          style={{ color: "var(--ink)" }}
         >
           우리들의 이야기
         </h2>
-        <p className="text-sm" style={{ color: "#a8a29e" }}>
+        <p className="text-sm" style={{ color: "var(--muted)" }}>
           만남부터 결혼까지의 특별한 순간들
         </p>
       </div>
@@ -92,7 +92,7 @@ export default function LoveStory() {
         <div
           className="absolute left-8 top-0 bottom-0 w-0.5"
           style={{
-            background: "linear-gradient(180deg, #d4a96a, #b08840, #d4a96a)",
+            background: "linear-gradient(180deg, var(--blush), var(--sky), var(--lilac))",
           }}
         />
 
@@ -117,24 +117,24 @@ export default function LoveStory() {
                   <div
                     className="p-4 rounded-2xl"
                     style={{
-                      background: "rgba(255,255,255,0.6)",
-                      border: "1px solid rgba(212,169,106,0.2)",
+                      background: "rgba(255,255,255,0.76)",
+                      border: "1px solid rgba(205,188,229,0.34)",
                       backdropFilter: "blur(8px)",
                     }}
                   >
                     <p
                       className="text-xs tracking-widest font-medium mb-1"
-                      style={{ color: "#d4a96a" }}
+                      style={{ color: "var(--accent)" }}
                     >
                       {event.year}
                     </p>
                     <h3
                       className="text-lg font-medium mb-2"
-                      style={{ color: "#b08840" }}
+                      style={{ color: "var(--accent)" }}
                     >
                       {event.title}
                     </h3>
-                    <p className="text-sm" style={{ color: "#78716c" }}>
+                    <p className="text-sm" style={{ color: "var(--muted)" }}>
                       {event.description}
                     </p>
                   </div>
@@ -146,8 +146,8 @@ export default function LoveStory() {
                     className="w-12 h-12 rounded-full flex items-center justify-center text-2xl shadow-lg transition-all duration-500"
                     style={{
                       background: isVisible
-                        ? "linear-gradient(135deg, #d4a96a, #b08840)"
-                        : "rgba(212,169,106,0.3)",
+                        ? "linear-gradient(135deg, var(--blush), var(--accent))"
+                        : "rgba(205,188,229,0.35)",
                       transform: isVisible ? "scale(1)" : "scale(0.8)",
                     }}
                   >

@@ -94,9 +94,9 @@ export default function RSVPForm({
           className="lovely-panel-trigger w-full flex items-center justify-between px-4 py-4 rounded-2xl transition-all duration-300"
           style={{
             background: isExpanded
-              ? "linear-gradient(135deg, rgba(212,169,106,0.15), rgba(176,136,64,0.08))"
+              ? "linear-gradient(135deg, rgba(231,169,187,0.18), rgba(172,212,233,0.14))"
               : "rgba(255,255,255,0.6)",
-            border: "1px solid rgba(212,169,106,0.2)",
+            border: "1px solid rgba(205,188,229,0.3)",
             backdropFilter: "blur(8px)",
           }}
         >
@@ -107,7 +107,7 @@ export default function RSVPForm({
             >
               참석 여부 알리기
             </h3>
-            <p className="text-xs mt-1" style={{ color: "#a8a29e" }}>
+            <p className="text-xs mt-1" style={{ color: "var(--muted)" }}>
               예식 참석 여부를 알려주세요
             </p>
           </div>
@@ -137,14 +137,14 @@ export default function RSVPForm({
           className={`${isModal ? "" : "mt-4"} lovely-form space-y-4 px-4 py-4 rounded-2xl`}
           style={{
             background: "rgba(255,255,255,0.4)",
-            border: "1px solid rgba(212,169,106,0.15)",
+            border: "1px solid rgba(205,188,229,0.24)",
           }}
         >
           {/* 이름 입력 */}
           <div>
             <label
               className="block text-sm font-medium mb-2"
-              style={{ color: "#78716c" }}
+              style={{ color: "var(--muted)" }}
             >
               이름 *
             </label>
@@ -156,17 +156,17 @@ export default function RSVPForm({
               placeholder="성함을 입력해주세요"
               className="w-full px-3 py-2 rounded-lg border text-sm focus:outline-none focus:ring-2"
               style={{
-                borderColor: "rgba(212,169,106,0.3)",
-                color: "#44403c",
-                backgroundColor: "rgba(255,255,255,0.8)",
+                borderColor: "rgba(205,188,229,0.34)",
+                color: "var(--ink)",
+                backgroundColor: "rgba(255,255,255,0.9)",
               }}
               onFocus={(e) => {
                 e.currentTarget.style.borderColor = "var(--button)";
                 e.currentTarget.style.backgroundColor = "#fff";
               }}
               onBlur={(e) => {
-                e.currentTarget.style.borderColor = "rgba(212,169,106,0.3)";
-                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.8)";
+                e.currentTarget.style.borderColor = "rgba(205,188,229,0.34)";
+                e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.9)";
               }}
             />
           </div>
@@ -175,7 +175,7 @@ export default function RSVPForm({
           <div>
             <label
               className="block text-sm font-medium mb-2"
-              style={{ color: "#78716c" }}
+              style={{ color: "var(--muted)" }}
             >
               참석 여부 *
             </label>
@@ -196,7 +196,7 @@ export default function RSVPForm({
                     onChange={handleInputChange}
                     className="w-4 h-4"
                   />
-                  <span className="text-sm" style={{ color: "#78716c" }}>
+                  <span className="text-sm" style={{ color: "var(--muted)" }}>
                     {label}
                   </span>
                 </label>
@@ -208,7 +208,7 @@ export default function RSVPForm({
           <div>
             <label
               className="block text-sm font-medium mb-2"
-              style={{ color: "#78716c" }}
+              style={{ color: "var(--muted)" }}
             >
               동반인 수 (본인 포함)
             </label>
@@ -218,9 +218,9 @@ export default function RSVPForm({
               onChange={handleInputChange}
               className="w-full px-3 py-2 rounded-lg border text-sm focus:outline-none focus:ring-2"
               style={{
-                borderColor: "rgba(212,169,106,0.3)",
-                color: "#44403c",
-                backgroundColor: "rgba(255,255,255,0.8)",
+                borderColor: "rgba(205,188,229,0.34)",
+                color: "var(--ink)",
+                backgroundColor: "rgba(255,255,255,0.9)",
               }}
             >
               {[1, 2, 3, 4, 5].map((num) => (
@@ -238,8 +238,8 @@ export default function RSVPForm({
             className="invitation-action w-full px-4 py-3 rounded-xl font-medium transition-all duration-200 text-white"
             style={{
               background: isSubmitting
-                ? "linear-gradient(135deg, #d4a96a, #b08840)"
-                : "linear-gradient(135deg, #d4a96a, #b08840)",
+                ? "linear-gradient(135deg, #d99ab2, #8e74a7)"
+                : "linear-gradient(135deg, #d99ab2, #8e74a7)",
               opacity: isSubmitting ? 0.7 : 1,
               cursor: isSubmitting ? "not-allowed" : "pointer",
             }}

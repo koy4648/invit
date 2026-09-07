@@ -76,7 +76,7 @@ export default function Guestbook() {
       <div className="flex items-end justify-between mb-6">
         <div>
           <p className="section-title mb-1">Guestbook</p>
-          <h2 className="text-xl font-light tracking-wider" style={{ color: "#44403c" }}>
+          <h2 className="text-xl font-light tracking-wider" style={{ color: "var(--ink)" }}>
             방명록
           </h2>
         </div>
@@ -96,8 +96,8 @@ export default function Guestbook() {
           className="lovely-form mb-6 rounded-3xl p-5 space-y-3 animate-fadeInUp"
           style={{
             background: "rgba(253,250,246,0.9)",
-            border: "1px solid rgba(212,169,106,0.25)",
-            boxShadow: "0 4px 24px rgba(180,140,80,0.1)",
+            border: "1px solid rgba(231,169,187,0.28)",
+            boxShadow: "0 4px 24px rgba(142,116,167,0.1)",
           }}
         >
           <div className="grid grid-cols-2 gap-3">
@@ -143,7 +143,7 @@ export default function Guestbook() {
               className="input-field resize-none"
               disabled={submitting}
             />
-            <div className="text-right text-[11px] mt-0.5" style={{ color: "#c4b8a8" }}>
+            <div className="text-right text-[11px] mt-0.5" style={{ color: "var(--muted)" }}>
               {message.length} / {MAX_MESSAGE_LENGTH}
             </div>
           </div>
@@ -154,7 +154,7 @@ export default function Guestbook() {
             style={{
               background: submitting
                 ? "rgba(212,169,106,0.3)"
-                : "linear-gradient(135deg, #d4a96a, #b08840)",
+                : "linear-gradient(135deg, #d4a96a, var(--accent))",
               color: "#fff",
               boxShadow: submitting ? "none" : "0 4px 16px rgba(176,136,64,0.35)",
             }}
@@ -179,7 +179,7 @@ export default function Guestbook() {
         <div className="text-center py-14">
           <div
             className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-2xl"
-            style={{ background: "rgba(212,169,106,0.1)" }}
+            style={{ background: "rgba(172,212,233,0.16)" }}
           >
             💌
           </div>
@@ -200,23 +200,23 @@ export default function Guestbook() {
                   <div
                     className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium"
                     style={{
-                      background: "linear-gradient(135deg, rgba(212,169,106,0.2), rgba(176,136,64,0.1))",
-                      color: "#b08840",
+                      background: "linear-gradient(135deg, rgba(231,169,187,0.22), rgba(205,188,229,0.16))",
+                      color: "var(--accent)",
                     }}
                   >
                     {entry.name.charAt(0)}
                   </div>
-                  <span className="text-sm font-medium tracking-wide" style={{ color: "#44403c" }}>
+                  <span className="text-sm font-medium tracking-wide" style={{ color: "var(--ink)" }}>
                     {entry.name}
                   </span>
                 </div>
-                <span className="text-[11px]" style={{ color: "#c4b8a8" }}>
+                <span className="text-[11px]" style={{ color: "var(--muted)" }}>
                   {formatDate(entry.created_at)}
                 </span>
               </div>
               <p
                 className="text-[13px] leading-[1.85] whitespace-pre-wrap break-words pl-9"
-                style={{ color: "#78716c" }}
+                style={{ color: "var(--muted)" }}
               >
                 {entry.message}
               </p>

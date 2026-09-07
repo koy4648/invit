@@ -83,13 +83,13 @@ END:VCALENDAR`;
         <Calendar size={20} style={{ color: "var(--blush)" }} />
         <h3
           className="text-lg font-light tracking-wider"
-          style={{ color: "#44403c" }}
+          style={{ color: "var(--ink)" }}
         >
           캘린더 등록
         </h3>
       </div>
 
-      <p className="text-sm mb-4" style={{ color: "#78716c" }}>
+      <p className="text-sm mb-4" style={{ color: "var(--muted)" }}>
         {eventDate} {eventTime}
         <br />
         {eventLocation}
@@ -100,7 +100,7 @@ END:VCALENDAR`;
           onClick={downloadICS}
           className="invitation-action flex-1 px-4 py-3 rounded-xl font-medium transition-all duration-200 text-white text-sm"
           style={{
-            background: "linear-gradient(135deg, #d4a96a, #b08840)",
+            background: "linear-gradient(135deg, #d99ab2, #8e74a7)",
           }}
         >
           📥 .ics 다운로드
@@ -109,7 +109,7 @@ END:VCALENDAR`;
           onClick={addToGoogleCalendar}
           className="invitation-action flex-1 px-4 py-3 rounded-xl font-medium transition-all duration-200 text-white text-sm"
           style={{
-            background: "linear-gradient(135deg, #4285F4, #34A853)",
+            background: "linear-gradient(135deg, #8fbfdd, #9b86bd)",
           }}
         >
           📅 구글 캘린더

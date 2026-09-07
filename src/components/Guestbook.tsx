@@ -154,7 +154,7 @@ export default function Guestbook() {
             style={{
               background: submitting
                 ? "rgba(212,169,106,0.3)"
-                : "linear-gradient(135deg, #d4a96a, var(--accent))",
+                : "linear-gradient(135deg, var(--lilac), var(--accent))",
               color: "#fff",
               boxShadow: submitting ? "none" : "0 4px 16px rgba(176,136,64,0.35)",
             }}

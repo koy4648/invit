@@ -48,8 +48,8 @@ export default function NavigationLinks({
           onClick={openKakaoNavi}
           className="invitation-action px-3 py-3 rounded-xl font-medium transition-all duration-200 text-white text-xs"
           style={{
-            background: "linear-gradient(135deg, #FFE812, #FFED4E)",
-            color: "#000",
+            background: "linear-gradient(135deg, var(--lilac), var(--sky))",
+            color: "#fff",
           }}
         >
           카카오내비

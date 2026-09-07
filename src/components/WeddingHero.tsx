@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useGalleryPhotos } from "@/hooks/useGalleryPhotos";
 
-const OPENING_LINES = ["Wedding of", "Youngseo & Jinseong"];
+const OPENING_LINES = ["Welcome to our", "wedding"];
 
 export default function WeddingHero() {
   const photos = useGalleryPhotos();
@@ -50,8 +50,9 @@ export default function WeddingHero() {
           preload
         />
         <div className="hero-image-copy">
-          <p className="hero-copy-label">Wedding of</p>
+          <p className="hero-copy-label">Wedding Day of</p>
           <p className="hero-copy-title">Youngseo <span>&amp;</span> Jinseong</p>
+          <p className="hero-copy-date">2027.08.28. SAT 12PM</p>
           <span className="hero-copy-line" aria-hidden="true" />
         </div>
       </div>

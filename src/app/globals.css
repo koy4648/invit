@@ -5,10 +5,10 @@
   --ink: #403a48;
   --muted: #817987;
   --line: #eee7f1;
-  --accent: #8f78a8;
-  --blush: #e7a9bb;
-  --butter: #f5dca2;
-  --sage: #b9d9d6;
+  --accent: #80639c;
+  --blush: #e7b8ca;
+  --butter: #d9c9ed;
+  --sage: #b8ddec;
   --sky: #acd4e9;
   --lilac: #cdbce5;
   --blush-soft: #fff3f7;
@@ -1010,6 +1010,16 @@ input[type="radio"] { accent-color: var(--button); }
 }
 
 .hero-copy-title span { color: inherit; font-family: inherit; }
+
+.hero-copy-date {
+  margin: 0.45rem 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-cormorant), serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.2);
+}
 
 @keyframes openingCharacter {
   to { opacity: 1; transform: translateY(0) rotate(0); }

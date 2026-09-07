@@ -27,7 +27,7 @@ export default function RSVPModal({ isOpen = false, onClose }: RSVPModalProps) {
       const hiddenUntil = localStorage.getItem(HIDE_TODAY_KEY);
       const hiddenForToday = hiddenUntil === todayKey();
       setIsVisible(isOpen || (!responded && !hiddenForToday));
-    }, 0);
+    }, isOpen ? 0 : 3900);
     return () => window.clearTimeout(timer);
   }, [isOpen]);
 

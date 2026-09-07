@@ -992,15 +992,16 @@ input[type="radio"] { accent-color: var(--button); }
 
 .hero-opening-line {
   margin: 0;
-  font-size: clamp(1.9rem, 9vw, 3rem);
+  font-size: clamp(1.42rem, 6.8vw, 2.35rem);
   font-weight: 400;
   letter-spacing: 0.015em;
   line-height: 1.2;
+  white-space: nowrap;
 }
 
 .hero-opening-line + .hero-opening-line {
   margin-top: 0.3rem;
-  font-size: clamp(1.55rem, 7.2vw, 2.35rem);
+  font-size: clamp(1.08rem, 5.3vw, 1.75rem);
 }
 
 .hero-opening-line span {

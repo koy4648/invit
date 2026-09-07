@@ -11,6 +11,7 @@ const COUPLE = [
     englishName: "Youngseo Kim",
     birthDate:"1997.12.09",
     initial: "Y",
+    photoIndex: 0,
     introduction: "마음의 방향을 알고, 웃음으로 하루를 밝히는 사람. 음악과 야구, 새로운 즐거움을 사랑하며 언제나 곁에서 함께 나아가게 하는 경쾌한 돛이 되어줍니다."
   },
   {
@@ -18,6 +19,7 @@ const COUPLE = [
     englishName: "Jinseong Jeong",
     birthDate:"1997.01.18",
     initial: "J",
+    photoIndex: 1,
     introduction: "말의 무게를 알고, 행동으로 사랑을 보여주는 사람.운동과 책, 깊은 대화를 좋아하며 언제나 곁에서 든든히 자리를 지키는 단단한 닻이 되어줍니다."
   },
 ];

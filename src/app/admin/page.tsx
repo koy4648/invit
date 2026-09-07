@@ -110,7 +110,7 @@ export default function AdminPage() {
         <div className="w-full max-w-sm">
           <div className="text-center mb-8">
             <div className="flex justify-center mb-4">
-              <Lock size={48} style={{ color: "#cbb8e3" }} />
+              <Lock size={48} style={{ color: "#b8ded6" }} />
             </div>
             <h1
               className="text-3xl font-light tracking-wider mb-2"
@@ -128,7 +128,7 @@ export default function AdminPage() {
             className="space-y-4 p-6 rounded-2xl"
             style={{
               background: "rgba(255,255,255,0.6)",
-              border: "1px solid rgba(205,188,229,0.2)",
+              border: "1px solid rgba(167,217,234,0.2)",
               backdropFilter: "blur(8px)",
             }}
           >
@@ -139,7 +139,7 @@ export default function AdminPage() {
               placeholder="비밀번호"
               className="w-full px-4 py-3 rounded-lg border text-sm focus:outline-none focus:ring-2"
               style={{
-                borderColor: "rgba(205,188,229,0.3)",
+                borderColor: "rgba(167,217,234,0.3)",
                 color: "#44403c",
                 backgroundColor: "rgba(255,255,255,0.8)",
               }}
@@ -151,7 +151,7 @@ export default function AdminPage() {
               disabled={isLoading}
               className="w-full px-4 py-3 rounded-lg font-medium transition-all duration-200 text-white"
               style={{
-                background: "linear-gradient(135deg, #cbb8e3, #80639c)",
+                background: "linear-gradient(135deg, #b8ded6, #4f839c)",
                 opacity: isLoading ? 0.7 : 1,
                 cursor: isLoading ? "not-allowed" : "pointer",
               }}
@@ -175,7 +175,7 @@ export default function AdminPage() {
         style={{
           background: "rgba(253,250,246,0.95)",
           backdropFilter: "blur(20px)",
-          borderBottom: "1px solid rgba(205,188,229,0.2)",
+          borderBottom: "1px solid rgba(167,217,234,0.2)",
         }}
       >
         <h1
@@ -188,8 +188,8 @@ export default function AdminPage() {
           onClick={handleLogout}
           className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200"
           style={{
-            background: "rgba(205,188,229,0.1)",
-            color: "#cbb8e3",
+            background: "rgba(167,217,234,0.1)",
+            color: "#b8ded6",
           }}
         >
           <LogOut size={18} />
@@ -202,7 +202,7 @@ export default function AdminPage() {
         className="sticky top-16 z-40 px-6 py-3 flex gap-2"
         style={{
           background: "rgba(253,250,246,0.9)",
-          borderBottom: "1px solid rgba(205,188,229,0.1)",
+          borderBottom: "1px solid rgba(167,217,234,0.1)",
         }}
       >
         {ADMIN_TABS.map(({ id, label }) => (
@@ -213,9 +213,9 @@ export default function AdminPage() {
             style={{
               background:
                 activeTab === id
-                  ? "linear-gradient(135deg, #cbb8e3, #80639c)"
-                  : "rgba(205,188,229,0.1)",
-              color: activeTab === id ? "#fff" : "#80639c",
+                  ? "linear-gradient(135deg, #b8ded6, #4f839c)"
+                  : "rgba(167,217,234,0.1)",
+              color: activeTab === id ? "#fff" : "#4f839c",
             }}
           >
             {label}
@@ -240,7 +240,7 @@ export default function AdminPage() {
                 className="p-4 rounded-2xl text-center"
                 style={{
                   background: "rgba(255,255,255,0.6)",
-                  border: "1px solid rgba(205,188,229,0.2)",
+                  border: "1px solid rgba(167,217,234,0.2)",
                 }}
               >
                 <p className="text-xs mb-2" style={{ color: "#a8a29e" }}>
@@ -249,7 +249,7 @@ export default function AdminPage() {
                 <p
                   className="text-3xl font-light"
                   style={{
-                    background: "linear-gradient(135deg, #cbb8e3, #80639c)",
+                    background: "linear-gradient(135deg, #b8ded6, #4f839c)",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                   }}
@@ -278,24 +278,24 @@ export default function AdminPage() {
                   <thead>
                     <tr
                       style={{
-                        borderBottom: "1px solid rgba(205,188,229,0.2)",
+                        borderBottom: "1px solid rgba(167,217,234,0.2)",
                       }}
                     >
                       <th
                         className="px-4 py-2 text-left"
-                        style={{ color: "#80639c" }}
+                        style={{ color: "#4f839c" }}
                       >
                         이름
                       </th>
                       <th
                         className="px-4 py-2 text-left"
-                        style={{ color: "#80639c" }}
+                        style={{ color: "#4f839c" }}
                       >
                         참석
                       </th>
                       <th
                         className="px-4 py-2 text-left"
-                        style={{ color: "#80639c" }}
+                        style={{ color: "#4f839c" }}
                       >
                         인원
                       </th>
@@ -306,7 +306,7 @@ export default function AdminPage() {
                       <tr
                         key={entry.id}
                         style={{
-                          borderBottom: "1px solid rgba(205,188,229,0.1)",
+                          borderBottom: "1px solid rgba(167,217,234,0.1)",
                         }}
                       >
                         <td className="px-4 py-3" style={{ color: "#44403c" }}>
@@ -346,13 +346,13 @@ export default function AdminPage() {
                     className="p-4 rounded-xl"
                     style={{
                       background: "rgba(255,255,255,0.6)",
-                      border: "1px solid rgba(205,188,229,0.2)",
+                      border: "1px solid rgba(167,217,234,0.2)",
                     }}
                   >
                     <div className="flex items-start justify-between mb-2">
                       <p
                         className="font-medium"
-                        style={{ color: "#80639c" }}
+                        style={{ color: "#4f839c" }}
                       >
                         {entry.name}
                       </p>

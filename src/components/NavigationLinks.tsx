@@ -19,12 +19,6 @@ export default function NavigationLinks({
     window.location.href = kakaoNaviUrl;
   };
 
-  // 티맵 링크
-  const openTMap = () => {
-    const tmapUrl = `tmap://search?query=${encodeURIComponent(destination)}`;
-    window.location.href = tmapUrl;
-  };
-
   // 네이버지도 링크
   const openNaverMap = () => {
     const naverMapUrl = `https://map.naver.com/p/search/${encodeURIComponent(destination)}`;
@@ -49,7 +43,7 @@ export default function NavigationLinks({
         {venueAddress}
       </p>
 
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-2 gap-2">
         <button
           onClick={openKakaoNavi}
           className="invitation-action px-3 py-3 rounded-xl font-medium transition-all duration-200 text-white text-xs"
@@ -59,15 +53,6 @@ export default function NavigationLinks({
           }}
         >
           카카오내비
-        </button>
-        <button
-          onClick={openTMap}
-          className="invitation-action px-3 py-3 rounded-xl font-medium transition-all duration-200 text-white text-xs"
-          style={{
-            background: "linear-gradient(135deg, #FF6B6B, #FF8E72)",
-          }}
-        >
-          티맵
         </button>
         <button
           onClick={openNaverMap}

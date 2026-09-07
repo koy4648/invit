@@ -43,12 +43,14 @@ export default function RSVPModal({ isOpen = false, onClose }: RSVPModalProps) {
   const handleClose = () => {
     if (hideToday) localStorage.setItem(HIDE_TODAY_KEY, todayKey());
     setIsVisible(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
     onClose?.();
   };
 
   const handleRsvpSubmit = () => {
     localStorage.setItem(RESPONDED_KEY, "true");
     setIsVisible(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   if (!isVisible) return null;

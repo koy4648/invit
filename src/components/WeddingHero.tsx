@@ -60,14 +60,14 @@ export default function WeddingHero() {
       <div className="hero-intro">
         <p className="hero-script">We are getting married</p>
         <h1>
-          김영서 <span>&amp;</span> 정진성
+          김영서 <span>♡</span> 정진성
         </h1>
         <p className="hero-venue">2027년 8월 28일 토요일 낮 12시<br />서울가든호텔 그랜드볼룸웨딩홀 2층</p>
         <div className="hero-rule" />
         <p className="hero-message">
-좋아하는 것도, 살아가는 방식도 조금 다른 두 사람이
-함께 웃고 이야기하며 서로의 가장 든든한 편이 되어주기로 약속합니다.
-저희의 새로운 시작을 함께 축복해 주시면 감사하겠습니다.
+          좋아하는 것도, 살아가는 방식도 조금 다른 두 사람이<br />
+          함께 웃고 이야기하며 서로의 가장 든든한 편이 되어주기로 약속합니다.<br />
+          저희의 새로운 시작을 함께 축복해 주시면 감사하겠습니다.
         </p>
         <div className="hero-worship-note">
           <p className="hero-worship-label">CEREMONY NOTE</p>

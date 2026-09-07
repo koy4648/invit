@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useGalleryPhotos } from "@/hooks/useGalleryPhotos";
 
-const OPENING_LINES = ["welcome to our wedding", "by. youngseo & jinseong"];
+const OPENING_LINES = ["welcome to our wedding", "by. youngseo ♡ jinseong"];
 
 export default function WeddingHero() {
   const photos = useGalleryPhotos();
@@ -51,7 +51,7 @@ export default function WeddingHero() {
         />
         <div className="hero-image-copy">
           <p className="hero-copy-label">Wedding Day of</p>
-          <p className="hero-copy-title">Youngseo<span>🤍</span>Jinseong</p>
+          <p className="hero-copy-title">Youngseo <span>&amp;</span> Jinseong</p>
           <p className="hero-copy-date">2027.08.28. SAT 12PM</p>
           <span className="hero-copy-line" aria-hidden="true" />
         </div>
@@ -60,7 +60,7 @@ export default function WeddingHero() {
       <div className="hero-intro">
         <p className="hero-script">We are getting married</p>
         <h1>
-          김영서 <span>♡</span> 정진성
+          김영서 <span>&amp;</span> 정진성
         </h1>
         <p className="hero-venue">2027년 8월 28일 토요일 낮 12시<br />서울가든호텔 그랜드볼룸웨딩홀 2층</p>
         <div className="hero-rule" />

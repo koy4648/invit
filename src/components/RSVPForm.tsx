@@ -256,7 +256,7 @@ export default function RSVPForm({
   }
 
   return (
-    <section id="section-rsvp" className="px-6 py-8">
+    <section id="section-rsvp" className="pearl-rsvp px-6 py-8">
       {content}
     </section>
   );

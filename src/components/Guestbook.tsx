@@ -71,7 +71,7 @@ export default function Guestbook() {
     new Date(s).toLocaleDateString("ko-KR", { year: "numeric", month: "long", day: "numeric" });
 
   return (
-    <section id="section-guestbook" className="py-10 px-4">
+    <section id="section-guestbook" className="shore-guestbook py-10 px-4">
       {/* 섹션 헤더 */}
       <div className="flex items-end justify-between mb-6">
         <div>

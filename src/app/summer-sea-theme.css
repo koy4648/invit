@@ -156,3 +156,109 @@
   .summer-sea-theme::before { left: 0.35rem; }
   .summer-sea-theme::after { right: 0.3rem; }
 }
+
+/* Waterline animation: the sea and sand share a moving, translucent edge. */
+.summer-sea-theme .shore-section::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: -1.1rem;
+  left: -12%;
+  width: 124%;
+  height: 2.2rem;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  background:
+    radial-gradient(ellipse at 20% 100%, rgba(255,255,255,0.94) 0 24%, transparent 25%),
+    radial-gradient(ellipse at 62% 100%, rgba(255,255,255,0.72) 0 20%, transparent 21%),
+    linear-gradient(180deg, rgba(185, 226, 224, 0.55), rgba(255, 255, 255, 0.72));
+  filter: blur(0.15px);
+  pointer-events: none;
+  animation: shore-wave-drift 7s ease-in-out infinite alternate;
+}
+
+@keyframes shore-wave-drift {
+  0% { transform: translateX(-1.5%) translateY(0) scaleY(0.9); }
+  100% { transform: translateX(1.5%) translateY(0.35rem) scaleY(1.12); }
+}
+
+/* Pearly shell frame for the guestbook. */
+.summer-sea-theme .shore-guestbook {
+  position: relative;
+  margin-inline: 0.55rem;
+  border: 1px solid rgba(213, 190, 165, 0.34);
+  border-radius: 2.4rem;
+  background:
+    radial-gradient(circle at 50% 112%, rgba(255, 255, 255, 0.9) 0 18%, transparent 19%),
+    linear-gradient(145deg, rgba(255,255,255,0.58), rgba(255, 248, 237, 0.48));
+  box-shadow: 0 1rem 3rem rgba(184, 157, 126, 0.1), inset 0 1px 0 rgba(255,255,255,0.9);
+}
+
+.summer-sea-theme .shore-guestbook::before {
+  content: "𓇼";
+  position: absolute;
+  top: 1rem;
+  right: 1.1rem;
+  color: rgba(190, 161, 130, 0.4);
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  transform: rotate(-12deg);
+  animation: pearl-shimmer 3.6s ease-in-out infinite;
+}
+
+.summer-sea-theme .shore-guestbook::after {
+  content: "";
+  position: absolute;
+  right: 1.55rem;
+  bottom: 1.4rem;
+  width: 0.48rem;
+  height: 0.48rem;
+  border-radius: 50%;
+  background: radial-gradient(circle at 32% 28%, #fff, #dff6f2 42%, #a8d8d2 100%);
+  box-shadow: 0 0 0.7rem rgba(255,255,255,0.95), 0 0 1.1rem rgba(168,216,210,0.8);
+  animation: pearl-shimmer 2.8s ease-in-out infinite 0.5s;
+}
+
+.summer-sea-theme .shore-guestbook > * { position: relative; z-index: 1; }
+
+/* A small moving glint crossing the RSVP submit button. */
+.summer-sea-theme .pearl-rsvp .invitation-action {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: linear-gradient(135deg, #8fcbd2, #5c91aa 54%, #78b9bd) !important;
+  box-shadow: 0 0.55rem 1.4rem rgba(82, 145, 157, 0.24), inset 0 1px 0 rgba(255,255,255,0.58) !important;
+}
+
+.summer-sea-theme .pearl-rsvp .invitation-action::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -40%;
+  left: -35%;
+  width: 24%;
+  height: 180%;
+  transform: rotate(22deg);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.85), transparent);
+  filter: blur(0.2rem);
+  animation: pearl-glint 3.8s ease-in-out infinite;
+}
+
+@keyframes pearl-glint {
+  0%, 35% { left: -35%; opacity: 0; }
+  48% { opacity: 1; }
+  70%, 100% { left: 125%; opacity: 0; }
+}
+
+@keyframes pearl-shimmer {
+  0%, 100% { opacity: 0.48; transform: scale(0.94) rotate(-12deg); }
+  50% { opacity: 0.95; transform: scale(1.08) rotate(-4deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .summer-sea-theme .shore-section::before,
+  .summer-sea-theme .shore-guestbook::before,
+  .summer-sea-theme .shore-guestbook::after,
+  .summer-sea-theme .pearl-rsvp .invitation-action::after {
+    animation: none;
+  }
+}

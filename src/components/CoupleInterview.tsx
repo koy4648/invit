@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { ChevronDown } from "lucide-react";
+import { useGalleryPhotos } from "@/hooks/useGalleryPhotos";
 
 const COUPLE = [
   {
@@ -9,14 +11,14 @@ const COUPLE = [
     englishName: "Youngseo Kim",
     birthDate:"1997.12.09",
     initial: "Y",
-    introduction: "좋아하는 것에는\n누구보다 진심인 사람.\n음악과 야구, 새로운 즐거움을 사랑하고 웃음과 이야기로 하루를 채웁니다."
+    introduction: "좋아하는 것에는 누구보다 진심인 사람. 음악과 야구, 새로운 즐거움을 사랑하고 웃음과 이야기로 하루를 채웁니다."
   },
   {
     name: "정진성",
     englishName: "Jinseong Jeong",
     birthDate:"1997.01.18",
     initial: "J",
-    introduction: "한결같은 꾸준함으로 마음을 보여주는 사람. 운동과 책, 깊은 이야기를 좋아하고 말보다 행동으로 묵묵히 곁을 지킵니다.",
+    introduction: "꾸준함으로 마음을 보여주는 사람. 운동과 책, 깊은 이야기를 좋아하고 말보다 행동으로 묵묵히 곁을 지킵니다.",
   },
 ];
 
@@ -40,6 +42,7 @@ const INTERVIEW = [
 
 export default function CoupleInterview() {
   const [isInterviewOpen, setIsInterviewOpen] = useState(false);
+  const photos = useGalleryPhotos();
 
   return (
     <section id="section-couple" className="couple-section">
@@ -52,7 +55,19 @@ export default function CoupleInterview() {
       <div className="couple-profiles">
         {COUPLE.map((person) => (
           <article key={person.name} className="couple-profile">
-            <div className="couple-monogram" aria-hidden="true">{person.initial}</div>
+            <div className="couple-monogram">
+              {photos[person.photoIndex] ? (
+                <Image
+                  src={photos[person.photoIndex].url}
+                  alt={`${person.name} 사진`}
+                  fill
+                  sizes="(max-width: 480px) 36vw, 160px"
+                  className="object-cover"
+                />
+              ) : (
+                <span aria-hidden="true">{person.initial}</span>
+              )}
+            </div>
             <h3>{person.name}</h3>
             <p className="couple-english-name">{person.englishName}</p>
             <p className="couple-birth-date">{person.birthDate}</p>

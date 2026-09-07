@@ -437,6 +437,8 @@ input[type="radio"] { accent-color: var(--button); }
 .couple-profile:last-child .couple-monogram { color: var(--accent); }
 
 .couple-monogram {
+  position: relative;
+  overflow: hidden;
   display: grid;
   width: 4.5rem;
   height: 4.5rem;
@@ -451,6 +453,9 @@ input[type="radio"] { accent-color: var(--button); }
   font-size: 2rem;
   font-style: italic;
 }
+
+.couple-monogram img { transition: transform 0.45s ease; }
+.couple-profile:hover .couple-monogram img { transform: scale(1.05); }
 
 .couple-role {
   margin: 0 0 0.45rem;

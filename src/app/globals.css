@@ -388,8 +388,8 @@ input[type="radio"] { accent-color: var(--button); }
 .couple-section {
   padding: 5rem 1.5rem;
   background:
-    radial-gradient(circle at 0 28%, rgba(243, 217, 130, 0.18), transparent 14rem),
-    radial-gradient(circle at 100% 72%, rgba(169, 201, 167, 0.18), transparent 14rem),
+    radial-gradient(circle at 0 28%, rgba(231, 184, 202, 0.18), transparent 14rem),
+    radial-gradient(circle at 100% 72%, rgba(172, 212, 233, 0.18), transparent 14rem),
     linear-gradient(180deg, #fff 0%, var(--lilac-soft) 48%, #fff 100%);
 }
 
@@ -566,8 +566,8 @@ input[type="radio"] { accent-color: var(--button); }
 .family-contacts-section {
   padding: 5rem 1rem;
   background:
-    radial-gradient(circle at 105% 25%, rgba(243, 217, 130, 0.2), transparent 13rem),
-    radial-gradient(circle at -5% 75%, rgba(169, 201, 167, 0.18), transparent 13rem),
+    radial-gradient(circle at 105% 25%, rgba(231, 184, 202, 0.2), transparent 13rem),
+    radial-gradient(circle at -5% 75%, rgba(172, 212, 233, 0.18), transparent 13rem),
     linear-gradient(180deg, #fff 0%, var(--lilac-soft) 52%, #fff 100%);
 }
 
@@ -733,7 +733,7 @@ input[type="radio"] { accent-color: var(--button); }
   padding: 5rem 1rem;
   background:
     radial-gradient(circle at 100% 28%, rgba(169, 201, 220, 0.18), transparent 14rem),
-    radial-gradient(circle at 0 76%, rgba(243, 217, 130, 0.17), transparent 14rem),
+    radial-gradient(circle at 0 76%, rgba(231, 184, 202, 0.17), transparent 14rem),
     linear-gradient(180deg, #fff 0%, var(--sage-soft) 50%, #fff 100%);
 }
 
@@ -861,11 +861,11 @@ input[type="radio"] { accent-color: var(--button); }
   width: 2.8rem;
   height: 2.8rem;
   border-radius: 50%;
-  background: rgba(243, 217, 130, 0.62);
+  background: rgba(231, 184, 202, 0.62);
 }
 
 .gallery-empty-mark span:first-child { left: 0; }
-.gallery-empty-mark span:last-child { right: 0; background: rgba(169, 201, 167, 0.58); }
+.gallery-empty-mark span:last-child { right: 0; background: rgba(172, 212, 233, 0.58); }
 
 .gallery-empty > p {
   margin: 0;

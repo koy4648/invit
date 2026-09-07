@@ -120,7 +120,7 @@ export default function FamilyContacts() {
   return (
     <section id="section-contacts" className="family-contacts-section">
       <header className="family-contacts-heading">
-        <p className="section-title">연락처</p>
+        <p className="section-title">Contact</p>
         <h2>연락처 및 마음 전하실 곳</h2>
         <p>전화번호와 계좌번호를 확인하실 수 있습니다.</p>
       </header>

@@ -75,7 +75,7 @@ export default function Guestbook() {
       {/* 섹션 헤더 */}
       <div className="flex items-end justify-between mb-6">
         <div>
-          <p className="section-title mb-1">축하의 글</p>
+          <p className="section-title mb-1">Guestbook</p>
           <h2 className="text-xl font-light tracking-wider" style={{ color: "var(--ink)" }}>
             방명록
           </h2>

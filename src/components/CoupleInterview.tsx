@@ -9,14 +9,14 @@ const COUPLE = [
     name: "김영서",
     englishName: "Youngseo Kim",
     initial: "Y",
-    introduction: "밝고 감성적인 ENFP",
+    introduction: "좋아하는 것에는 누구보다 진심인 사람. 음악과 야구, 새로운 즐거움을 사랑하고 웃음과 이야기로 하루를 채웁니다."
   },
   {
     role: "TWO",
     name: "정진성",
     englishName: "Jinseong Jeong",
     initial: "J",
-    introduction: "성실하고 다정한 ISTJ",
+    introduction: "꾸준함으로 마음을 보여주는 사람. 운동과 책, 깊은 이야기를 좋아하고 말보다 행동으로 묵묵히 곁을 지킵니다.",
   },
 ];
 
@@ -46,7 +46,7 @@ export default function CoupleInterview() {
       <header className="couple-heading">
         <p className="section-title">About us</p>
         <h2>두 사람을 소개합니다</h2>
-        <p>서로에게 가장 가까운 친구가 되어주기로 한 두 사람의 이야기</p>
+        <p>서로에게 가장 든든한 편이 되어주기로 한 두 사람의 이야기</p>
       </header>
 
       <div className="couple-profiles">

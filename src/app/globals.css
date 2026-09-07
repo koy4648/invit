@@ -1068,6 +1068,112 @@ input[type="radio"] { accent-color: var(--button); }
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+.rsvp-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: rgba(64, 52, 78, 0.38);
+  backdrop-filter: blur(7px);
+}
+
+.rsvp-modal-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 71;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.rsvp-modal-card {
+  width: min(100%, 28rem);
+  max-height: 92vh;
+  overflow-y: auto;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 1.8rem;
+  background: linear-gradient(145deg, #fffefe, #faf6fd 60%, #f3fbfd);
+  box-shadow: 0 1.5rem 4rem rgba(64, 52, 78, 0.22);
+  animation: rsvpModalIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.rsvp-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.35rem 1.35rem 1rem;
+  border-bottom: 1px solid rgba(205, 188, 229, 0.34);
+}
+
+.rsvp-modal-kicker {
+  margin: 0 0 0.35rem;
+  color: var(--accent);
+  font-family: var(--font-cormorant), serif;
+  font-size: 0.76rem;
+  font-style: italic;
+  letter-spacing: 0.12em;
+}
+
+.rsvp-modal-header h2 {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.14rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+}
+
+.rsvp-modal-close {
+  display: grid;
+  width: 2.3rem;
+  height: 2.3rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgba(205, 188, 229, 0.4);
+  border-radius: 50%;
+  background: rgba(247, 241, 252, 0.8);
+  color: var(--accent);
+}
+
+.rsvp-modal-content { padding: 1.1rem 1.35rem 1.35rem; }
+.rsvp-modal-intro { margin: 0 0 1rem; color: var(--muted); font-size: 0.78rem; line-height: 1.85; }
+.rsvp-modal-form-wrap { padding: 0.15rem; }
+.rsvp-modal-form-wrap .lovely-form { padding: 0.8rem 0.95rem; border-radius: 1.25rem; }
+
+.rsvp-modal-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.95rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.rsvp-modal-check input { position: absolute; opacity: 0; pointer-events: none; }
+.rsvp-check-box {
+  display: grid;
+  width: 1.15rem;
+  height: 1.15rem;
+  place-items: center;
+  border: 1px solid rgba(142, 116, 167, 0.45);
+  border-radius: 0.38rem;
+  background: #fff;
+  color: transparent;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.rsvp-modal-check input:checked + .rsvp-check-box { background: var(--accent); color: #fff; }
+.rsvp-modal-check input:focus-visible + .rsvp-check-box { outline: 2px solid var(--sky); outline-offset: 2px; }
+
+.rsvp-modal-later {
+  display: block;
+  margin: 1rem auto 0;
+  color: var(--accent);
+  font-size: 0.76rem;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
 
 /* Shared pastel art direction: one palette for everyone, no gender-coded accents. */
 .section-title::before { background: var(--blush); box-shadow: 0.42rem 0.28rem 0 var(--sky), 0.78rem -0.08rem 0 var(--lilac); }

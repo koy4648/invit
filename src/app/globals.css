@@ -943,6 +943,83 @@ input[type="radio"] { accent-color: var(--button); }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
 }
 
+/* Opening title: a quiet handwritten reveal that resolves into the hero caption. */
+.hero-opening {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  width: min(100%, 480px);
+  margin: 0 auto;
+  background: #fff;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.hero-opening.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+.hero-opening-copy {
+  display: grid;
+  justify-items: center;
+  color: var(--accent);
+  font-family: "Segoe Script", "Bradley Hand", "Snell Roundhand", cursive;
+  font-style: italic;
+  text-align: center;
+}
+
+.hero-opening-line {
+  margin: 0;
+  font-size: clamp(1.9rem, 9vw, 3rem);
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  line-height: 1.2;
+}
+
+.hero-opening-line + .hero-opening-line {
+  margin-top: 0.3rem;
+  font-size: clamp(1.55rem, 7.2vw, 2.35rem);
+}
+
+.hero-opening-line span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.3rem) rotate(4deg);
+  animation: openingCharacter 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-opening-rule {
+  width: 4.2rem;
+  height: 1px;
+  margin-top: 1.8rem;
+  background: linear-gradient(90deg, transparent, var(--blush), var(--lilac), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  animation: lineReveal 0.8s 2.25s ease forwards;
+}
+
+.hero-image-copy {
+  opacity: 0;
+  animation: heroCaptionReveal 1s 3.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.hero-copy-title {
+  font-family: "Segoe Script", "Bradley Hand", "Snell Roundhand", cursive;
+  font-size: clamp(1.35rem, 6.8vw, 2rem);
+  font-style: italic;
+  letter-spacing: 0.04em;
+}
+
+.hero-copy-title span { color: inherit; font-family: inherit; }
+
+@keyframes openingCharacter {
+  to { opacity: 1; transform: translateY(0) rotate(0); }
+}
+
+@keyframes heroCaptionReveal {
+  from { opacity: 0; transform: translateY(0.75rem) scale(1.08); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
 
 /* Shared pastel art direction: one palette for everyone, no gender-coded accents. */
 .section-title::before { background: var(--blush); box-shadow: 0.42rem 0.28rem 0 var(--sky), 0.78rem -0.08rem 0 var(--lilac); }

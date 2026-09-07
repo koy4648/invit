@@ -479,6 +479,29 @@ input[type="radio"] { accent-color: var(--button); }
 
 .interview-list { padding-top: 4rem; }
 
+.interview-toggle {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.15rem 1.2rem;
+  border: 1px solid rgba(205, 188, 229, 0.42);
+  border-radius: 1.25rem;
+  background: linear-gradient(135deg, rgba(247, 241, 252, 0.9), rgba(238, 248, 252, 0.72));
+  color: var(--accent);
+  text-align: left;
+  box-shadow: 0 0.55rem 1.5rem rgba(117, 91, 107, 0.06);
+}
+
+.interview-toggle > span { display: grid; gap: 0.3rem; }
+.interview-toggle .interview-label { margin: 0; }
+.interview-toggle strong { color: var(--ink); font-size: 0.84rem; font-weight: 400; letter-spacing: 0.03em; }
+.interview-toggle svg { flex: 0 0 auto; transition: transform 0.25s ease; }
+.interview-toggle svg.is-open { transform: rotate(180deg); }
+.interview-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.interview-answers-panel { animation: fadeInUp 0.35s both; }
+
 .interview-label {
   margin: 0 0 1rem;
   color: var(--accent);

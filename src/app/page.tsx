@@ -12,7 +12,6 @@ import RSVPModal from "@/components/RSVPModal";
 import FamilyContacts from "@/components/FamilyContacts";
 import NavigationLinks from "@/components/NavigationLinks";
 import CalendarLink from "@/components/CalendarLink";
-import LoveStory from "@/components/LoveStory";
 import ConfettiEasterEgg from "@/components/ConfettiEasterEgg";
 import CoupleInterview from "@/components/CoupleInterview";
 
@@ -75,13 +74,6 @@ export default function Home() {
 
           {/* 하객 사진 공유 */}
           <PhotoUpload />
-
-          <GoldDivider />
-
-          {/* 우리들의 이야기 */}
-          <Suspense fallback={<SectionSkeleton height="h-80" />}>
-            <LoveStory />
-          </Suspense>
 
           <GoldDivider />
 

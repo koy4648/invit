@@ -1,3 +1,8 @@
+"use client";
+
+import { useState } from "react";
+import { ChevronDown } from "lucide-react";
+
 const COUPLE = [
   {
     role: "ONE",
@@ -34,6 +39,8 @@ const INTERVIEW = [
 ];
 
 export default function CoupleInterview() {
+  const [isInterviewOpen, setIsInterviewOpen] = useState(false);
+
   return (
     <section id="section-couple" className="couple-section">
       <header className="couple-heading">
@@ -45,9 +52,7 @@ export default function CoupleInterview() {
       <div className="couple-profiles">
         {COUPLE.map((person) => (
           <article key={person.role} className="couple-profile">
-            <div className="couple-monogram" aria-hidden="true">
-              {person.initial}
-            </div>
+            <div className="couple-monogram" aria-hidden="true">{person.initial}</div>
             <p className="couple-role">{person.role}</p>
             <h3>{person.name}</h3>
             <p className="couple-english-name">{person.englishName}</p>
@@ -57,23 +62,34 @@ export default function CoupleInterview() {
       </div>
 
       <div className="interview-list">
-        <p className="interview-label">A little interview</p>
-        {INTERVIEW.map((item, index) => (
-          <article key={item.question} className="interview-item">
-            <p className="interview-number">0{index + 1}</p>
-            <h3>{item.question}</h3>
-            <dl className="interview-answers">
-              <div>
-                <dt>영서</dt>
-                <dd>{item.bride}</dd>
-              </div>
-              <div>
-                <dt>진성</dt>
-                <dd>{item.groom}</dd>
-              </div>
-            </dl>
-          </article>
-        ))}
+        <button
+          type="button"
+          className="interview-toggle"
+          onClick={() => setIsInterviewOpen((open) => !open)}
+          aria-expanded={isInterviewOpen}
+          aria-controls="couple-interview-answers"
+        >
+          <span>
+            <span className="interview-label">A little interview</span>
+            <strong>{isInterviewOpen ? "우리의 이야기를 접어둘게요" : "서로에게 물어본 작은 질문들"}</strong>
+          </span>
+          <ChevronDown size={19} className={isInterviewOpen ? "is-open" : ""} />
+        </button>
+
+        {isInterviewOpen && (
+          <div id="couple-interview-answers" className="interview-answers-panel">
+            {INTERVIEW.map((item, index) => (
+              <article key={item.question} className="interview-item">
+                <p className="interview-number">0{index + 1}</p>
+                <h3>{item.question}</h3>
+                <dl className="interview-answers">
+                  <div><dt>영서</dt><dd>{item.bride}</dd></div>
+                  <div><dt>진성</dt><dd>{item.groom}</dd></div>
+                </dl>
+              </article>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

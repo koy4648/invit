@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useGalleryPhotos } from "@/hooks/useGalleryPhotos";
 
-const OPENING_LINES = ["welcome to our wedding", "by. youngseo ♡ jinseong"];
+const OPENING_LINES = ["welcome to our", "wedding", "by. youngseo ♡ jinseong"];
 
 export default function WeddingHero() {
   const photos = useGalleryPhotos();

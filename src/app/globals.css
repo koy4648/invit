@@ -411,11 +411,13 @@ input[type="radio"] { accent-color: var(--button); }
 }
 
 .couple-heading > p:last-child {
-  margin: 0;
+  max-width: 19rem;
+  margin: 0 auto;
   color: var(--muted);
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.8;
+  word-break: keep-all;
 }
 
 .couple-profiles {
@@ -425,7 +427,7 @@ input[type="radio"] { accent-color: var(--button); }
 }
 
 .couple-profile {
-  padding: 2.5rem 1rem;
+  padding: 2.5rem 0.75rem;
   text-align: center;
 }
 
@@ -475,12 +477,13 @@ input[type="radio"] { accent-color: var(--button); }
 }
 
 .couple-introduction {
-  max-width: 9rem;
+  max-width: 11rem;
   margin: 1rem auto 0;
   color: #60635d;
   font-size: 0.875rem;
   font-weight: 300;
   line-height: 1.8;
+  word-break: keep-all;
 }
 
 .interview-list { padding-top: 4rem; }
@@ -998,16 +1001,20 @@ input[type="radio"] { accent-color: var(--button); }
 
 .hero-opening-line {
   margin: 0;
-  font-size: clamp(1.42rem, 6.8vw, 2.35rem);
+  font-size: clamp(1.18rem, 6.2vw, 2.35rem);
   font-weight: 400;
   letter-spacing: 0.015em;
   line-height: 1.2;
   white-space: nowrap;
 }
 
-.hero-opening-line + .hero-opening-line {
+.hero-opening-line:nth-child(2) {
   margin-top: 0.3rem;
-  font-size: clamp(1.08rem, 5.3vw, 1.75rem);
+}
+
+.hero-opening-line:nth-child(3) {
+  margin-top: 0.45rem;
+  font-size: clamp(0.98rem, 5vw, 1.75rem);
 }
 
 .hero-opening-line span {
@@ -1065,9 +1072,10 @@ input[type="radio"] { accent-color: var(--button); }
 .hero-worship-note { font-family: var(--font-noto-serif-kr), serif; font-style: normal; }
 
 .hero-worship-note {
-  max-width: 20rem;
+  width: min(100%, 22rem);
+  max-width: 22rem;
   margin: 2.35rem auto 0;
-  padding: 1.2rem 1rem 1.25rem;
+  padding: 1.25rem 1.2rem 1.3rem;
   border: 1px solid rgba(205, 188, 229, 0.48);
   border-radius: 1.35rem;
   background: linear-gradient(145deg, rgba(247, 241, 252, 0.72), rgba(238, 248, 252, 0.52));
@@ -1088,6 +1096,11 @@ input[type="radio"] { accent-color: var(--button); }
   font-weight: 300;
   line-height: 1.9;
   word-break: keep-all;
+}
+
+@media (max-width: 380px) {
+  .hero-opening-line { font-size: 1.05rem; }
+  .hero-opening-line:nth-child(3) { font-size: 0.9rem; }
 }
 
 @keyframes openingCharacter {

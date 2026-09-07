@@ -11,14 +11,14 @@ const COUPLE = [
     englishName: "Youngseo Kim",
     birthDate:"1997.12.09",
     initial: "Y",
-    introduction: "좋아하는 것에는 누구보다 진심인 사람. 음악과 야구, 새로운 즐거움을 사랑하고 웃음과 이야기로 하루를 채웁니다."
+    introduction: "마음의 방향을 알고, 웃음으로 하루를 밝히는 사람. 음악과 야구, 새로운 즐거움을 사랑하며 언제나 곁에서 함께 나아가게 하는 경쾌한 돛이 되어줍니다."
   },
   {
     name: "정진성",
     englishName: "Jinseong Jeong",
     birthDate:"1997.01.18",
     initial: "J",
-    introduction: "꾸준함으로 마음을 보여주는 사람. 운동과 책, 깊은 이야기를 좋아하고 말보다 행동으로 묵묵히 곁을 지킵니다.",
+    introduction: "말의 무게를 알고, 행동으로 사랑을 보여주는 사람.운동과 책, 깊은 대화를 좋아하며 언제나 곁에서 든든히 자리를 지키는 단단한 닻이 되어줍니다."
   },
 ];
 

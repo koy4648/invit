@@ -69,6 +69,14 @@ export default function WeddingHero() {
           이제 같은 방향을 바라보려 합니다.<br />
           귀한 걸음으로 함께해 주시면 감사하겠습니다.
         </p>
+        <div className="hero-worship-note">
+          <p className="hero-worship-label">CEREMONY NOTE</p>
+          <p>
+            저희의 결혼식은 예배 형식으로 진행됩니다.<br />
+            종교와 관계없이 두 사람의 새로운 시작을 축복하는 자리로<br />
+            마련하고자 하오니, 편안한 마음으로 함께해 주시면 감사하겠습니다.
+          </p>
+        </div>
       </div>
     </section>
   );

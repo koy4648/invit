@@ -1023,9 +1023,7 @@ input[type="radio"] { accent-color: var(--button); }
 }
 
 .hero-intro .hero-script,
-.hero-intro h1,
-.hero-intro .hero-venue,
-.hero-intro .hero-message {
+.hero-intro h1 {
   font-family: "Segoe Script", "Bradley Hand", "Snell Roundhand", var(--font-noto-serif-kr), cursive;
   font-style: italic;
 }
@@ -1033,7 +1031,33 @@ input[type="radio"] { accent-color: var(--button); }
 .hero-intro .hero-script { letter-spacing: 0.05em; }
 .hero-intro h1 { letter-spacing: 0.1em; }
 .hero-intro .hero-venue,
-.hero-intro .hero-message { font-weight: 400; }
+.hero-intro .hero-message,
+.hero-worship-note { font-family: var(--font-noto-serif-kr), serif; font-style: normal; }
+
+.hero-worship-note {
+  max-width: 20rem;
+  margin: 2.35rem auto 0;
+  padding: 1.2rem 1rem 1.25rem;
+  border: 1px solid rgba(205, 188, 229, 0.48);
+  border-radius: 1.35rem;
+  background: linear-gradient(145deg, rgba(247, 241, 252, 0.72), rgba(238, 248, 252, 0.52));
+}
+
+.hero-worship-label {
+  margin: 0 0 0.55rem;
+  color: var(--accent);
+  font-family: var(--font-cormorant), serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.22em;
+}
+
+.hero-worship-note p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 300;
+  line-height: 1.9;
+}
 
 @keyframes openingCharacter {
   to { opacity: 1; transform: translateY(0) rotate(0); }

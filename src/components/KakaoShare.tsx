@@ -85,8 +85,8 @@ export default function KakaoShare({
       className="invitation-action w-full px-4 py-3 rounded-xl font-medium transition-all duration-200 flex items-center justify-center gap-2"
       style={{
         background: isKakaoReady
-          ? "linear-gradient(135deg, #d99ab2, #8e74a7)"
-          : "linear-gradient(135deg, #d99ab2, #8e74a7)",
+          ? "linear-gradient(135deg, #8fcbd2, #5c91aa)"
+          : "linear-gradient(135deg, #8fcbd2, #5c91aa)",
         color: "#fff",
         opacity: isKakaoReady ? 1 : 0.6,
         cursor: isKakaoReady ? "pointer" : "not-allowed",

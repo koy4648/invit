@@ -100,7 +100,7 @@ END:VCALENDAR`;
           onClick={downloadICS}
           className="invitation-action flex-1 px-4 py-3 rounded-xl font-medium transition-all duration-200 text-white text-sm"
           style={{
-            background: "linear-gradient(135deg, #d99ab2, #8e74a7)",
+            background: "linear-gradient(135deg, #8fcbd2, #5c91aa)",
           }}
         >
           📥 .ics 다운로드

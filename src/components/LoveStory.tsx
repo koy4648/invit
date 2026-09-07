@@ -118,7 +118,7 @@ export default function LoveStory() {
                     className="p-4 rounded-2xl"
                     style={{
                       background: "rgba(255,255,255,0.76)",
-                      border: "1px solid rgba(205,188,229,0.34)",
+                      border: "1px solid rgba(167,217,234,0.34)",
                       backdropFilter: "blur(8px)",
                     }}
                   >
@@ -147,7 +147,7 @@ export default function LoveStory() {
                     style={{
                       background: isVisible
                         ? "linear-gradient(135deg, var(--blush), var(--accent))"
-                        : "rgba(205,188,229,0.35)",
+                        : "rgba(167,217,234,0.35)",
                       transform: isVisible ? "scale(1)" : "scale(0.8)",
                     }}
                   >

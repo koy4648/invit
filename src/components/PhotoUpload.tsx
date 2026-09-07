@@ -272,7 +272,7 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
                   <button
                     onClick={() => abortRefs.current.get(state.id)?.abort()}
                     className="text-[11px] px-2 py-1 rounded-lg tracking-wider transition-colors"
-                    style={{ border: "1px solid rgba(205,188,229,0.34)", color: "var(--muted)" }}
+                    style={{ border: "1px solid rgba(167,217,234,0.34)", color: "var(--muted)" }}
                   >
                     취소
                   </button>

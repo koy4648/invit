@@ -93,7 +93,7 @@ export default function ConfettiEasterEgg({
           <div
             className="text-4xl font-bold"
             style={{
-              background: "linear-gradient(135deg, #d99ab2, #8e74a7)",
+              background: "linear-gradient(135deg, #8fcbd2, #5c91aa)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}

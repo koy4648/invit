@@ -97,7 +97,7 @@ export default function Guestbook() {
           style={{
             background: "rgba(253,250,246,0.9)",
             border: "1px solid rgba(231,169,187,0.28)",
-            boxShadow: "0 4px 24px rgba(142,116,167,0.1)",
+            boxShadow: "0 4px 24px rgba(79,131,156,0.1)",
           }}
         >
           <div className="grid grid-cols-2 gap-3">
@@ -153,7 +153,7 @@ export default function Guestbook() {
             className="invitation-action w-full py-3 rounded-2xl text-sm font-medium tracking-wider transition-all active:scale-[0.98]"
             style={{
               background: submitting
-                ? "rgba(205,188,229,0.3)"
+                ? "rgba(167,217,234,0.3)"
                 : "linear-gradient(135deg, var(--lilac), var(--accent))",
               color: "#fff",
               boxShadow: submitting ? "none" : "0 4px 16px rgba(128,99,156,0.25)",
@@ -200,7 +200,7 @@ export default function Guestbook() {
                   <div
                     className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-medium"
                     style={{
-                      background: "linear-gradient(135deg, rgba(231,169,187,0.22), rgba(205,188,229,0.16))",
+                      background: "linear-gradient(135deg, rgba(231,169,187,0.22), rgba(167,217,234,0.16))",
                       color: "var(--accent)",
                     }}
                   >

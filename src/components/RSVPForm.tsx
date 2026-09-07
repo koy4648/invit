@@ -96,7 +96,7 @@ export default function RSVPForm({
             background: isExpanded
               ? "linear-gradient(135deg, rgba(231,169,187,0.18), rgba(172,212,233,0.14))"
               : "rgba(255,255,255,0.6)",
-            border: "1px solid rgba(205,188,229,0.3)",
+            border: "1px solid rgba(167,217,234,0.3)",
             backdropFilter: "blur(8px)",
           }}
         >
@@ -137,7 +137,7 @@ export default function RSVPForm({
           className={`${isModal ? "" : "mt-4"} lovely-form space-y-4 px-4 py-4 rounded-2xl`}
           style={{
             background: "rgba(255,255,255,0.4)",
-            border: "1px solid rgba(205,188,229,0.24)",
+            border: "1px solid rgba(167,217,234,0.24)",
           }}
         >
           {/* 이름 입력 */}
@@ -156,7 +156,7 @@ export default function RSVPForm({
               placeholder="성함을 입력해주세요"
               className="w-full px-3 py-2 rounded-lg border text-sm focus:outline-none focus:ring-2"
               style={{
-                borderColor: "rgba(205,188,229,0.34)",
+                borderColor: "rgba(167,217,234,0.34)",
                 color: "var(--ink)",
                 backgroundColor: "rgba(255,255,255,0.9)",
               }}
@@ -165,7 +165,7 @@ export default function RSVPForm({
                 e.currentTarget.style.backgroundColor = "#fff";
               }}
               onBlur={(e) => {
-                e.currentTarget.style.borderColor = "rgba(205,188,229,0.34)";
+                e.currentTarget.style.borderColor = "rgba(167,217,234,0.34)";
                 e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.9)";
               }}
             />
@@ -218,7 +218,7 @@ export default function RSVPForm({
               onChange={handleInputChange}
               className="w-full px-3 py-2 rounded-lg border text-sm focus:outline-none focus:ring-2"
               style={{
-                borderColor: "rgba(205,188,229,0.34)",
+                borderColor: "rgba(167,217,234,0.34)",
                 color: "var(--ink)",
                 backgroundColor: "rgba(255,255,255,0.9)",
               }}
@@ -238,8 +238,8 @@ export default function RSVPForm({
             className="invitation-action w-full px-4 py-3 rounded-xl font-medium transition-all duration-200 text-white"
             style={{
               background: isSubmitting
-                ? "linear-gradient(135deg, #d99ab2, #8e74a7)"
-                : "linear-gradient(135deg, #d99ab2, #8e74a7)",
+                ? "linear-gradient(135deg, #8fcbd2, #5c91aa)"
+                : "linear-gradient(135deg, #8fcbd2, #5c91aa)",
               opacity: isSubmitting ? 0.7 : 1,
               cursor: isSubmitting ? "not-allowed" : "pointer",
             }}

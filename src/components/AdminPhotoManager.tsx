@@ -174,7 +174,7 @@ export default function AdminPhotoManager({ password }: AdminPhotoManagerProps) 
           onClick={() => inputRef.current?.click()}
           disabled={Boolean(uploadStatus)}
           className="flex shrink-0 items-center gap-2 rounded-xl px-4 py-2.5 text-sm text-white disabled:opacity-60"
-          style={{ background: "linear-gradient(135deg, #cbb8e3, #80639c)" }}
+          style={{ background: "linear-gradient(135deg, #b8ded6, #4f839c)" }}
         >
           <ImagePlus size={17} />
           {uploadStatus ?? "사진 추가"}
@@ -191,7 +191,7 @@ export default function AdminPhotoManager({ password }: AdminPhotoManagerProps) 
 
       <div
         className="rounded-2xl px-4 py-3 text-sm"
-        style={{ background: "rgba(205,188,229,0.1)", color: "#78716c" }}
+        style={{ background: "rgba(167,217,234,0.1)", color: "#78716c" }}
       >
         JPG · PNG · WebP / 한 장당 20MB 이하 / 최대 20장씩 업로드
       </div>
@@ -205,7 +205,7 @@ export default function AdminPhotoManager({ password }: AdminPhotoManagerProps) 
           type="button"
           onClick={() => inputRef.current?.click()}
           className="w-full rounded-2xl border border-dashed px-6 py-14 text-center"
-          style={{ borderColor: "rgba(205,188,229,0.4)", color: "#a8a29e" }}
+          style={{ borderColor: "rgba(167,217,234,0.4)", color: "#a8a29e" }}
         >
           아직 등록된 사진이 없습니다.<br />스냅 사진이 준비되면 여기에 추가하세요.
         </button>
@@ -215,14 +215,14 @@ export default function AdminPhotoManager({ password }: AdminPhotoManagerProps) 
             <article
               key={photo.key}
               className="overflow-hidden rounded-2xl bg-white"
-              style={{ border: "1px solid rgba(205,188,229,0.2)" }}
+              style={{ border: "1px solid rgba(167,217,234,0.2)" }}
             >
               <div className="relative aspect-[4/3] bg-stone-100">
                 {/* 저장소 주소가 달라도 표시할 수 있도록 동일 출처 이미지 API를 사용합니다. */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={photo.url} alt={photo.name} className="h-full w-full object-cover" />
                 {photo.isCover && (
-                  <span className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-xs" style={{ color: "#80639c" }}>
+                  <span className="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-white/90 px-2.5 py-1 text-xs" style={{ color: "#4f839c" }}>
                     <Star size={13} fill="currentColor" /> 대표 사진
                   </span>
                 )}

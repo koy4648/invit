@@ -29,7 +29,7 @@ export default function WeddingInfo() {
       {/* 예식 정보 카드 */}
       <div className="card p-5">
         {/* 날짜 */}
-        <div className="flex items-start gap-4 pb-4" style={{ borderBottom: "1px solid rgba(205,188,229,0.28)" }}>
+        <div className="flex items-start gap-4 pb-4" style={{ borderBottom: "1px solid rgba(167,217,234,0.28)" }}>
           <div
             className="w-10 h-10 rounded-2xl flex items-center justify-center flex-shrink-0"
             style={{ background: "linear-gradient(135deg, rgba(231,169,187,0.18), rgba(172,212,233,0.14))" }}

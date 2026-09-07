@@ -6,19 +6,19 @@
   --ink: #403a48;
   --muted: #817987;
   --line: #eee7f1;
-  --accent: #80639c;
+  --accent: #4f839c;
   --blush: #e7b8ca;
-  --butter: #d9c9ed;
+  --butter: #b9e2e0;
   --sage: #b8ddec;
   --sky: #acd4e9;
-  --lilac: #cdbce5;
+  --lilac: #b8d8e4;
   --blush-soft: #fff3f7;
   --blue-soft: #eef8fc;
   --butter-soft: #f7f1fc;
   --sage-soft: #eef8fc;
   --lilac-soft: #f7f1fc;
-  --button: #8e74a7;
-  --button-hover: #795f93;
+  --button: #5c91aa;
+  --button-hover: #467c96;
   --button-soft: #f3ebf8;
   --paper: #fffdfd;
 }
@@ -84,13 +84,13 @@ input[type="radio"] { accent-color: var(--button); }
 .invitation-action,
 .btn-gold {
   border: 1px solid rgba(255, 255, 255, 0.34) !important;
-  background: linear-gradient(135deg, #d99ab2, var(--button) 52%, #9a86bd) !important;
+  background: linear-gradient(135deg, #8fcbd2, var(--button) 52%, #79b7c7) !important;
   color: #fff !important;
   box-shadow: 0 0.45rem 1.1rem rgba(126, 98, 150, 0.22) !important;
 }
 
 .invitation-action:hover,
-.btn-gold:hover { background: linear-gradient(135deg, #9c7bb1, var(--button-hover)) !important; }
+.btn-gold:hover { background: linear-gradient(135deg, #5d9db1, var(--button-hover)) !important; }
 
 .invitation-action:disabled,
 .btn-gold:disabled { box-shadow: none !important; opacity: 0.55 !important; }
@@ -98,7 +98,7 @@ input[type="radio"] { accent-color: var(--button); }
 .invitation-action-soft {
   border: 1px solid rgba(150, 124, 173, 0.23) !important;
   background: linear-gradient(135deg, var(--blush-soft), var(--blue-soft) 52%, var(--lilac-soft)) !important;
-  color: #735f87 !important;
+  color: #4f788e !important;
   box-shadow: none !important;
 }
 
@@ -1231,4 +1231,4 @@ input[type="radio"] { accent-color: var(--button); }
   background-image: radial-gradient(circle at 8% 12%, rgba(231,169,187,0.12), transparent 11rem), radial-gradient(circle at 92% 82%, rgba(172,212,233,0.13), transparent 13rem), linear-gradient(180deg, rgba(255,253,253,0.98), rgba(247,241,252,0.7) 52%, rgba(255,253,253,0.98));
 }
 .couple-profile:first-child .couple-monogram, .couple-profile:last-child .couple-monogram { color: var(--accent); }
-.family-contact-group.groom, .family-contact-card.groom { border-color: rgba(205,188,229,0.38); }
+.family-contact-group.groom, .family-contact-card.groom { border-color: rgba(167,217,234,0.38); }

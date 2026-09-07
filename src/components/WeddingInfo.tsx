@@ -105,7 +105,17 @@ export default function WeddingInfo() {
         </p>
         <div className="space-y-3">
           {[
-            { icon: "🚇", label: "지하철", desc: "5호선 마포역 3번 출구에서 도보 약 2분, 공덕역(5호선·6호선·공항철도·경의중앙선)에서는 도보 약 5분 거리입니다." },
+            {
+              icon: "🚇",
+              label: "지하철",
+              desc: (
+                <>
+                  마포역(5호선) 3번 출구에서 도보 약 2분,
+                  <br />
+                  공덕역(5호선·6호선·공항철도·경의중앙선)에서는 도보 약 5분 거리
+                </>
+              )
+            },
             { icon: "🚌", label: "버스",   desc: "마포역(중) 정류장에서 하차" },
             { icon: "🚗", label: "주차",   desc: "호텔 건물 주차장 이용 가능 (3시간 무료)" },
                     ].map(({ icon, label, desc }) => (

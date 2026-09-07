@@ -47,7 +47,7 @@ export default function Home() {
             <CountdownTimer />
           </Suspense>
           <p className="countdown-date">
-            2027 · 08 · 28 · SAT · 12:00 PM
+            2027 · 08 · 28 · SAT · 12 PM
           </p>
         </section>
 
@@ -118,7 +118,7 @@ export default function Home() {
               className="mt-4 text-xs tracking-[0.3em]"
               style={{ color: "var(--ink)" }}
             >
-              Youngseo Kim 🤍 Jinseong Jeong
+              김영서 🤍 정진성
             </p>
             <p className="mt-2 text-xs" style={{ color: "var(--muted)" }}>
               2027 · 08 · 28

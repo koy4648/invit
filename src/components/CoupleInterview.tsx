@@ -5,14 +5,12 @@ import { ChevronDown } from "lucide-react";
 
 const COUPLE = [
   {
-    role: "ONE",
     name: "김영서",
     englishName: "Youngseo Kim",
     initial: "Y",
     introduction: "좋아하는 것에는 누구보다 진심인 사람. 음악과 야구, 새로운 즐거움을 사랑하고 웃음과 이야기로 하루를 채웁니다."
   },
   {
-    role: "TWO",
     name: "정진성",
     englishName: "Jinseong Jeong",
     initial: "J",
@@ -24,17 +22,17 @@ const INTERVIEW = [
   {
     question: "서로의 첫인상은?",
     bride: "성실하고 다정다감한 귀여운 구석이 있는 사람",
-    groom: "웃을 때 주변까지 환해지는 사람이었습니다.",
+    groom: "",
   },
   {
     question: "가장 사랑스러운 순간은?",
     bride: "사소한 말장난을 하고 개구지게 웃을 때",
-    groom: "사소한 일에도 진심으로 기뻐해 줄 때",
+    groom: "",
   },
   {
     question: "함께 그리고 싶은 모습은?",
     bride: "서로의 가장 기쁜 순간도 슬픈 순간도 함께 나누는 사이",
-    groom: "오래도록 서로를 웃게 해주는 다정한 부부.",
+    groom: "",
   },
 ];
 
@@ -51,9 +49,8 @@ export default function CoupleInterview() {
 
       <div className="couple-profiles">
         {COUPLE.map((person) => (
-          <article key={person.role} className="couple-profile">
+          <article key={person.name} className="couple-profile">
             <div className="couple-monogram" aria-hidden="true">{person.initial}</div>
-            <p className="couple-role">{person.role}</p>
             <h3>{person.name}</h3>
             <p className="couple-english-name">{person.englishName}</p>
             <p className="couple-introduction">{person.introduction}</p>

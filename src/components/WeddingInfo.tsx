@@ -55,7 +55,7 @@ export default function WeddingInfo() {
           </div>
           <div className="flex-1">
             <p className="text-[11px] tracking-wider mb-1" style={{ color: "var(--muted)" }}>VENUE</p>
-            <p className="text-sm font-medium" style={{ color: "var(--ink)" }}>그랜드볼룸웨딩홀 2층</p>
+            <p className="text-sm font-medium" style={{ color: "var(--ink)" }}>서울가든호텔 그랜드볼룸웨딩홀</p>
             <p className="text-xs mt-0.5" style={{ color: "var(--muted)" }}>서울특별시 마포구 마포대로 58</p>
             <button
               onClick={handleCopyAddress}

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useGalleryPhotos } from "@/hooks/useGalleryPhotos";
 
-const OPENING_LINES = ["welcome to our wedding", "by. youngseo ♡ jinseong"];
+const OPENING_LINES = ["Welcome to our Wedding", "by. Youngseo ♡ Jinseong"];
 
 export default function WeddingHero() {
   const photos = useGalleryPhotos();
@@ -46,7 +46,7 @@ export default function WeddingHero() {
       </div>
 
       <div className="hero-masthead">
-        <p className="hero-kicker">우리의 결혼식</p>
+        <p className="hero-kicker">Wedding Day</p>
         <p className="hero-date">28 · AUGUST · 2027. 12:00 PM</p>
       </div>
 
@@ -61,7 +61,7 @@ export default function WeddingHero() {
         />
         <div className="hero-image-copy">
           <p className="hero-copy-label">Wedding Day of</p>
-          <p className="hero-copy-title">Youngseo <span>&amp;</span> Jinseong</p>
+          <p className="hero-copy-title">Youngseo <span> ♥ </span> Jinseong</p>
           <p className="hero-copy-date">2027.08.28. SAT 12PM</p>
           <span className="hero-copy-line" aria-hidden="true" />
         </div>
@@ -75,12 +75,14 @@ export default function WeddingHero() {
         <p className="hero-venue">2027년 8월 28일 토요일 낮 12시<br />서울가든호텔 그랜드볼룸웨딩홀 2층</p>
         <div className="hero-rule" />
         <p className="hero-message">
-          좋아하는 것도, 살아가는 방식도 조금 다른 두 사람이 함께 웃고 이야기하며 서로의 가장 든든한 편이 되어주기로 약속합니다. 저희의 새로운 시작을 함께 축복해 주시면 감사하겠습니다.
+          좋아하는 것도, 살아가는 방식도 달랐던 두 사람이<br/> 더 많이 웃고, 더 좋은 사람이 되기 위해 <br/>남은 평생을 함께하기로 약속했습니다.<br/>  소중한 날, 저희의 시작을 함께해주세요.
         </p>
         <div className="hero-worship-note">
           <p className="hero-worship-label">예식 안내</p>
           <p>
-            저희의 결혼식은 기독교 예배 형식으로 진행됩니다. 종교와 관계없이 두 사람의 새로운 시작을 축복하는 자리로 마련하였으니, 편안한 마음으로 함께해 주시면 감사하겠습니다.
+            저희의 결혼식은 기독교 예배 형식으로 진행됩니다.<br />
+            종교와 관계없이 편안한 마음으로 자리하시어<br />
+            두 사람의 새로운 시작을 축복해 주시면 감사하겠습니다.<br />
           </p>
         </div>
       </div>

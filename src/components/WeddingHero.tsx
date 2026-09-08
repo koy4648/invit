@@ -61,7 +61,7 @@ export default function WeddingHero() {
         />
         <div className="hero-image-copy">
           <p className="hero-copy-label">Wedding Day of</p>
-          <p className="hero-copy-title">Youngseo <span> ♥ </span> Jinseong</p>
+          <p className="hero-copy-title"> Jinseong <span> ♥ </span> Youngseo</p>
           <p className="hero-copy-date">2027.08.28. SAT 12PM</p>
           <p className="hero-copy-venue">Seoul Garden Hotel Grand Ballroom Wedding Hall 2F</p>
           <span className="hero-copy-line" aria-hidden="true" />

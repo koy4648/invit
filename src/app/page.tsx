@@ -105,7 +105,7 @@ export default function Home() {
             <span className="invitation-footer-mark" aria-hidden="true">♡</span>
             <p
               className="reading-reflow text-[13px] leading-[2.2] font-light tracking-wider"
-              style={{ color: "var(--muted)" }}
+              style={{ color: "var(--ink)" }}
             >
               저희의 새로운 시작을<br />{" "}
               함께 축복해 주셔서 감사합니다
@@ -116,7 +116,7 @@ export default function Home() {
             >
               김영서 💝 정진성
             </p>
-            <p className="mt-2 text-xs" style={{ color: "var(--muted)" }}>
+            <p className="mt-2 text-xs" style={{ color: "var(--ink)", opacity: 0.8 }}>
               2027 · 08 · 28
             </p>
             <ShareInvitation />

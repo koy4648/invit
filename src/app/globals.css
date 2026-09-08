@@ -3,24 +3,24 @@
 
 :root {
   --font-noto-serif-kr: "Noto Serif KR", serif;
-  --ink: #403a48;
-  --muted: #817987;
-  --line: #eee7f1;
-  --accent: #4f839c;
-  --blush: #e7b8ca;
-  --butter: #b9e2e0;
-  --sage: #b8ddec;
-  --sky: #acd4e9;
-  --lilac: #c7e3df;
-  --blush-soft: #fff3f7;
-  --blue-soft: #eef8fc;
-  --butter-soft: #f2fbfb;
-  --sage-soft: #eef8fc;
-  --lilac-soft: #f2fbfb;
-  --button: #5c91aa;
-  --button-hover: #467c96;
-  --button-soft: #f3ebf8;
-  --paper: #fffdfd;
+  --ink: #2a3c46;
+  --muted: #627b87;
+  --line: #e3eff3;
+  --accent: #5ba3b5;
+  --blush: #ebcadd;
+  --butter: #d3edea;
+  --sage: #cce9df;
+  --sky: #c4e4f2;
+  --lilac: #d9ecf0;
+  --blush-soft: #fcf4f7;
+  --blue-soft: #f4fafc;
+  --butter-soft: #f4fbfb;
+  --sage-soft: #f4fbf9;
+  --lilac-soft: #f6fcfa;
+  --button: #68aebb;
+  --button-hover: #5296a2;
+  --button-soft: #eff6f7;
+  --paper: #fefefe;
 }
 
 * {
@@ -116,12 +116,14 @@ input[type="radio"] { accent-color: var(--button); }
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(167, 217, 234, 0.38);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
   border-radius: 1.65rem;
   box-shadow:
-    0 0.8rem 2.5rem rgba(103, 88, 118, 0.08),
-    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    0 0.8rem 2.5rem rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
 .invitation-action,

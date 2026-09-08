@@ -72,8 +72,8 @@ export default function KakaoShare({
         {
           title: "위치 보기",
           link: {
-            mobileWebUrl: `${mobileWebUrl}#section-info`,
-            webUrl: `${webUrl}#section-info`,
+            mobileWebUrl: `https://map.kakao.com/?q=${encodeURIComponent("서울가든호텔 서울특별시 마포구 마포대로 58")}`,
+            webUrl: `https://map.kakao.com/?q=${encodeURIComponent("서울가든호텔 서울특별시 마포구 마포대로 58")}`,
           },
         },
       ],
@@ -84,18 +84,18 @@ export default function KakaoShare({
     <button
       onClick={handleShareClick}
       disabled={!isKakaoReady}
-      className="invitation-action w-full px-4 py-3 rounded-xl font-medium transition-all duration-200 flex items-center justify-center gap-2"
+      className="flex-1 py-3 px-2 rounded-xl text-xs font-medium transition-all duration-200 flex items-center justify-center gap-1.5"
       style={{
-        background: isKakaoReady
-          ? "linear-gradient(135deg, #8fcbd2, #5c91aa)"
-          : "linear-gradient(135deg, #8fcbd2, #5c91aa)",
-        color: "#fff",
+        background: "rgba(255, 255, 255, 0.7)",
+        backdropFilter: "blur(4px)",
+        border: "1px solid rgba(255, 255, 255, 0.5)",
+        color: "var(--ink)",
         opacity: isKakaoReady ? 1 : 0.6,
         cursor: isKakaoReady ? "pointer" : "not-allowed",
+        boxShadow: "0 2px 10px rgba(0,0,0,0.03)",
       }}
     >
-      <span>💬</span>
-      <span>카카오톡으로 공유</span>
+      <span>💬 카카오톡</span>
     </button>
   );
 }

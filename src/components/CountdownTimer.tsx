@@ -90,7 +90,7 @@ export default function CountdownTimer() {
           {/* 레이블 */}
           <span
             className="text-[9px] tracking-[0.25em] font-medium"
-            style={{ color: "var(--muted)" }}
+            style={{ color: "var(--ink)", opacity: 0.85 }}
           >
             {label}
           </span>

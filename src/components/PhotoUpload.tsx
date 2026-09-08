@@ -146,7 +146,7 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
       {/* 헤더 */}
       <div className="invitation-section-heading mb-6">
         <p className="section-title mb-1">Photo Share</p>
-        <h2 className="text-xl font-light tracking-wider" style={{ color: "#44403c" }}>
+        <h2 className="text-xl font-light tracking-wider" style={{ color: "var(--ink)" }}>
           하객 사진 공유
         </h2>
         <p className="reading-reflow text-xs mt-1 tracking-wide" style={{ color: "var(--muted)" }}>

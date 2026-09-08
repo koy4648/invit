@@ -135,7 +135,3 @@ npm run dev
 | `R2_SECRET_ACCESS_KEY` | R2 Secret Access Key | **비공개** |
 | `R2_BUCKET_NAME` | R2 버킷 이름 | **비공개** |
 | `R2_PUBLIC_URL` | R2 퍼블릭 접근 URL | **비공개** |
-
-## 라이선스
-
-MIT

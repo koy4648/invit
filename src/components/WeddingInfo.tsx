@@ -22,7 +22,7 @@ export default function WeddingInfo() {
       <div className="invitation-section-heading mb-6">
         <p className="section-title mb-1">Location & Info</p>
         <h2 className="text-xl font-light tracking-wider" style={{ color: "var(--ink)" }}>
-          예식 안내
+          일시 • 장소 • 교통편
         </h2>
       </div>
 
@@ -100,9 +100,6 @@ export default function WeddingInfo() {
 
       {/* 오시는 길 */}
       <div className="card p-5">
-        <p className="text-[11px] tracking-[0.25em] uppercase mb-4" style={{ color: "var(--button)" }}>
-          Direction
-        </p>
         <div className="space-y-3">
           {[
             {
@@ -116,9 +113,9 @@ export default function WeddingInfo() {
                 </>
               )
             },
-            { icon: "🚌", label: "버스",   desc: "마포역(중) 정류장에서 하차" },
-            { icon: "🚗", label: "주차",   desc: "호텔 건물 주차장 이용 가능 (3시간 무료)" },
-                    ].map(({ icon, label, desc }) => (
+            { icon: "🚌", label: "버스", desc: "마포역(중) 정류장에서 하차" },
+            { icon: "🚗", label: "주차", desc: "호텔 건물 주차장 이용 가능 (3시간 무료)" },
+          ].map(({ icon, label, desc }) => (
             <div key={label} className="flex gap-3 items-start">
               <div
                 className="w-8 h-8 rounded-xl flex items-center justify-center flex-shrink-0 text-sm"

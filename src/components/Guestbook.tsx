@@ -185,7 +185,7 @@ export default function Guestbook() {
           >
             💌
           </div>
-          <p className="text-sm tracking-wider" style={{ color: "#a8a29e" }}>
+          <p className="text-sm tracking-wider" style={{ color: "var(--ink)" }}>
             첫 번째 축하 메시지를 남겨주세요
           </p>
         </div>

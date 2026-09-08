@@ -1,23 +1,21 @@
 /* August concept: clear Jeju waves flowing into a pearly sandy beach. */
 .summer-sea-theme {
-  --ink: #1d3f50;
-  --muted: #3d5e6d;
-  --line: #d9ebed;
-  --accent: #247d91;
-  --blush: #e9b8c8;
-  --butter: #b9e2e0;
-  --sage: #a6d8c9;
-  --sky: #a7d9ea;
-  --lilac: #c7e3df;
-  --blush-soft: #fff4f7;
-  --blue-soft: #edf9fc;
-  --butter-soft: #effafa;
-  --sage-soft: #effaf5;
-  --lilac-soft: #f1fbfa;
-  --button: #347c91;
-  --button-hover: #286b85;
-  --button-soft: #edf8fa;
-  --paper: #fcfefe;
+  --ink: #425b66;
+  --muted: #7b949f;
+  --line: #d3e7ea;
+  --accent: #5ba3b5;
+  --blush: #eac5d3;
+  --butter: #c5e9e5;
+  --sage: #b3e3d4;
+  --sky: #bfe5f3;
+  --lilac: #d6ebec;
+  --blush-soft: #fcf4f7;
+  --blue-soft: #f2fbfe;
+  --butter-soft: #f4fcfa;
+  --sage-soft: #f4fbf8;
+  --lilac-soft: #f4fcfa;
+  --button: #68aebb;
+  --paper: #fefefe;
   position: relative;
   background: var(--paper);
 }
@@ -39,7 +37,7 @@
 .summer-sea-theme .countdown-section {
   background:
     radial-gradient(circle at 78% 18%, rgba(255, 255, 255, 0.82), transparent 8rem),
-    linear-gradient(180deg, #f8ffff 0%, #dff7f7 52%, #c9edf0 100%);
+    linear-gradient(180deg, #f8ffff 0%, #e9fbfb 52%, #d9f3f6 100%);
 }
 
 .summer-sea-theme .hero-editorial::after {
@@ -76,10 +74,7 @@
 .summer-sea-theme .shore-section {
   position: relative;
   overflow: hidden;
-  background:
-    radial-gradient(circle at 12% 8%, rgba(255, 255, 255, 0.9), transparent 7rem),
-    radial-gradient(circle at 88% 38%, rgba(255, 255, 255, 0.58), transparent 9rem),
-    linear-gradient(180deg, #dff6f5 0%, #edf8f2 13%, #faf6eb 32%, #fbf1df 100%);
+  background: transparent;
 }
 
 .summer-sea-theme .shore-section::before,
@@ -370,25 +365,7 @@
   text-shadow: 0 1px 0 rgba(255,255,255,0.75);
 }
 
-/* One continuous invitation sheet. Section rhythm comes from whitespace, not color bands. */
-.summer-sea-theme,
-.summer-sea-theme .hero-editorial,
-.summer-sea-theme .hero-masthead,
-.summer-sea-theme .hero-intro,
-.summer-sea-theme .countdown-section,
-.summer-sea-theme .content-column,
-.summer-sea-theme .content-column .couple-section,
-.summer-sea-theme .content-column .family-contacts-section,
-.summer-sea-theme .content-column .gallery-section,
-.summer-sea-theme .content-column .photo-upload-section,
-.summer-sea-theme .content-column .pearl-rsvp,
-.summer-sea-theme .content-column #section-info,
-.summer-sea-theme .content-column #section-rsvp,
-.summer-sea-theme .content-column #section-contacts,
-.summer-sea-theme .content-column #section-guestbook {
-  background: var(--paper) !important;
-  background-image: none !important;
-}
+/* Removed the rule forcing var(--paper) background to allow the seamless gradient to shine through. */
 
 .summer-sea-theme {
   box-shadow: inset 0 0 0 1px rgba(79, 131, 156, 0.08);
@@ -417,6 +394,57 @@
   overflow: visible;
   padding-block: 2rem 4.5rem;
   border: 0;
+}
+
+/* Remove the pill box, return to floating text */
+.summer-sea-theme .invitation-section-heading {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* Deep sea sections (Gallery, PhotoShare, Family Contacts, Couple Interview) -> White Text */
+.summer-sea-theme .gallery-section .invitation-section-heading h2,
+.summer-sea-theme .gallery-section .invitation-section-heading .section-title,
+.summer-sea-theme .gallery-section .invitation-section-heading p,
+.summer-sea-theme #section-photos .invitation-section-heading h2,
+.summer-sea-theme #section-photos .invitation-section-heading .section-title,
+.summer-sea-theme #section-photos .invitation-section-heading p,
+.summer-sea-theme .family-contacts-section .invitation-section-heading h2,
+.summer-sea-theme .family-contacts-section .invitation-section-heading .section-title,
+.summer-sea-theme .family-contacts-section .invitation-section-heading p,
+.summer-sea-theme .couple-section .invitation-section-heading h2,
+.summer-sea-theme .couple-section .invitation-section-heading .section-title,
+.summer-sea-theme .couple-section .invitation-section-heading p {
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 2px 6px rgba(12, 75, 85, 0.4) !important;
+}
+
+/* Shallow water sections (Info, Guestbook, RSVP) -> Dark Text */
+.summer-sea-theme #section-info .invitation-section-heading h2,
+.summer-sea-theme #section-info .invitation-section-heading p,
+.summer-sea-theme #section-guestbook .invitation-section-heading h2,
+.summer-sea-theme #section-guestbook .invitation-section-heading p,
+.summer-sea-theme #section-rsvp .invitation-section-heading h2,
+.summer-sea-theme #section-rsvp .invitation-section-heading p {
+  color: var(--ink) !important;
+  text-shadow: none !important;
+}
+
+.summer-sea-theme #section-info .invitation-section-heading .section-title,
+.summer-sea-theme #section-guestbook .invitation-section-heading .section-title,
+.summer-sea-theme #section-rsvp .invitation-section-heading .section-title {
+  color: var(--accent) !important;
+  text-shadow: none !important;
+}
+
+/* Ensure other non-pill texts still have glow */
+.summer-sea-theme .countdown-section h2,
+.summer-sea-theme .countdown-section .section-title,
+.summer-sea-theme .countdown-section p,
+.summer-sea-theme .hero-intro h1,
+.summer-sea-theme .hero-intro .hero-script,
+.summer-sea-theme .hero-intro .hero-message {
+  text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 12px rgba(255, 255, 255, 0.8) !important;
 }
 
 .summer-sea-theme .countdown-section::before {
@@ -578,18 +606,29 @@
   outline-offset: 3px;
 }
 
-/* Broad, non-repeating tropical colour fields keep the water lively and readable. */
+/* Sunny Beach to Tropical Sea Gradient */
 .summer-sea-theme .hero-intro {
-  background: linear-gradient(180deg, #f2fdff 0%, #d9f5fb 48%, #cceff4 100%) !important;
+  background: linear-gradient(180deg, #ffffff 0%, #e8f8f9 30%, #d4f3f5 100%) !important;
+}
+
+.summer-sea-theme .hero-intro h1,
+.summer-sea-theme .hero-intro .hero-script,
+.summer-sea-theme .hero-intro .hero-venue,
+.summer-sea-theme .hero-intro .hero-message {
+  text-shadow: none;
+}
+
+.summer-sea-theme .hero-intro .hero-worship-note {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 .summer-sea-theme .countdown-section {
   background: linear-gradient(
     180deg,
-    #cceff4 0%,
-    #b8eaf0 44%,
-    #afe8e6 72%,
-    #afe8e3 100%
+    #d4f3f5 0%,
+    #aae4e8 40%,
+    #76d6df 100%
   ) !important;
 }
 
@@ -597,24 +636,17 @@
   position: relative;
   isolation: isolate;
   overflow: hidden;
-  background:
-    radial-gradient(ellipse 38rem 70rem at 8% 14%, rgba(92, 211, 205, 0.24), transparent 72%),
-    radial-gradient(ellipse 42rem 82rem at 94% 34%, rgba(78, 178, 225, 0.22), transparent 74%),
-    radial-gradient(ellipse 44rem 76rem at 4% 62%, rgba(104, 220, 210, 0.2), transparent 76%),
-    radial-gradient(ellipse 40rem 68rem at 92% 82%, rgba(104, 195, 228, 0.16), transparent 74%),
-    linear-gradient(
-      180deg,
-      #afe8e3 0,
-      #b2e4ed 82rem,
-      #b8ebe7 170rem,
-      #addfeb 262rem,
-      #c3ecec 350rem,
-      #d0f0e9 430rem,
-      #e8f9f3 500rem
-    ) !important;
-  background-color: #e8f9f3 !important;
+  background: linear-gradient(
+    180deg,
+    #76d6df 0%,
+    #209fac 15%,
+    #147986 40%,
+    #209fac 75%,
+    #76d6df 90%,
+    #bdf4f4 100%
+  ) !important;
+  background-color: #bdf4f4 !important;
   background-repeat: no-repeat !important;
-  background-size: 100% 500rem !important;
 }
 
 .summer-sea-theme .content-column .couple-section,
@@ -1101,11 +1133,11 @@
   background: linear-gradient(
     180deg,
     transparent 0,
-    transparent calc(100% - 18rem),
-    rgba(204, 239, 235, 0.22) calc(100% - 15rem),
-    rgba(224, 245, 237, 0.5) calc(100% - 11rem),
-    rgba(244, 248, 235, 0.82) calc(100% - 6rem),
-    rgba(255, 249, 236, 0.96) calc(100% - 2rem),
+    transparent calc(100% - 15rem),
+    rgba(189, 244, 244, 0.4) calc(100% - 12rem),
+    rgba(219, 246, 246, 0.7) calc(100% - 7rem),
+    rgba(244, 248, 235, 0.85) calc(100% - 4rem),
+    rgba(255, 249, 236, 0.96) calc(100% - 1.5rem),
     #fff9ec 100%
   ) !important;
 }

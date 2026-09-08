@@ -12,8 +12,9 @@ interface KakaoShareProps {
 
 export default function KakaoShare({
   title = "김영서 ♥ 정진성 결혼합니다",
-  description = "2027년 8월 28일 토요일 낮 12시\n서울가든호텔 2층 그랜드볼룸에서 두 사람의 새로운 시작을 함께 축복해 주세요.",
-  imageUrl = "/og-image.jpg",
+  description = "2027년 8월 28일 토요일 낮 12시\n서울가든호텔 2층 그랜드볼룸에서 두 사람의 새로운 시작을 함께 축복해 주세요.",  
+  // imageUrl = "/og-image.jpg",
+  imageUrl = "/gallery/wedding-main.png",
   webUrl = typeof window !== "undefined" ? window.location.origin : "",
   mobileWebUrl = typeof window !== "undefined" ? window.location.origin : "",
 }: KakaoShareProps) {

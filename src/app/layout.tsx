@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Noto_Serif_KR, Cormorant_Garamond } from "next/font/google";
+import { Noto_Serif_KR, Cormorant_Garamond, Great_Vibes } from "next/font/google";
 import "./globals.css";
 
 const notoSerifKR = Noto_Serif_KR({
@@ -14,6 +14,13 @@ const cormorant = Cormorant_Garamond({
   weight: ["300", "400", "500", "600"],
   style: ["normal", "italic"],
   variable: "--font-cormorant",
+  display: "swap",
+});
+
+const greatVibes = Great_Vibes({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-script",
   display: "swap",
 });
 
@@ -42,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className={`${notoSerifKR.variable} ${cormorant.variable}`}>
+    <html lang="ko" className={`${notoSerifKR.variable} ${cormorant.variable} ${greatVibes.variable}`}>
       <body className={`${notoSerifKR.className} antialiased`}>{children}</body>
     </html>
   );

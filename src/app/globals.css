@@ -1000,8 +1000,8 @@ input[type="radio"] { accent-color: var(--button); }
   display: grid;
   justify-items: center;
   color: var(--accent);
-  font-family: "Segoe Script", "Bradley Hand", "Snell Roundhand", cursive;
-  font-style: italic;
+  font-family: var(--font-script), cursive;
+  font-style: normal;
   text-align: center;
 }
 
@@ -1046,9 +1046,9 @@ input[type="radio"] { accent-color: var(--button); }
 }
 
 .hero-copy-title {
-  font-family: "Segoe Script", "Bradley Hand", "Snell Roundhand", cursive;
+  font-family: var(--font-script), cursive;
   font-size: clamp(1.35rem, 6.8vw, 2rem);
-  font-style: italic;
+  font-style: normal;
   letter-spacing: 0.04em;
 }
 
@@ -1067,8 +1067,8 @@ input[type="radio"] { accent-color: var(--button); }
 
 .hero-intro .hero-script,
 .hero-intro h1 {
-  font-family: "Segoe Script", "Bradley Hand", "Snell Roundhand", var(--font-noto-serif-kr), cursive;
-  font-style: italic;
+  font-family: var(--font-script), var(--font-noto-serif-kr), cursive;
+  font-style: normal;
 }
 
 .hero-intro .hero-script { letter-spacing: 0.05em; }

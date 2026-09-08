@@ -27,9 +27,6 @@ export default function Home() {
 
       <main className="invitation-shell summer-sea-theme min-h-screen">
         <div className="ocean-motion" aria-hidden="true">
-          <span className="wave-light wave-light-one" />
-          <span className="wave-light wave-light-two" />
-          <span className="wave-light wave-light-three" />
           {Array.from({ length: 12 }, (_, index) => (
             <span key={index} className={`rising-bubble rising-bubble-${index + 1}`} />
           ))}

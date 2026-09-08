@@ -718,23 +718,6 @@
   transform: translateX(-50%);
 }
 
-.wave-light {
-  position: absolute;
-  left: -25%;
-  width: 150%;
-  height: 6.5rem;
-  border-radius: 50%;
-  border-top: 1px solid rgba(255, 255, 255, 0.56);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 58%);
-  box-shadow: 0 -0.7rem 1.8rem rgba(126, 224, 226, 0.16);
-  opacity: 0.76;
-  animation: wave-breathe 9s ease-in-out infinite alternate;
-}
-
-.wave-light-one { top: 20%; transform: rotate(-2deg); }
-.wave-light-two { top: 50%; transform: rotate(2deg); animation-delay: -3s; }
-.wave-light-three { top: 79%; transform: rotate(-1deg); animation-delay: -6s; }
-
 .rising-bubble {
   position: absolute;
   bottom: -3rem;
@@ -771,11 +754,6 @@
 @keyframes ornament-tide {
   from { translate: -0.15rem 0; }
   to { translate: 0.15rem 0.45rem; }
-}
-
-@keyframes wave-breathe {
-  from { translate: -2% 0; scale: 1 0.82; opacity: 0.36; }
-  to { translate: 2% 0.45rem; scale: 1.03 1.15; opacity: 0.72; }
 }
 
 @keyframes bubble-rise {
@@ -927,7 +905,6 @@
 @media (prefers-reduced-motion: reduce) {
   .summer-sea-theme .countdown-section::before,
   .summer-sea-theme .content-column::before,
-  .wave-light,
   .rising-bubble {
     animation: none;
   }

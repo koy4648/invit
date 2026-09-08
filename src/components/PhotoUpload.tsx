@@ -144,7 +144,7 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
   return (
     <section id="section-photos" className="py-10 px-4">
       {/* 헤더 */}
-      <div className="mb-6">
+      <div className="invitation-section-heading mb-6">
         <p className="section-title mb-1">Photo Share</p>
         <h2 className="text-xl font-light tracking-wider" style={{ color: "#44403c" }}>
           하객 사진 공유
@@ -160,12 +160,8 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
         onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
         onDragLeave={() => setIsDragging(false)}
         onClick={() => fileInputRef.current?.click()}
-        className="relative rounded-3xl p-8 text-center cursor-pointer transition-all duration-300"
+        className={`photo-dropzone relative rounded-3xl p-8 text-center cursor-pointer transition-all duration-300 ${isDragging ? "is-dragging" : ""}`}
         style={{
-          background: isDragging
-            ? "rgba(216,148,169,0.12)"
-            : "rgba(240,245,250,0.72)",
-          border: `2px dashed ${isDragging ? "var(--button)" : "rgba(130,152,178,0.34)"}`,
           transform: isDragging ? "scale(1.01)" : "scale(1)",
         }}
       >

@@ -79,17 +79,15 @@ END:VCALENDAR`;
 
   return (
     <div className="px-6 py-4 space-y-3">
-      <div className="flex items-center gap-2 mb-4">
-        <Calendar size={20} style={{ color: "var(--blush)" }} />
-        <h3
-          className="text-lg font-light tracking-wider"
-          style={{ color: "var(--ink)" }}
-        >
+      <div className="invitation-section-heading mb-6">
+        <p className="section-title">Save the Date</p>
+        <h2 className="flex items-center justify-center gap-2">
+          <Calendar size={18} aria-hidden="true" />
           캘린더 등록
-        </h3>
+        </h2>
       </div>
 
-      <p className="text-sm mb-4" style={{ color: "var(--muted)" }}>
+      <p className="text-sm mb-5 text-center leading-relaxed" style={{ color: "var(--muted)" }}>
         {eventDate} {eventTime}
         <br />
         {eventLocation}

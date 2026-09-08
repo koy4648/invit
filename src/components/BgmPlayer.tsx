@@ -59,6 +59,7 @@ export default function BgmPlayer({
       <audio
         ref={audioRef}
         src={audioUrl}
+        autoPlay={autoPlay}
         loop
         preload="metadata"
         crossOrigin="anonymous"

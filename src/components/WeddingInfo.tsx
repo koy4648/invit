@@ -19,8 +19,8 @@ export default function WeddingInfo() {
   return (
     <section id="section-info" className="py-10 px-4 space-y-4">
       {/* 섹션 헤더 */}
-      <div className="mb-6">
-          <p className="section-title mb-1">Location & Info</p>
+      <div className="invitation-section-heading mb-6">
+        <p className="section-title mb-1">Location & Info</p>
         <h2 className="text-xl font-light tracking-wider" style={{ color: "var(--ink)" }}>
           예식 안내
         </h2>

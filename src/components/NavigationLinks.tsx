@@ -27,17 +27,15 @@ export default function NavigationLinks({
 
   return (
     <div className="px-6 py-4 space-y-3">
-      <div className="flex items-center gap-2 mb-4">
-        <MapPin size={20} style={{ color: "var(--blush)" }} />
-        <h3
-          className="text-lg font-light tracking-wider"
-          style={{ color: "#44403c" }}
-        >
+      <div className="invitation-section-heading mb-6">
+        <p className="section-title">Location</p>
+        <h2 className="flex items-center justify-center gap-2">
+          <MapPin size={18} aria-hidden="true" />
           오시는 길
-        </h3>
+        </h2>
       </div>
 
-      <p className="text-sm mb-4" style={{ color: "#78716c" }}>
+      <p className="text-sm mb-5 text-center leading-relaxed" style={{ color: "var(--muted)" }}>
         {venueName}
         <br />
         {venueAddress}

@@ -71,14 +71,16 @@ export default function Guestbook() {
     new Date(s).toLocaleDateString("ko-KR", { year: "numeric", month: "long", day: "numeric" });
 
   return (
-    <section id="section-guestbook" className="shore-guestbook py-10 px-4">
+    <section id="section-guestbook" className="shore-guestbook py-10 px-3">
       {/* 섹션 헤더 */}
-      <div className="flex items-end justify-between mb-6">
+      <div className="guestbook-heading mb-6">
         <div>
-          <p className="section-title mb-1">Guestbook</p>
-          <h2 className="text-xl font-light tracking-wider" style={{ color: "var(--ink)" }}>
-            방명록
-          </h2>
+          <div className="invitation-section-heading">
+            <p className="section-title mb-1">Guestbook</p>
+            <h2 className="text-xl font-light tracking-wider" style={{ color: "var(--ink)" }}>
+              방명록
+            </h2>
+          </div>
         </div>
         <button
           onClick={() => setShowForm((v) => !v)}
@@ -93,14 +95,14 @@ export default function Guestbook() {
       {showForm && (
         <form
           onSubmit={handleSubmit}
-          className="lovely-form mb-6 rounded-3xl p-5 space-y-3 animate-fadeInUp"
+          className="guestbook-form lovely-form w-full mb-6 rounded-3xl p-4 space-y-3 animate-fadeInUp"
           style={{
             background: "rgba(253,250,246,0.9)",
             border: "1px solid rgba(231,169,187,0.28)",
             boxShadow: "0 4px 24px rgba(79,131,156,0.1)",
           }}
         >
-          <div className="grid grid-cols-2 gap-3">
+          <div className="guestbook-identity-grid grid grid-cols-2 gap-3">
             <div>
               <label className="block text-[11px] tracking-wider mb-1.5" style={{ color: "#a8a29e" }}>
                 이름 <span style={{ color: "var(--blush)" }}>*</span>
@@ -140,7 +142,7 @@ export default function Guestbook() {
               placeholder="두 분의 결혼을 진심으로 축하드립니다..."
               maxLength={MAX_MESSAGE_LENGTH}
               rows={3}
-              className="input-field resize-none"
+              className="guestbook-message-input input-field resize-none"
               disabled={submitting}
             />
             <div className="text-right text-[11px] mt-0.5" style={{ color: "var(--muted)" }}>

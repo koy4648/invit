@@ -87,7 +87,7 @@ export default function Gallery() {
 
   return (
     <section id="section-gallery" className="gallery-section">
-      <header className="gallery-heading">
+      <header className="gallery-heading invitation-section-heading">
         <div>
           <p className="section-title">Gallery</p>
           <h2>우리의 순간들</h2>

@@ -15,15 +15,6 @@ import CalendarLink from "@/components/CalendarLink";
 import ConfettiEasterEgg from "@/components/ConfettiEasterEgg";
 import CoupleInterview from "@/components/CoupleInterview";
 
-/* 파스텔 구분선 */
-function GoldDivider() {
-  return (
-    <div className="divider-gold px-8 py-2" aria-hidden="true">
-      <span className="text-xs">♡</span>
-    </div>
-  );
-}
-
 /* 섹션 스켈레톤 */
 function SectionSkeleton({ height = "h-48" }: { height?: string }) {
   return <div className={`${height} mx-4 rounded-3xl shimmer`} />;
@@ -35,6 +26,15 @@ export default function Home() {
       <ToastProvider />
 
       <main className="invitation-shell summer-sea-theme min-h-screen">
+        <div className="ocean-motion" aria-hidden="true">
+          <span className="wave-light wave-light-one" />
+          <span className="wave-light wave-light-two" />
+          <span className="wave-light wave-light-three" />
+          {Array.from({ length: 12 }, (_, index) => (
+            <span key={index} className={`rising-bubble rising-bubble-${index + 1}`} />
+          ))}
+        </div>
+
         {/* ── 히어로 ─────────────────────────────── */}
         <WeddingHero />
 
@@ -52,81 +52,72 @@ export default function Home() {
         </section>
 
         {/* ── 본문 컨텐츠 ────────────────────────── */}
-        <div className="content-column pb-28">
+        <div className="content-column">
           {/* 예식 안내 */}
           <Suspense fallback={<SectionSkeleton height="h-64" />}>
             <WeddingInfo />
           </Suspense>
 
-          <GoldDivider />
+          <div className="section-bridge section-bridge-white" aria-hidden="true" />
 
           {/* 신랑신부 소개 및 인터뷰 */}
           <CoupleInterview />
 
-          <GoldDivider />
-
           {/* 갤러리 */}
-          <div className="shore-section">
-            <div className="shore-pearl-drift" aria-hidden="true" />
-            <Suspense fallback={<SectionSkeleton height="h-80" />}>
-              <Gallery />
-            </Suspense>
+          <Suspense fallback={<SectionSkeleton height="h-80" />}>
+            <Gallery />
+          </Suspense>
 
-          <GoldDivider />
+          <div className="section-bridge section-bridge-coral" aria-hidden="true" />
 
           {/* 하객 사진 공유 */}
           <PhotoUpload />
 
-          <GoldDivider />
-
           {/* 참석 여부 */}
           <RSVPForm />
-
-          <GoldDivider />
 
           {/* 연락처 및 마음 전하기 */}
           <FamilyContacts />
 
-          <GoldDivider />
+          <div className="section-bridge section-bridge-oyster" aria-hidden="true" />
 
           {/* 오시는 길 */}
-          <NavigationLinks />
-
-          <GoldDivider />
+          <section className="invitation-utility-section location-background">
+            <NavigationLinks />
+          </section>
 
           {/* 캘린더 등록 */}
-          <CalendarLink />
+          <section className="invitation-utility-section">
+            <CalendarLink />
+          </section>
 
-          <GoldDivider />
+          <div className="section-bridge section-bridge-guestbook" aria-hidden="true" />
 
-            {/* 방명록 */}
-            <Suspense fallback={<SectionSkeleton height="h-48" />}>
-              <Guestbook />
-            </Suspense>
+          {/* 방명록 */}
+          <Suspense fallback={<SectionSkeleton height="h-48" />}>
+            <Guestbook />
+          </Suspense>
 
           {/* 푸터 */}
-            <footer className="text-center py-12 px-6">
-              <div className="divider-gold mb-6">
-                <span className="text-xs" style={{ color: "var(--blush)" }}>♡</span>
-              </div>
-              <p
-                className="text-[13px] leading-[2.2] font-light tracking-wider"
-                style={{ color: "var(--muted)" }}
-              >
-                저희의 새로운 시작을<br />
-                함께 축복해 주셔서 감사합니다
-              </p>
-              <p
-                className="mt-4 text-xs tracking-[0.3em]"
-                style={{ color: "var(--ink)" }}
-              >
-                김영서 🤍 정진성
-              </p>
-              <p className="mt-2 text-xs" style={{ color: "var(--muted)" }}>
-                2027 · 08 · 28
-              </p>
-            </footer>
-          </div>
+          <footer className="invitation-footer text-center py-12 px-6">
+            <span className="invitation-footer-mark" aria-hidden="true">♡</span>
+            <p
+              className="text-[13px] leading-[2.2] font-light tracking-wider"
+              style={{ color: "var(--muted)" }}
+            >
+              저희의 새로운 시작을<br />
+              함께 축복해 주셔서 감사합니다
+            </p>
+            <p
+              className="mt-4 text-xs tracking-[0.3em]"
+              style={{ color: "var(--ink)" }}
+            >
+              김영서 🤍 정진성
+            </p>
+            <p className="mt-2 text-xs" style={{ color: "var(--muted)" }}>
+              2027 · 08 · 28
+            </p>
+          </footer>
         </div>
       </main>
 

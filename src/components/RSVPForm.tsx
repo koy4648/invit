@@ -257,6 +257,11 @@ export default function RSVPForm({
 
   return (
     <section id="section-rsvp" className="pearl-rsvp px-6 py-8">
+      <header className="invitation-section-heading mb-6">
+        <p className="section-title">RSVP</p>
+        <h2>참석 여부</h2>
+        <p>소중한 걸음을 미리 알려주세요.</p>
+      </header>
       {content}
     </section>
   );

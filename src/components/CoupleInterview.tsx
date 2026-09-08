@@ -48,7 +48,7 @@ export default function CoupleInterview() {
 
   return (
     <section id="section-couple" className="couple-section">
-      <header className="couple-heading">
+      <header className="couple-heading invitation-section-heading">
         <p className="section-title">About us</p>
         <h2>두 사람을 소개합니다</h2>
         <p>서로에게 가장 든든한 편이 되어주기로 한 두 사람의 이야기</p>

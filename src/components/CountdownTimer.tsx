@@ -25,12 +25,26 @@ function calculateTimeLeft(): TimeLeft {
   };
 }
 
+const INITIAL_TIME_LEFT: TimeLeft = {
+  days: 0,
+  hours: 0,
+  minutes: 0,
+  seconds: 0,
+  isPast: false,
+};
+
 export default function CountdownTimer() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>(() => calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>(INITIAL_TIME_LEFT);
 
   useEffect(() => {
-    const id = setInterval(() => setTimeLeft(calculateTimeLeft()), 1_000);
-    return () => clearInterval(id);
+    const update = () => setTimeLeft(calculateTimeLeft());
+    const initialId = window.setTimeout(update, 0);
+    const intervalId = window.setInterval(update, 1_000);
+
+    return () => {
+      window.clearTimeout(initialId);
+      window.clearInterval(intervalId);
+    };
   }, []);
 
   const units = [

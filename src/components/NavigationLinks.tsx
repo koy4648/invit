@@ -1,7 +1,5 @@
 "use client";
 
-import { MapPin } from "lucide-react";
-
 interface NavigationLinksProps {
   venueName?: string;
   venueAddress?: string;
@@ -26,41 +24,40 @@ export default function NavigationLinks({
   };
 
   return (
-    <div className="px-6 py-4 space-y-3">
+    <div className="invitation-utility-block">
       <div className="invitation-section-heading mb-6">
         <p className="section-title">Location</p>
-        <h2 className="flex items-center justify-center gap-2">
-          <MapPin size={18} aria-hidden="true" />
-          오시는 길
-        </h2>
+        <h2>오시는 길</h2>
       </div>
 
-      <p className="text-sm mb-5 text-center leading-relaxed" style={{ color: "var(--muted)" }}>
-        {venueName}
-        <br />
-        {venueAddress}
-      </p>
+      <div className="invitation-utility-card px-6 py-4 space-y-3">
+        <p className="text-sm mb-5 text-center leading-relaxed" style={{ color: "var(--muted)" }}>
+          {venueName}
+          <br />
+          {venueAddress}
+        </p>
 
-      <div className="grid grid-cols-2 gap-2">
-        <button
-          onClick={openKakaoNavi}
-          className="invitation-action px-3 py-3 rounded-xl font-medium transition-all duration-200 text-white text-xs"
-          style={{
-            background: "linear-gradient(135deg, var(--lilac), var(--sky))",
-            color: "#fff",
-          }}
-        >
-          카카오내비
-        </button>
-        <button
-          onClick={openNaverMap}
-          className="invitation-action px-3 py-3 rounded-xl font-medium transition-all duration-200 text-white text-xs"
-          style={{
-            background: "linear-gradient(135deg, #00C73C, #1EC800)",
-          }}
-        >
-          네이버지도
-        </button>
+        <div className="grid grid-cols-2 gap-2">
+          <button
+            onClick={openKakaoNavi}
+            className="invitation-action px-3 py-3 rounded-xl font-medium transition-all duration-200 text-white text-xs"
+            style={{
+              background: "linear-gradient(135deg, var(--lilac), var(--sky))",
+              color: "#fff",
+            }}
+          >
+            카카오내비
+          </button>
+          <button
+            onClick={openNaverMap}
+            className="invitation-action px-3 py-3 rounded-xl font-medium transition-all duration-200 text-white text-xs"
+            style={{
+              background: "linear-gradient(135deg, #00C73C, #1EC800)",
+            }}
+          >
+            네이버지도
+          </button>
+        </div>
       </div>
     </div>
   );

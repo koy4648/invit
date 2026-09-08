@@ -108,7 +108,7 @@ export default function RSVPForm({
               참석 여부 알리기
             </h3>
             <p className="text-xs mt-1" style={{ color: "var(--muted)" }}>
-              예식 참석 여부를 알려주세요
+              소중한 걸음을 미리 알려주세요.
             </p>
           </div>
           <span
@@ -260,7 +260,10 @@ export default function RSVPForm({
       <header className="invitation-section-heading mb-6">
         <p className="section-title">RSVP</p>
         <h2>참석 여부</h2>
-        <p>소중한 걸음을 미리 알려주세요.</p>
+        <p>
+          원활한 좌석 및 식사 준비를 위해<br />
+          참석 여부를 미리 알려주시면 감사하겠습니다.
+        </p>
       </header>
       {content}
     </section>

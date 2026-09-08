@@ -84,7 +84,7 @@ export default function Guestbook() {
         </div>
         <button
           onClick={() => setShowForm((v) => !v)}
-          className="btn-gold text-xs"
+          className="btn-gold guestbook-compose-button text-xs"
           style={{ padding: "9px 18px" }}
         >
           {showForm ? "취소" : "✦ 메시지 남기기"}

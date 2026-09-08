@@ -414,7 +414,7 @@
 .summer-sea-theme .countdown-section {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
+  overflow: visible;
   padding-block: 2rem 4.5rem;
   border: 0;
 }
@@ -423,8 +423,9 @@
   content: "";
   position: absolute;
   z-index: 0;
+  top: -4.25rem;
   left: -1.2rem;
-  bottom: -3rem;
+  bottom: auto;
   width: 52%;
   height: 18rem;
   pointer-events: none;
@@ -442,9 +443,14 @@
   z-index: 1;
 }
 
+.summer-sea-theme .countdown-heading {
+  margin-bottom: 1.25rem;
+}
+
 .summer-sea-theme .content-column > section,
 .summer-sea-theme .content-column > .gallery-section {
   position: relative;
+  z-index: 1;
   padding-top: 4.5rem !important;
   padding-bottom: 4.5rem !important;
 }
@@ -459,7 +465,7 @@
   background: rgba(79, 131, 156, 0.22);
 }
 
-.summer-sea-theme .invitation-utility-section > div {
+.summer-sea-theme .invitation-utility-block {
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -510,31 +516,21 @@
 }
 
 .invitation-footer::before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  left: -1.6rem;
-  bottom: 0.4rem;
-  width: 6.4rem;
-  height: 9rem;
-  background: url("/invitation-ornament-oyster-pearl.png") center / contain no-repeat;
-  filter: saturate(0.68) brightness(1.08);
-  opacity: 0.52;
-  pointer-events: none;
+  content: none;
 }
 
 .invitation-footer::after {
   content: "";
   position: absolute;
   z-index: 0;
-  right: -1.8rem;
-  bottom: 1.8rem;
-  width: 6.6rem;
-  height: 10rem;
-  background: url("/invitation-ornament-shell-garden.png") center / contain no-repeat;
-  filter: saturate(0.64) brightness(1.1);
-  opacity: 0.48;
-  transform: scaleX(-1) rotate(-4deg);
+  right: -1.15rem;
+  bottom: 4.6rem;
+  width: 11.5rem;
+  height: 7.7rem;
+  background: url("/invitation-ornament-sandcastle.png") center / contain no-repeat;
+  filter: saturate(0.72) brightness(1.06);
+  mix-blend-mode: multiply;
+  opacity: 0.7;
   pointer-events: none;
 }
 
@@ -548,6 +544,38 @@
   margin-bottom: 1.5rem;
   color: var(--accent);
   font-size: 0.8rem;
+}
+
+.invitation-share-button {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.6rem;
+  padding: 0.72rem 1.25rem;
+  border: 1px solid rgba(139, 116, 85, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.62);
+  color: #806c55;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  box-shadow: 0 0.55rem 1.5rem rgba(132, 104, 72, 0.08);
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+
+.invitation-share-button:hover,
+.invitation-share-button:focus-visible {
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 0.75rem 1.7rem rgba(132, 104, 72, 0.12);
+  transform: translateY(-1px);
+}
+
+.invitation-share-button:focus-visible {
+  outline: 2px solid rgba(38, 141, 160, 0.72);
+  outline-offset: 3px;
 }
 
 /* Broad, non-repeating tropical colour fields keep the water lively and readable. */
@@ -886,7 +914,7 @@
 }
 
 .summer-sea-theme .family-contacts-section .family-contact-group {
-  background-color: rgba(255, 255, 255, 0.91);
+  background-color: #fff;
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
 }
@@ -922,7 +950,7 @@
 
 .section-bridge {
   position: relative;
-  z-index: 3 !important;
+  z-index: 0 !important;
   height: 0;
   pointer-events: none;
 }
@@ -941,13 +969,6 @@
   transform: translateY(-50%);
 }
 
-.section-bridge-white::before {
-  right: -2.4rem;
-  width: 10.5rem;
-  height: 14rem;
-  background-image: url("/invitation-ornament-white.png");
-}
-
 .section-bridge-coral::before {
   left: -2.8rem;
   width: 11rem;
@@ -957,11 +978,21 @@
 }
 
 .section-bridge-oyster::before {
-  left: -2rem;
+  right: -2.7rem;
   width: 8.5rem;
   height: 11.5rem;
   background-image: url("/invitation-ornament-oyster-pearl.png");
+  background-position: right center;
   opacity: 0.17;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+.section-bridge-shell-garden::before {
+  left: -2.8rem;
+  width: 9.5rem;
+  height: 13rem;
+  background-image: url("/invitation-ornament-shell-garden.png");
+  opacity: 0.15;
 }
 
 .section-bridge-guestbook::before {
@@ -1006,7 +1037,7 @@
   box-shadow: 0 0.8rem 2.4rem rgba(31, 102, 122, 0.08);
 }
 
-.summer-sea-theme .invitation-utility-section > div {
+.summer-sea-theme .invitation-utility-card {
   margin-inline: 1rem;
   padding: 2rem 1.25rem !important;
   border: 1px solid rgba(45, 126, 145, 0.18);
@@ -1017,6 +1048,11 @@
   box-shadow:
     0 0.85rem 2.5rem rgba(31, 102, 122, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.96);
+}
+
+.summer-sea-theme .invitation-utility-block > .invitation-section-heading {
+  margin-bottom: 1.75rem;
+  padding-inline: 1rem;
 }
 
 .summer-sea-theme .photo-dropzone {
@@ -1065,9 +1101,39 @@
   background: linear-gradient(
     180deg,
     transparent 0,
-    transparent calc(100% - 8rem),
-    rgba(240, 249, 239, 0.84) calc(100% - 5.5rem),
+    transparent calc(100% - 18rem),
+    rgba(204, 239, 235, 0.22) calc(100% - 15rem),
+    rgba(224, 245, 237, 0.5) calc(100% - 11rem),
+    rgba(244, 248, 235, 0.82) calc(100% - 6rem),
     rgba(255, 249, 236, 0.96) calc(100% - 2rem),
     #fff9ec 100%
   ) !important;
+}
+
+.shore-playground {
+  position: relative;
+  z-index: 4 !important;
+  height: 4rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 17% 34%, rgba(255, 255, 255, 0.72) 0 0.16rem, transparent 0.2rem),
+    radial-gradient(circle at 25% 58%, rgba(255, 255, 255, 0.58) 0 0.1rem, transparent 0.14rem),
+    radial-gradient(circle at 72% 28%, rgba(255, 255, 255, 0.68) 0 0.13rem, transparent 0.17rem),
+    radial-gradient(circle at 80% 62%, rgba(255, 255, 255, 0.52) 0 0.08rem, transparent 0.12rem),
+    linear-gradient(180deg, rgba(255, 249, 236, 0.96), #fff9ec);
+  pointer-events: none;
+}
+
+.summer-sea-theme .guestbook-compose-button {
+  min-height: 2.5rem;
+  padding-inline: 1.15rem !important;
+  border-radius: 999px;
+  box-shadow: 0 0.45rem 1.2rem rgba(31, 102, 122, 0.11);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-opening::before,
+  .hero-opening::after {
+    animation: none;
+  }
 }

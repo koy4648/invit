@@ -9,6 +9,7 @@ import BottomNav from "@/components/BottomNav";
 import ToastProvider from "@/components/ToastProvider";
 import RSVPForm from "@/components/RSVPForm";
 import RSVPModal from "@/components/RSVPModal";
+import ShareInvitation from "@/components/ShareInvitation";
 import FamilyContacts from "@/components/FamilyContacts";
 import NavigationLinks from "@/components/NavigationLinks";
 import CalendarLink from "@/components/CalendarLink";
@@ -37,9 +38,10 @@ export default function Home() {
 
         {/* ── D-Day 카운트다운 배너 ─────────────── */}
         <section className="countdown-section">
-          <p className="countdown-label">
-            Wedding Countdown
-          </p>
+          <header className="countdown-heading invitation-section-heading">
+            <p className="section-title">Wedding Countdown</p>
+            <h2>결혼식까지 남은 시간</h2>
+          </header>
           <Suspense fallback={<div className="h-20" />}>
             <CountdownTimer />
           </Suspense>
@@ -55,7 +57,7 @@ export default function Home() {
             <WeddingInfo />
           </Suspense>
 
-          <div className="section-bridge section-bridge-white" aria-hidden="true" />
+          <div className="section-bridge section-bridge-oyster" aria-hidden="true" />
 
           {/* 신랑신부 소개 및 인터뷰 */}
           <CoupleInterview />
@@ -76,7 +78,7 @@ export default function Home() {
           {/* 연락처 및 마음 전하기 */}
           <FamilyContacts />
 
-          <div className="section-bridge section-bridge-oyster" aria-hidden="true" />
+          <div className="section-bridge section-bridge-shell-garden" aria-hidden="true" />
 
           {/* 오시는 길 */}
           <section className="invitation-utility-section location-background">
@@ -95,6 +97,8 @@ export default function Home() {
             <Guestbook />
           </Suspense>
 
+          <div className="shore-playground" aria-hidden="true" />
+
           {/* 푸터 */}
           <footer className="invitation-footer text-center py-12 px-6">
             <span className="invitation-footer-mark" aria-hidden="true">♡</span>
@@ -109,11 +113,12 @@ export default function Home() {
               className="mt-4 text-xs tracking-[0.3em]"
               style={{ color: "var(--ink)" }}
             >
-              김영서 🤍 정진성
+              김영서 💝 정진성
             </p>
             <p className="mt-2 text-xs" style={{ color: "var(--muted)" }}>
               2027 · 08 · 28
             </p>
+            <ShareInvitation />
           </footer>
         </div>
       </main>

@@ -1,6 +1,5 @@
 "use client";
 
-import { Calendar } from "lucide-react";
 import toast from "react-hot-toast";
 
 interface CalendarLinkProps {
@@ -78,40 +77,39 @@ END:VCALENDAR`;
   };
 
   return (
-    <div className="px-6 py-4 space-y-3">
+    <div className="invitation-utility-block">
       <div className="invitation-section-heading mb-6">
         <p className="section-title">Save the Date</p>
-        <h2 className="flex items-center justify-center gap-2">
-          <Calendar size={18} aria-hidden="true" />
-          캘린더 등록
-        </h2>
+        <h2>캘린더 등록</h2>
       </div>
 
-      <p className="text-sm mb-5 text-center leading-relaxed" style={{ color: "var(--muted)" }}>
-        {eventDate} {eventTime}
-        <br />
-        {eventLocation}
-      </p>
+      <div className="invitation-utility-card px-6 py-4 space-y-3">
+        <p className="text-sm mb-5 text-center leading-relaxed" style={{ color: "var(--muted)" }}>
+          {eventDate} {eventTime}
+          <br />
+          {eventLocation}
+        </p>
 
-      <div className="flex gap-2">
-        <button
-          onClick={downloadICS}
-          className="invitation-action flex-1 px-4 py-3 rounded-xl font-medium transition-all duration-200 text-white text-sm"
-          style={{
-            background: "linear-gradient(135deg, #8fcbd2, #5c91aa)",
-          }}
-        >
-          📥 .ics 다운로드
-        </button>
-        <button
-          onClick={addToGoogleCalendar}
-          className="invitation-action flex-1 px-4 py-3 rounded-xl font-medium transition-all duration-200 text-white text-sm"
-          style={{
-            background: "linear-gradient(135deg, #8fbfdd, #9b86bd)",
-          }}
-        >
-          📅 구글 캘린더
-        </button>
+        <div className="flex gap-2">
+          <button
+            onClick={downloadICS}
+            className="invitation-action flex-1 px-4 py-3 rounded-xl font-medium transition-all duration-200 text-white text-sm"
+            style={{
+              background: "linear-gradient(135deg, #8fcbd2, #5c91aa)",
+            }}
+          >
+            📥 .ics 다운로드
+          </button>
+          <button
+            onClick={addToGoogleCalendar}
+            className="invitation-action flex-1 px-4 py-3 rounded-xl font-medium transition-all duration-200 text-white text-sm"
+            style={{
+              background: "linear-gradient(135deg, #8fbfdd, #9b86bd)",
+            }}
+          >
+            📅 구글 캘린더
+          </button>
+        </div>
       </div>
     </div>
   );

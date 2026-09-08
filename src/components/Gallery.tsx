@@ -5,19 +5,23 @@ import Image from "next/image";
 import { ChevronDown, ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
 import { useGalleryPhotos } from "@/hooks/useGalleryPhotos";
 
-const MOCK_IMAGES = [
-  ["/gallery-mock/01-cafe.jpg", "핑크빛 카페에서 시작된 하루"],
-  ["/gallery-mock/02-flowers.jpg", "햇살 아래 피어난 꽃"],
-  ["/gallery-mock/03-bloom.jpg", "우리의 봄날"],
-  ["/gallery-mock/04-wedding.jpg", "서로를 바라보던 순간"],
-  ["/gallery-mock/05-cafe.jpg", "달콤한 오후의 데이트"],
-  ["/gallery-mock/06-couple.jpg", "바다를 닮은 여행"],
-  ["/gallery-mock/07-dreamy.jpg", "포근하게 물든 계절"],
-  ["/gallery-mock/08-sunset.jpg", "노을이 예뻤던 날"],
-  ["/gallery-mock/09-wedding-detail.jpg", "함께 걷는 길"],
-  ["/gallery-mock/10-cafe-detail.jpg", "우리만의 작은 장소"],
-  ["/gallery-mock/11-bloom-detail.jpg", "꽃처럼 피어난 마음"],
-  ["/gallery-mock/12-flowers-detail.jpg", "오래 기억할 장면"],
+const EX_IMAGES = [
+  ["/gallery/b1.jpg", "영서와 진성의 웨딩 사진 1"],
+  ["/gallery/b2.jpg", "영서와 진성의 웨딩 사진 2"],
+  ["/gallery/b3.jpg", "영서와 진성의 웨딩 사진 3"],
+  ["/gallery/b4.jpeg", "영서와 진성의 웨딩 사진 4"],
+  ["/gallery/d1.jpeg", "영서와 진성의 웨딩 사진 5"],
+  ["/gallery/d2.jpeg", "영서와 진성의 웨딩 사진 6"],
+  ["/gallery/d3.jpeg", "영서와 진성의 웨딩 사진 7"],
+  ["/gallery/d4.jpeg", "영서와 진성의 웨딩 사진 8"],
+  ["/gallery/d5.jpeg", "영서와 진성의 웨딩 사진 9"],
+  ["/gallery/d6.jpeg", "영서와 진성의 웨딩 사진 10"],
+  ["/gallery/d7.jpeg", "영서와 진성의 웨딩 사진 11"],
+  ["/gallery/d8.jpeg", "영서와 진성의 웨딩 사진 12"],
+  ["/gallery/d9.jpeg", "영서와 진성의 웨딩 사진 13"],
+  ["/gallery/d10.jpeg", "영서와 진성의 웨딩 사진 14"],
+  ["/gallery/d11.jpeg", "영서와 진성의 웨딩 사진 15"],
+  ["/gallery/d12.jpeg", "영서와 진성의 웨딩 사진 16"],
 ] as const;
 
 const INITIAL_VISIBLE_COUNT = 9;
@@ -41,7 +45,7 @@ export default function Gallery() {
         alt: photo.name,
         position: "50% 50%",
       }))
-    : MOCK_IMAGES.map(([src, alt], index) => ({
+    : EX_IMAGES.map(([src, alt], index) => ({
         key: `mock-${index + 1}`,
         src,
         alt,
@@ -141,7 +145,15 @@ export default function Gallery() {
             onTouchStart={(event) => { touchStartX.current = event.touches[0].clientX; }}
             onTouchEnd={(event) => handleTouchEnd(event.changedTouches[0].clientX)}
           >
-            <Image src={images[activeIndex].src} alt={images[activeIndex].alt} fill className="object-contain" sizes="100vw" loading="eager" />
+            <Image
+              src={images[activeIndex].src}
+              alt={images[activeIndex].alt}
+              fill
+              draggable={false}
+              className="lightbox-photo object-contain"
+              sizes="100vw"
+              loading="eager"
+            />
           </div>
           <button type="button" className="lightbox-arrow lightbox-next" onClick={(event) => { event.stopPropagation(); next(); }} aria-label="다음 사진">
             <ChevronRight size={26} />

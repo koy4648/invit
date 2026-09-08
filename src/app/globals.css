@@ -128,8 +128,10 @@ input[type="radio"] { accent-color: var(--button); }
 
 .section-title::before {
   content: "";
+  flex: 0 0 auto;
   width: 0.45rem;
   height: 0.45rem;
+  margin-right: 0.4rem;
   border-radius: 50%;
   background: var(--butter);
   box-shadow: 0.42rem 0.28rem 0 var(--lilac), 0.78rem -0.08rem 0 var(--sage);
@@ -917,6 +919,7 @@ input[type="radio"] { accent-color: var(--button); }
   display: grid;
   place-items: center;
   background: rgba(16, 17, 15, 0.96);
+  touch-action: none;
   animation: lightboxIn 0.2s ease-out;
 }
 
@@ -924,7 +927,16 @@ input[type="radio"] { accent-color: var(--button); }
   position: relative;
   width: min(86vw, 34rem);
   height: min(78vh, 46rem);
-  touch-action: pan-y;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.lightbox-photo {
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .lightbox-close,
@@ -986,17 +998,53 @@ input[type="radio"] { accent-color: var(--button); }
   position: fixed;
   inset: 0;
   z-index: 80;
+  isolation: isolate;
+  overflow: hidden;
   display: grid;
   place-items: center;
   width: min(100%, 480px);
   margin: 0 auto;
-  background: #fff;
+  background:
+    radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.94), transparent 9rem),
+    radial-gradient(circle at 84% 76%, rgba(167, 231, 224, 0.34), transparent 11rem),
+    linear-gradient(180deg, #f9feff 0%, #eaf9fb 48%, #e7f7f2 100%);
   transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.hero-opening::before,
+.hero-opening::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.hero-opening::before {
+  z-index: 0;
+  inset: -12%;
+  background:
+    radial-gradient(ellipse 9rem 3rem at 24% 28%, rgba(255, 255, 255, 0.72), transparent 72%),
+    radial-gradient(ellipse 12rem 3.5rem at 78% 45%, rgba(255, 255, 255, 0.64), transparent 74%),
+    radial-gradient(ellipse 10rem 2.8rem at 36% 78%, rgba(133, 224, 219, 0.2), transparent 72%);
+  filter: blur(0.35rem);
+  animation: openingCaustics 7s ease-in-out infinite alternate;
+}
+
+.hero-opening::after {
+  z-index: 0;
+  inset: 0;
+  background:
+    radial-gradient(circle 0.34rem at 17% 72%, transparent 52%, rgba(255, 255, 255, 0.78) 58% 78%, transparent 84%),
+    radial-gradient(circle 0.22rem at 78% 24%, transparent 50%, rgba(255, 255, 255, 0.7) 58% 78%, transparent 84%),
+    radial-gradient(circle 0.46rem at 88% 68%, transparent 54%, rgba(255, 255, 255, 0.68) 60% 78%, transparent 84%),
+    radial-gradient(circle 0.18rem at 28% 20%, rgba(255, 255, 255, 0.72), transparent 72%);
+  animation: openingBubbles 6s ease-in-out infinite alternate;
 }
 
 .hero-opening.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 
 .hero-opening-copy {
+  position: relative;
+  z-index: 1;
   display: grid;
   justify-items: center;
   color: var(--accent);
@@ -1065,6 +1113,18 @@ input[type="radio"] { accent-color: var(--button); }
   text-shadow: 0 1px 14px rgba(0, 0, 0, 0.3);
 }
 
+.hero-copy-venue {
+  margin: 0.35rem 0 0;
+  color: #fff;
+  font-family: var(--font-cormorant), serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  line-height: 1.45;
+  text-transform: uppercase;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.38);
+}
+
 .hero-intro .hero-script,
 .hero-intro h1 {
   font-family: var(--font-script), var(--font-noto-serif-kr), cursive;
@@ -1111,6 +1171,16 @@ input[type="radio"] { accent-color: var(--button); }
 
 @keyframes openingCharacter {
   to { opacity: 1; transform: translateY(0) rotate(0); }
+}
+
+@keyframes openingCaustics {
+  from { transform: translate3d(-1.5%, -0.4rem, 0) rotate(-1deg) scale(1); opacity: 0.56; }
+  to { transform: translate3d(1.5%, 0.45rem, 0) rotate(1deg) scale(1.04); opacity: 0.9; }
+}
+
+@keyframes openingBubbles {
+  from { transform: translateY(0.35rem); opacity: 0.54; }
+  to { transform: translateY(-0.55rem); opacity: 0.9; }
 }
 
 @keyframes heroCaptionReveal {

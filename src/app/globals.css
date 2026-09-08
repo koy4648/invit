@@ -958,7 +958,7 @@ input[type="radio"] { accent-color: var(--button); }
 .lightbox {
   position: fixed;
   inset: 0;
-  z-index: 60;
+  z-index: 100;
   display: grid;
   place-items: center;
   background: rgba(16, 17, 15, 0.96);

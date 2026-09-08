@@ -11,7 +11,7 @@ export default function WeddingHero() {
   const cover = photos.find((photo) => photo.isCover) ?? photos[0];
   const [isOpening, setIsOpening] = useState(true);
   const displayPhoto = cover?.url ?? "/gallery/wedding-main.png";
-  const displayAlt = cover?.name ?? "Youngseo & Jinseong 웨딩 사진";
+  const displayAlt = cover?.name ?? "웨딩 사진";
 
   useEffect(() => {
     if ("scrollRestoration" in window.history) window.history.scrollRestoration = "manual";

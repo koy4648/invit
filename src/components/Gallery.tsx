@@ -1,27 +1,27 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { ChevronDown, ChevronLeft, ChevronRight, Maximize2, X } from "lucide-react";
 import { useGalleryPhotos } from "@/hooks/useGalleryPhotos";
 
 const EX_IMAGES = [
-  ["/gallery/b1.jpg", "영서와 진성의 웨딩 사진 1"],
-  ["/gallery/b2.jpg", "영서와 진성의 웨딩 사진 2"],
-  ["/gallery/b3.jpg", "영서와 진성의 웨딩 사진 3"],
-  ["/gallery/b4.jpeg", "영서와 진성의 웨딩 사진 4"],
-  ["/gallery/d1.jpeg", "영서와 진성의 웨딩 사진 5"],
-  ["/gallery/d2.jpeg", "영서와 진성의 웨딩 사진 6"],
-  ["/gallery/d3.jpeg", "영서와 진성의 웨딩 사진 7"],
-  ["/gallery/d4.jpeg", "영서와 진성의 웨딩 사진 8"],
-  ["/gallery/d5.jpeg", "영서와 진성의 웨딩 사진 9"],
-  ["/gallery/d6.jpeg", "영서와 진성의 웨딩 사진 10"],
-  ["/gallery/d7.jpeg", "영서와 진성의 웨딩 사진 11"],
-  ["/gallery/d8.jpeg", "영서와 진성의 웨딩 사진 12"],
-  ["/gallery/d9.jpeg", "영서와 진성의 웨딩 사진 13"],
-  ["/gallery/d10.jpeg", "영서와 진성의 웨딩 사진 14"],
-  ["/gallery/d11.jpeg", "영서와 진성의 웨딩 사진 15"],
-  ["/gallery/d12.jpeg", "영서와 진성의 웨딩 사진 16"],
+  ["/gallery/b2.jpg", "벚꽃사진 2"],
+  ["/gallery/b3.jpg", "벚꽃사진 3"],
+  ["/gallery/b4.jpeg", "벚꽃사진 4"],
+  ["/gallery/d1.jpeg", "데이트사진 1"],
+  ["/gallery/d2.jpeg", "데이트사진 2"],
+  ["/gallery/d3.jpeg", "데이트사진 3"],
+  ["/gallery/d4.jpeg", "데이트사진 4"],
+  ["/gallery/d5.jpeg", "데이트사진 5"],
+  ["/gallery/d6.jpeg", "데이트사진 6"],
+  ["/gallery/d7.jpeg", "데이트사진 7"],
+  ["/gallery/d8.jpeg", "데이트사진 8"],
+  ["/gallery/d9.jpeg", "데이트사진 9"],
+  ["/gallery/d10.jpeg", "데이트사진 10"],
+  ["/gallery/d11.jpeg", "데이트사진 11"],
+  ["/gallery/d12.jpeg", "데이트사진 12"],
 ] as const;
 
 const INITIAL_VISIBLE_COUNT = 9;
@@ -40,20 +40,23 @@ export default function Gallery() {
   const uploadedPhotos = useGalleryPhotos();
   const images: GalleryImage[] = uploadedPhotos.length
     ? uploadedPhotos.map((photo) => ({
-        key: photo.key,
-        src: photo.url,
-        alt: photo.name,
-        position: "50% 50%",
-      }))
+      key: photo.key,
+      src: photo.url,
+      alt: photo.name,
+      position: "50% 50%",
+    }))
     : EX_IMAGES.map(([src, alt], index) => ({
-        key: `mock-${index + 1}`,
-        src,
-        alt,
-        position: index % 3 === 0 ? "50% 35%" : "50% 50%",
-      }));
+      key: `mock-${index + 1}`,
+      src,
+      alt,
+      position: index % 3 === 0 ? "50% 35%" : "50% 50%",
+    }));
   const visibleImages = isExpanded ? images : images.slice(0, INITIAL_VISIBLE_COUNT);
   const hasMore = images.length > INITIAL_VISIBLE_COUNT;
   const isMock = uploadedPhotos.length === 0;
+
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   const close = useCallback(() => setActiveIndex(null), []);
   const previous = useCallback(() => {
@@ -133,7 +136,7 @@ export default function Gallery() {
         </button>
       )}
 
-      {activeIndex !== null && images[activeIndex] && (
+      {mounted && activeIndex !== null && images[activeIndex] && createPortal(
         <div className="lightbox" role="dialog" aria-modal="true" aria-label="사진 크게 보기" onClick={close}>
           <button type="button" className="lightbox-close" onClick={close} aria-label="닫기"><X size={22} /></button>
           <button type="button" className="lightbox-arrow lightbox-previous" onClick={(event) => { event.stopPropagation(); previous(); }} aria-label="이전 사진">
@@ -159,7 +162,8 @@ export default function Gallery() {
             <ChevronRight size={26} />
           </button>
           <p className="lightbox-counter">{activeIndex + 1} / {images.length}</p>
-        </div>
+        </div>,
+        document.body
       )}
     </section>
   );

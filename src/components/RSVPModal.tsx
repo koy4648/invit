@@ -72,8 +72,8 @@ export default function RSVPModal({ isOpen = false, onClose }: RSVPModalProps) {
           </div>
 
           <div className="rsvp-modal-content">
-            <p className="rsvp-modal-intro">
-              저희의 결혼식에 함께해 주실 수 있을까요?<br />
+            <p className="rsvp-modal-intro reading-reflow">
+              저희의 결혼식에 함께해 주실 수 있을까요?<br />{" "}
               편하신 방법으로 참석 여부를 남겨주세요.
             </p>
 

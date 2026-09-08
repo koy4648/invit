@@ -149,8 +149,8 @@ export default function PhotoUpload({ onUploadComplete }: { onUploadComplete?: (
         <h2 className="text-xl font-light tracking-wider" style={{ color: "#44403c" }}>
           하객 사진 공유
         </h2>
-        <p className="text-xs mt-1 tracking-wide" style={{ color: "var(--muted)" }}>
-          소중한 순간을 함께 나눠주세요.<br/>최대 50MB<br/>JPG/PNG/WebP/HEIC
+        <p className="reading-reflow text-xs mt-1 tracking-wide" style={{ color: "var(--muted)" }}>
+          소중한 순간을 함께 나눠주세요.<br/>{" "}최대 50MB<br/>{" "}JPG/PNG/WebP/HEIC
         </p>
       </div>
 

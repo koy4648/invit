@@ -15,6 +15,7 @@ import NavigationLinks from "@/components/NavigationLinks";
 import CalendarLink from "@/components/CalendarLink";
 import ConfettiEasterEgg from "@/components/ConfettiEasterEgg";
 import CoupleInterview from "@/components/CoupleInterview";
+import EasyReadingToggle from "@/components/EasyReadingToggle";
 
 /* 섹션 스켈레톤 */
 function SectionSkeleton({ height = "h-48" }: { height?: string }) {
@@ -103,10 +104,10 @@ export default function Home() {
           <footer className="invitation-footer text-center py-12 px-6">
             <span className="invitation-footer-mark" aria-hidden="true">♡</span>
             <p
-              className="text-[13px] leading-[2.2] font-light tracking-wider"
+              className="reading-reflow text-[13px] leading-[2.2] font-light tracking-wider"
               style={{ color: "var(--muted)" }}
             >
-              저희의 새로운 시작을<br />
+              저희의 새로운 시작을<br />{" "}
               함께 축복해 주셔서 감사합니다
             </p>
             <p
@@ -125,6 +126,9 @@ export default function Home() {
 
       {/* ── 하단 탭 네비게이션 ─────────────────── */}
       <BottomNav />
+
+      {/* ── 어르신을 위한 큰 글자 보기 ─────────── */}
+      <EasyReadingToggle />
 
       {/* ── 이스터에그 (폭죽) ─────────────────── */}
       <ConfettiEasterEgg />

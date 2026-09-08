@@ -30,6 +30,10 @@
 
 html { scroll-behavior: smooth; }
 
+html.easy-reading-mode {
+  font-size: 118.75%;
+}
+
 body {
   margin: 0;
   background:
@@ -53,6 +57,45 @@ input[type="radio"] { accent-color: var(--button); }
 
 .tab-bar-safe {
   padding-bottom: max(0.35rem, env(safe-area-inset-bottom));
+}
+
+.easy-reading-toggle {
+  position: fixed;
+  right: max(1rem, calc((100vw - 480px) / 2 + 1rem));
+  bottom: calc(4.6rem + env(safe-area-inset-bottom));
+  z-index: 50;
+  display: grid;
+  width: 3.15rem;
+  height: 3.15rem;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 50%;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.97), rgba(224, 248, 247, 0.95));
+  color: var(--accent);
+  font-family: var(--font-noto-serif-kr), serif;
+  font-size: 0.86rem;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  box-shadow: 0 0.55rem 1.5rem rgba(27, 91, 112, 0.2);
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.easy-reading-toggle:active {
+  transform: scale(0.94);
+}
+
+.easy-reading-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.easy-reading-mode .easy-reading-toggle {
+  background: linear-gradient(145deg, #347c91, #256b80);
+  color: #fff;
+}
+
+.easy-reading-mode .reading-reflow br {
+  display: none;
 }
 
 .invitation-shell {

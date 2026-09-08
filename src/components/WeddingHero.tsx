@@ -76,19 +76,19 @@ export default function WeddingHero() {
         </h1>
         <p className="hero-venue">2027년 8월 28일 토요일 낮 12시<br />서울가든호텔 그랜드볼룸웨딩홀 2층</p>
         <div className="hero-rule" />
-        <p className="hero-message">
-          좋아하는 것도, 살아가는 방식도 달랐던 두 사람이<br/>
-          더 많이 웃고, 더 좋은 사람이 되기 위해<br/>
-          남은 평생을 함께하기로 약속했습니다.<br/>
-          저희의 새로운 시작을 따뜻하게 지켜봐 주세요.
+        <p className="hero-message reading-reflow">
+          좋아하는 것도, 살아가는 방식도 달랐던 두 사람이<br/>{" "}
+          더 많이 웃고, 더 좋은 사람이 되기 위해<br/>{" "}
+          남은 평생을 함께하기로 약속했습니다.<br/>{" "}
+          저희의 새로운 시작을 응원해주세요.
         </p>
         <div className="hero-worship-note">
           <p className="hero-worship-label">예식 안내</p>
-          <p>
-            저희의 결혼식은 기독교 예배로 드려집니다.<br/>
-            지금까지 저희를 아껴주시고 사랑해 주신 마음에 감사하며,
-            소중한 분들 앞에서 서로의 평생을 약속하려 합니다.<br/>
-            이날의 사랑과 기쁨이 함께해 주시는<br/>
+          <p className="reading-reflow">
+            저희의 결혼식은 기독교 예배로 드려집니다.<br/>{" "}
+            지금까지 저희를 아껴주시고 사랑해 주신 마음에 감사하며,<br/>{" "}
+            소중한 분들 앞에서 평생의 동행을 약속하려 합니다.<br/>{" "}
+            이날의 사랑과 기쁨이 함께해 주시는<br/>{" "}
             모든 분의 마음에도 따뜻하게 머물기를 소망합니다.
           </p>
         </div>

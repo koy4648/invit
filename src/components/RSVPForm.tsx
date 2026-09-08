@@ -260,8 +260,8 @@ export default function RSVPForm({
       <header className="invitation-section-heading mb-6">
         <p className="section-title">RSVP</p>
         <h2>참석 여부</h2>
-        <p>
-          원활한 좌석 및 식사 준비를 위해<br />
+        <p className="reading-reflow">
+          원활한 좌석 및 식사 준비를 위해<br />{" "}
           참석 여부를 미리 알려주시면 감사하겠습니다.
         </p>
       </header>

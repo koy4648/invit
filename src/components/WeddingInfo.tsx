@@ -41,7 +41,7 @@ export default function WeddingInfo() {
             <p className="text-sm font-medium" style={{ color: "var(--ink)" }}>
               2027년 8월 28일 토요일
             </p>
-            <p className="text-xs mt-0.5" style={{ color: "var(--muted)" }}>오전 12시 00분</p>
+            <p className="text-xs mt-0.5" style={{ color: "var(--muted)" }}>낮 12시 00분</p>
           </div>
         </div>
 

@@ -27,10 +27,10 @@ const greatVibes = Great_Vibes({
 export const metadata: Metadata = {
   title: "김영서 ♥ 정진성 결혼합니다",
   description:
-    "2027년 8월 28일 토요일 오전 12시, 두 사람의 새로운 시작을 함께 축복해 주세요.",
+    "2027년 8월 28일 토요일 낮 12시, 두 사람의 새로운 시작을 함께 축복해 주세요.",
   openGraph: {
     title: "김영서 ♥ 정진성 결혼합니다",
-    description: "2027년 8월 28일 토요일 오전 12시",
+    description: "2027년 8월 28일 토요일 낮 12시",
     type: "website",
   },
 };

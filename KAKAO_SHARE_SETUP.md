@@ -160,7 +160,7 @@ npm run dev
 ```typescript
 openGraph: {
   title: "김영서 ♥ 정진성 결혼합니다",
-  description: "2027년 8월 28일 토요일 오전 12시",
+  description: "2027년 8월 28일 토요일 낮 12시",
   type: "website",
 },
 ```
